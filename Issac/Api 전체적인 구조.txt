@@ -1,0 +1,36 @@
+용어정리)
+1. GameEngineBase
+   플랫폼에서 벗어난 추가적인 기능을 제공하는 코드 ex) 릭체크 기능, Math 관련 구조체
+
+2. GameEnginePlatform
+	윈도우의 크기 설정 및 메시지 등 이벤트를 받고 처리하는곳 메시지를 받고 없을 경우에 Loop가 실행 되는데 이 Loop에서 
+	게임의 동작이나 이벤트를 처리한다?
+
+3. GameEngineCore <= 엔진프로그래머의 영역
+   게임을 구성하는데 필요한 기본중의 기본
+   장르를 불문하고 모든걸 만들수 있는 기본구조에 대한 걸 여기에 만든다.
+   
+   GameEngineCore :게임안 화면 타이틀 화면(움직이는 애니메이션의 코드를 여기서 작성하나?)
+   플레이화면(이라하면 오브젝트의 움직임도 포함되나?) 맵에디터화면 엔딩화면
+   GameEngineLevel: 여기선 뭘할까? 레벨을 만들고 관리하는건 GameEngineCore에서 하고있다
+   GameEngineActor :타이틀화면에 속한 타이틀 이미지 계속하기 버튼 (아직 미구현)
+   
+
+4. GameEngineContent <= 컨텐츠 프로그래머의 영역
+   실제로 여려분들의 게임에서 움직이는 가장 말단 객체들을 정의하는 단계.
+   GameEngineCore의 기능을 써서? 아니면 GameEngineContent 코드내에서 물체의 움직임을 정의하나? 
+   몬스터,플레이어,하나의 래벨(장면)을 만든다. 
+   StudyGameCore : 나에겐 내게임Core가 되는데 여기서는 현재 GameEngineCore을 통해 레벨을 만들었다.
+                   -> 그럼 나중에 이를 상속받아 플레이어나 몬스터를 레벨에 넣어주는방식일까?
+5. APIApp 
+   exe파일을 만들어주기 위한 용도.
+
+전체적인 구조)
+main에서 시작 -> StudyGameCore에서 객체를 받아 CoreStart를 해준다. GameEngineCore를 상속받아서 사용가능
+그럼 CoreStart에서 WindowCreate를 통해 윈도우를 만들고 WindowLoop를 통해 콜백방식으로 함수를 넘겨준다.
+그럼 결과적으로 _Start에서는 초기화 _Loop에서는 동작 _End에서는 정리?
+
+이해가 안가는 부분)
+싱글톤으로 만들어진 StudyGameCore에서의 Core객체는 뭘의미할까?
+->싱글톤이란 하나의 객체 즉 하나의 인스턴스만을 만들어 사용하는 디자인 패턴이다. 싱글톤을 사용함으로써 이 Core는 하나뿐인 인스턴스
+가 된다. 여기서 Core는 공용의 인스턴스 즉 다른 객체를 만들어 사용하지 않아도 된다.

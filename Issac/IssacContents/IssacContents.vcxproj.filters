@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="IssacCore.cpp" />
+    <ClCompile Include="ContentsValue.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseObject.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="STLevel.cpp">
+      <Filter>Global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.cpp">
+      <Filter>Title\title</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.cpp">
+      <Filter>Title\title</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroBack.cpp">
+      <Filter>Title\intro</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroLevel.cpp">
+      <Filter>Title\intro</Filter>
+    </ClCompile>
+    <ClCompile Include="Issac.cpp">
+      <Filter>Play\TestLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="MapOne.cpp">
+      <Filter>Play\TestLevel\Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="TestLevel.cpp">
+      <Filter>Play\TestLevel\Level1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IssacCore.h" />
+    <ClInclude Include="ContentsEnums.h" />
+    <ClInclude Include="ContentsValue.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseObject.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="STLevel.h">
+      <Filter>Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.h">
+      <Filter>Title\title</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.h">
+      <Filter>Title\title</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroBack.h">
+      <Filter>Title\intro</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroLevel.h">
+      <Filter>Title\intro</Filter>
+    </ClInclude>
+    <ClInclude Include="Issac.h">
+      <Filter>Play\TestLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="MapOne.h">
+      <Filter>Play\TestLevel\Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="TestLevel.h">
+      <Filter>Play\TestLevel\Level1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Global">
+      <UniqueIdentifier>{35ed6b89-488d-4c89-86f9-8d95ca10b50b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play">
+      <UniqueIdentifier>{0be46e33-8f91-46f9-a0f3-b7bd8d85009a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{8a7cd66c-6bf1-4618-a123-dccaffa21eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title\title">
+      <UniqueIdentifier>{8b5dec33-b033-40db-a52f-c9f1b8d0d1af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title\intro">
+      <UniqueIdentifier>{c3838e38-58fd-4327-be6f-e1a1cb5781a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\TestLevel">
+      <UniqueIdentifier>{fd30ec2d-1129-431d-bf56-4f820081321d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\TestLevel\Level1">
+      <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
