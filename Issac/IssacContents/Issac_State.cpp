@@ -69,10 +69,10 @@ void Issac::UpdateState(float _Time)
 void Issac::IdleStart() {
 
 
-//	IssacHeadRender->ChangeAnimation(DirString + "HMove");
-//	IssacBodyRender->ChangeAnimation(DirString + "BMove");
+	IssacHeadRender->ChangeAnimation(DirString + "HMove");
+	IssacBodyRender->ChangeAnimation(DirString + "BMove");
 //	DirCheck("HIdle");
-	DirCheck("BIdle");
+//	DirCheck("BIdle");
 
 }
 void Issac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
@@ -90,10 +90,10 @@ void Issac::IdleEnd() {
 
 void Issac::MoveStart() {
 
-	DirCheck("HMove");
-	DirCheck("BMove");
-	//IssacHeadRender->ChangeAnimation(DirString +"HMove");
-	//IssacBodyRender->ChangeAnimation(DirString +"BMove");
+	//DirCheck("HMove");
+	//DirCheck("BMove");
+	IssacHeadRender->ChangeAnimation(DirString +"HMove");
+	IssacBodyRender->ChangeAnimation(DirString +"BMove");
 }
 void Issac::MoveUpdate(float _Time) {
 
@@ -119,8 +119,8 @@ void Issac::MoveUpdate(float _Time) {
 	{
 		SetMove(float4::Up * MoveSpeed * _Time);
 	}
-	DirCheck("HMove");
-	DirCheck("BMove");
+	//DirCheck("HMove");
+	//DirCheck("BMove");
 
 }
 void Issac::MoveEnd() {

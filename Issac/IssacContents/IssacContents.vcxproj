@@ -19,8 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.cpp" />
     <ClCompile Include="ContentsValue.cpp" />
     <ClCompile Include="IntroBack.cpp" />
     <ClCompile Include="IntroLevel.cpp" />
@@ -31,10 +29,10 @@
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="STLevel.cpp" />
     <ClCompile Include="TestLevel.cpp" />
+    <ClCompile Include="TitleBack.cpp" />
+    <ClCompile Include="TitleLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.h" />
-    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.h" />
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h" />
     <ClInclude Include="IntroBack.h" />
@@ -45,6 +43,8 @@
     <ClInclude Include="MouseObject.h" />
     <ClInclude Include="STLevel.h" />
     <ClInclude Include="TestLevel.h" />
+    <ClInclude Include="TitleBack.h" />
+    <ClInclude Include="TitleLevel.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

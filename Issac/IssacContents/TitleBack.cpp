@@ -3,21 +3,21 @@
 #include <GameEngineCore/GameEngineRender.h>
 #include <GameEnginePlatform/GameEngineWindow.h>
 
-TitleBack::TitleBack() 
+TitleBack::TitleBack()
 {
 }
 
-TitleBack::~TitleBack() 
+TitleBack::~TitleBack()
 {
 }
 
 
-void TitleBack::Start() 
+void TitleBack::Start()
 {
 	float4 Size = GameEngineWindow::GetScreenSize();
-	
 
-	TitleRender = CreateRender(BubbleRenderOrder::title);
+
+	TitleRender = CreateRender(IssacRenderOrder::title);
 	TitleRender->SetPosition(GameEngineWindow::GetScreenSize().half());
 	TitleRender->SetScale(GameEngineWindow::GetScreenSize());
 	TitleRender->CreateAnimation({ .AnimationName = "Loop",  .ImageName = "start.bmp", .Start = 0, .End = 1, .InterTime = 0.3f });

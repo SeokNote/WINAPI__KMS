@@ -26,6 +26,6 @@ protected:
 private:
 	// float4 MoveY;
 	float Time = 0.0f;
-	
+
 };
 

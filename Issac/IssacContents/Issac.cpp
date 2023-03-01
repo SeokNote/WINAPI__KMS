@@ -66,15 +66,15 @@ void Issac::Start()
 
 void Issac::Update(float _DeltaTime)
 {
-	//DirCheck();
+	DirCheck();
 	UpdateState(_DeltaTime);
 }
 
-void Issac::DirCheck(const std::string& _AnimationName)
+void Issac::DirCheck()
 {
-	std::string PrevDirString = DirString;
+	/*std::string PrevDirString = DirString;
 	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());*/
 
 
 	if (GameEngineInput::IsPress("LeftMove"))
@@ -95,11 +95,11 @@ void Issac::DirCheck(const std::string& _AnimationName)
 		DirString = "Down_";
 	}
 
-	if (PrevDirString != DirString)
-	{
-		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-		IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
-	}
+	//if (PrevDirString != DirString)
+	//{
+	//	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
+	//	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+	//}
 
 }
 

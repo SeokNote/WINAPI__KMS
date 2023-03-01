@@ -11,12 +11,6 @@
     <ClCompile Include="STLevel.cpp">
       <Filter>Global</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.cpp">
-      <Filter>Title\title</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.cpp">
-      <Filter>Title\title</Filter>
-    </ClCompile>
     <ClCompile Include="IntroBack.cpp">
       <Filter>Title\intro</Filter>
     </ClCompile>
@@ -35,6 +29,12 @@
     <ClCompile Include="Issac_State.cpp">
       <Filter>Play\TestLevel\Level1</Filter>
     </ClCompile>
+    <ClCompile Include="TitleBack.cpp">
+      <Filter>Title\title</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleLevel.cpp">
+      <Filter>Title\title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -47,12 +47,6 @@
     </ClInclude>
     <ClInclude Include="STLevel.h">
       <Filter>Global</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleBack.h">
-      <Filter>Title\title</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\..\Desktop\aaa\AR45\WINAPI\APIApp\GameEngineContents\TitleLevel.h">
-      <Filter>Title\title</Filter>
     </ClInclude>
     <ClInclude Include="IntroBack.h">
       <Filter>Title\intro</Filter>
@@ -68,6 +62,12 @@
     </ClInclude>
     <ClInclude Include="TestLevel.h">
       <Filter>Play\TestLevel\Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleBack.h">
+      <Filter>Title\title</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleLevel.h">
+      <Filter>Title\title</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

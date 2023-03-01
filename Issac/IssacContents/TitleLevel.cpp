@@ -9,15 +9,15 @@
 #include "TitleBack.h"
 #include "ContentsValue.h"
 
-TitleLevel::TitleLevel() 
+TitleLevel::TitleLevel()
 {
 }
 
-TitleLevel::~TitleLevel() 
+TitleLevel::~TitleLevel()
 {
 }
 
-void TestError(Button* _Btn) 
+void TestError(Button* _Btn)
 {
 	MsgAssert("버튼을 눌렀습니다.");
 }

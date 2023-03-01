@@ -46,7 +46,7 @@ private:
 	GameEngineRender* IssacHeadRender = nullptr;
 	GameEngineRender* IssacBodyRender = nullptr;
 
-	void DirCheck(const std::string& _AnimationName);
+	void DirCheck();
 
 	void ChangeState(IssacState _State);
 	void UpdateState(float _Time);
