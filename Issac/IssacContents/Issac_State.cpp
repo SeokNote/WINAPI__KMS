@@ -71,7 +71,7 @@ void Issac::IdleStart() {
 
 //	IssacHeadRender->ChangeAnimation(DirString + "HMove");
 //	IssacBodyRender->ChangeAnimation(DirString + "BMove");
-	DirCheck("HIdle");
+//	DirCheck("HIdle");
 	DirCheck("BIdle");
 
 }
