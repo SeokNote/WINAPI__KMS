@@ -32,6 +32,9 @@
     <ClCompile Include="TestLevel.cpp">
       <Filter>Play\TestLevel\Level1</Filter>
     </ClCompile>
+    <ClCompile Include="Issac_State.cpp">
+      <Filter>Play\TestLevel\Level1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />

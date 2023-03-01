@@ -9,7 +9,7 @@ enum class IssacRenderOrder
 	Monster,
 };
 
-enum class BubbleCollisionOrder
+enum class  IssacCollisionOrder
 {
 	Player,
 	Monster,

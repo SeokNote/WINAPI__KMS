@@ -18,9 +18,9 @@ TestLevel::~TestLevel()
 {
 }
 
+void TestLevel::ImageLoad() {
 
-void TestLevel::Loading()
-{
+
 	GameEngineDirectory Dir;
 	Dir.MoveParentToDirectory("ContentsResources");
 	Dir.Move("ContentsResources");
@@ -29,14 +29,27 @@ void TestLevel::Loading()
 
 	// 이미지 로드
 	{
-		GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP"));
+		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP")); //맵
+		{
+			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Issac.BMP"));
+			Image->Cut(8, 4);
+		}
+		{
+			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Issac.BMP"));
+			Image2->Cut(8, 4);
+		}
 
 	}
-	// 액터 생성
 
+}
+void TestLevel::Loading()
+{
+	
+	ImageLoad();
 
+	Issac* NewIssac = CreateActor<Issac>();
+	NewIssac->SetPos({ 500,500 });
 	CreateActor<MapOne>();
-
 
 	Start = float4::Zero;
 	End = float4(0.0f, GameEngineWindow::GetScreenSize().half().y);
@@ -46,11 +59,7 @@ void TestLevel::Loading()
 
 void TestLevel::Update(float _DeltaTime)
 {
-	//if (GameEngineInput::IsDown("PlayerOff"))
-	//{
-	//	Issac::MainPlayer->OnOffSwtich();
-	//	// Player::MainPlayer->Death();
-	//}
+
 
 
 }

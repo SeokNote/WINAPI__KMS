@@ -26,6 +26,7 @@
     <ClCompile Include="IntroLevel.cpp" />
     <ClCompile Include="Issac.cpp" />
     <ClCompile Include="IssacCore.cpp" />
+    <ClCompile Include="Issac_State.cpp" />
     <ClCompile Include="MapOne.cpp" />
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="STLevel.cpp" />

@@ -1,12 +1,18 @@
 #pragma once
 #include <GameEngineCore/GameEngineActor.h>
 
-enum class PlayerState
+enum class IssacState
 {
 	IDLE,
 	MOVE,
 };
-
+//enum class IssacDir
+//{
+//	Left,
+//	Right,
+//	Up,
+//	Down,
+//};
 // 설명 :
 class Issac : public GameEngineActor
 {
@@ -32,21 +38,19 @@ protected:
 private:
 	float AccTime = 0.0f;
 	int StartFrame = 0;
-	float MoveSpeed = 100.0f;
+	float MoveSpeed = 150.0f;
 
 	std::string DirString = "Right_";
-	PlayerState StateValue = PlayerState::IDLE;
+	IssacState StateValue = IssacState::IDLE;
 
-	GameEngineRender* AnimationRender = nullptr;
+	GameEngineRender* IssacHeadRender = nullptr;
+	GameEngineRender* IssacBodyRender = nullptr;
 
+	void DirCheck(const std::string& _AnimationName);
 
-	void DirCheck();
-
-	// State
-	void ChangeState(PlayerState _State);
+	void ChangeState(IssacState _State);
 	void UpdateState(float _Time);
 
-	// FSM 내가 어떤일을 할때 이동하면서 가만히 있을수 없다.
 	void IdleStart();
 	void IdleUpdate(float _Time);
 	void IdleEnd();
