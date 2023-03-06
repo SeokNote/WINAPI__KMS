@@ -80,7 +80,6 @@ void Issac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
 	if (GameEngineInput::IsPress("LeftMove") || GameEngineInput::IsPress("RightMove")|| GameEngineInput::IsPress("DownMove")|| GameEngineInput::IsPress("UpMove"))
 	{
 		ChangeState(IssacState::MOVE);
-		return; 
 	}
 }
 void Issac::IdleEnd() {
@@ -122,7 +121,6 @@ void Issac::MoveUpdate(float _Time) {
 	}
 	Dir.Normalize();
 	MoveDir = Dir * MoveSpeed;
-	SetMove(MoveDir* _Time);
 }
 void Issac::MoveEnd() {
 
