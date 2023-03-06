@@ -35,6 +35,18 @@
     <ClCompile Include="TitleLevel.cpp">
       <Filter>Title\title</Filter>
     </ClCompile>
+    <ClCompile Include="Monster_State.cpp">
+      <Filter>Play\Monster\MonsterOne</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterOne.cpp">
+      <Filter>Play\Monster\MonsterOne</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>Play\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2Level.cpp">
+      <Filter>Play\TestLevel\Stage2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -69,6 +81,15 @@
     <ClInclude Include="TitleLevel.h">
       <Filter>Title\title</Filter>
     </ClInclude>
+    <ClInclude Include="MonsterOne.h">
+      <Filter>Play\Monster\MonsterOne</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>Play\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2Level.h">
+      <Filter>Play\TestLevel\Stage2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -91,6 +112,18 @@
     </Filter>
     <Filter Include="Play\TestLevel\Level1">
       <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Monster">
+      <UniqueIdentifier>{55d74f9c-0fe1-4830-a8df-c0040e9db8e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Monster\MonsterOne">
+      <UniqueIdentifier>{264f7f7b-ce51-4201-9f78-c43235f229a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object">
+      <UniqueIdentifier>{12661614-7348-4100-9f64-b4c0903889da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\TestLevel\Stage2">
+      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

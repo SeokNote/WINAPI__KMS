@@ -20,13 +20,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContentsValue.cpp" />
+    <ClCompile Include="Door.cpp" />
     <ClCompile Include="IntroBack.cpp" />
     <ClCompile Include="IntroLevel.cpp" />
     <ClCompile Include="Issac.cpp" />
     <ClCompile Include="IssacCore.cpp" />
     <ClCompile Include="Issac_State.cpp" />
     <ClCompile Include="MapOne.cpp" />
+    <ClCompile Include="MonsterOne.cpp" />
+    <ClCompile Include="Monster_State.cpp" />
     <ClCompile Include="MouseObject.cpp" />
+    <ClCompile Include="Stage2Level.cpp" />
     <ClCompile Include="STLevel.cpp" />
     <ClCompile Include="TestLevel.cpp" />
     <ClCompile Include="TitleBack.cpp" />
@@ -35,12 +39,15 @@
   <ItemGroup>
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h" />
+    <ClInclude Include="Door.h" />
     <ClInclude Include="IntroBack.h" />
     <ClInclude Include="IntroLevel.h" />
     <ClInclude Include="Issac.h" />
     <ClInclude Include="IssacCore.h" />
     <ClInclude Include="MapOne.h" />
+    <ClInclude Include="MonsterOne.h" />
     <ClInclude Include="MouseObject.h" />
+    <ClInclude Include="Stage2Level.h" />
     <ClInclude Include="STLevel.h" />
     <ClInclude Include="TestLevel.h" />
     <ClInclude Include="TitleBack.h" />

@@ -1,5 +1,7 @@
 #pragma once
 #include <GameEngineCore/GameEngineActor.h>
+#include <GameEngineCore/GameEngineCollision.h>
+#include <GameEngineCore/GameEngineResources.h>
 
 enum class IssacState
 {
@@ -31,6 +33,10 @@ public:
 
 	void Movecalculation(float _DeltaTime);
 
+	GameEngineCollision* GetIsaacCollision()
+	{
+		return IssacColltion;
+	}
 
 protected:
 	void Start() override;
@@ -41,7 +47,7 @@ protected:
 private:
 	float AccTime = 0.0f;
 	int StartFrame = 0;
-	float MoveSpeed = 150.0f;
+	float MoveSpeed = 200.0f;
 	float4 MoveDir = float4::Zero;
 	float4 Dir = float4::Zero;
 	std::string DirString = "Right_";
@@ -50,6 +56,8 @@ private:
 	GameEngineRender* IssacHeadRender = nullptr;
 	GameEngineRender* IssacBodyRender = nullptr;
 
+	GameEngineCollision* IssacColltion = nullptr;
+	
 	void DirCheck();
 
 	void ChangeState(IssacState _State);

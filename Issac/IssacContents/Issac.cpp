@@ -2,6 +2,7 @@
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEngineBase/GameEnginePath.h>
 #include <GameEngineCore/GameEngineResources.h>
+#include <GameEngineCore/GameEngineCollision.h>
 #include <GameEngineCore/GameEngineRender.h>
 #include <GameEnginePlatform/GameEngineInput.h>
 #include "ContentsEnums.h"
@@ -18,6 +19,9 @@ Issac::~Issac()
 
 void Issac::Start()
 {
+	MainPlayer = this;
+
+
 	if (false == GameEngineInput::IsKey("LeftMove"))
 	{
 		GameEngineInput::CreateKey("LeftMove", 'A');
@@ -55,7 +59,13 @@ void Issac::Start()
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_HMove", .ImageName = "Left_Issac.bmp", .Start = 2, .End = 2 });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_HMove", .ImageName = "Left_Issac.bmp", .Start = 4, .End = 5,.InterTime = 0.2f });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_HMove", .ImageName = "Left_Issac.bmp", .Start = 0, .End = 0,.InterTime = 0.2f });
-
+		
+	}
+	{
+		IssacColltion = CreateCollision(IssacCollisionOrder::Player);
+		IssacColltion->SetScale({ 80,80 });
+		IssacColltion->On();
+		IssacColltion->SetDebugRenderType(CollisionType::CT_Rect);
 	}
 	ChangeState(IssacState::IDLE);
 
@@ -135,5 +145,6 @@ void Issac::DirCheck()
 
 void Issac::Render(float _DeltaTime)
 {
+	IssacColltion->DebugRender();
 
 }

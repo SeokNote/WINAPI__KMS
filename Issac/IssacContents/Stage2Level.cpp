@@ -1,4 +1,4 @@
-#include "TestLevel.h"
+#include "Stage2Level.h"
 #include "Issac.h"
 #include "MonsterOne.h"
 #include "Door.h"
@@ -9,19 +9,20 @@
 #include <GameEngineCore/Button.h>
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEnginePlatform/GameEngineInput.h>
+#include <GameEngineCore/GameEngineCollision.h>
 #include "MapOne.h"
 #include "MouseObject.h"
 #include "ContentsValue.h"
 
-TestLevel::TestLevel()
+Stage2Level::Stage2Level()
 {
 }
 
-TestLevel::~TestLevel()
+Stage2Level::~Stage2Level()
 {
 }
 
-void TestLevel::ImageLoad() {
+void Stage2Level::ImageLoad() {
 
 
 	GameEngineDirectory Dir;
@@ -32,7 +33,7 @@ void TestLevel::ImageLoad() {
 
 	// 이미지 로드
 	{
-		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP")); 
+		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP"));
 		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ColMap.BMP"));//맵
 		GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
@@ -55,13 +56,13 @@ void TestLevel::ImageLoad() {
 	}
 
 }
-void TestLevel::Loading()
+void Stage2Level::Loading()
 {
-	
+
 	ImageLoad();
 
-	Issac* NewIssac = CreateActor<Issac>();
-	NewIssac->SetPos({ 500,500 });
+	/*Issac* NewIssac = CreateActor<Issac>();
+	NewIssac->SetPos({ 500,500 });*/
 
 	/*MonsterOne* NewMonster1 = CreateActor<MonsterOne>();
 	NewMonster1->SetPos({ 200,200 });*/
@@ -75,15 +76,14 @@ void TestLevel::Loading()
 }
 
 
-void TestLevel::Update(float _DeltaTime)
+void Stage2Level::Update(float _DeltaTime)
 {
-
 
 
 }
 
 
-void TestLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
+void Stage2Level::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
 	ContentsValue::CameraScale = { 2000, 3000 };
 }
