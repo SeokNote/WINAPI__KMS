@@ -3,6 +3,8 @@
 #include "TitleLevel.h"
 #include "IntroLevel.h"
 #include "TestLevel.h"
+#include "Stage2Level.h"
+
 // StudyGameCore StudyGameCore::Core = new StudyGameCore();
 
 // 중간에 절대로 지워지지 않을애를 포인터형으로 만들어서 동적할당해서 사용한다는건
@@ -30,7 +32,7 @@ void IssacCore::Start()
 	CreateLevel<TitleLevel>("TitleLevel");
 	CreateLevel<TestLevel>("TestLevel");
 	CreateLevel<IntroLevel>("IntroLevel");
-	CreateLevel<IntroLevel>("Stage2Level");
+	CreateLevel<Stage2Level>("Stage2Level");
 
 	ChangeLevel("TitleLevel");
 }
