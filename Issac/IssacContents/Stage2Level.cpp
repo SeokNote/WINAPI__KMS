@@ -25,47 +25,12 @@ Stage2Level::~Stage2Level()
 void Stage2Level::ImageLoad() {
 
 
-	GameEngineDirectory Dir;
-	Dir.MoveParentToDirectory("ContentsResources");
-	Dir.Move("ContentsResources");
-	Dir.Move("Image");
-	Dir.Move("Play");
-
-	// 이미지 로드
-	{
-		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP"));
-		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ColMap.BMP"));//맵
-		GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
-
-		{
-			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Issac.BMP"));
-			Image->Cut(8, 4);
-		}
-		{
-			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Issac.BMP"));
-			Image2->Cut(8, 4);
-		}
-		/*{
-			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Monster1.BMP"));
-			MonsterImage1->Cut(4, 4);
-		}
-		{
-			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Monster1.BMP"));
-			MonsterImage1->Cut(4, 4);
-		}*/
-	}
-
+	
 }
 void Stage2Level::Loading()
 {
 
 	ImageLoad();
-
-	/*Issac* NewIssac = CreateActor<Issac>();
-	NewIssac->SetPos({ 500,500 });*/
-
-	/*MonsterOne* NewMonster1 = CreateActor<MonsterOne>();
-	NewMonster1->SetPos({ 200,200 });*/
 
 	CreateActor<MapOne>();
 	CreateActor<Door>();

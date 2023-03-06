@@ -17,7 +17,7 @@ public:
 
 protected:
 	void Start() override;
-	void UpDate();
+	void UpDate(float _DeltaTime);
 	void Render(float _DeltaTime);
 	GameEngineCollision* DoorCol = nullptr;
 private:

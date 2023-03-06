@@ -34,7 +34,7 @@ void TestLevel::ImageLoad() {
 	{
 		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP")); 
 		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ColMap.BMP"));//¸Ê
-		GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
+		GameEngineImage* Image3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
 		{
 			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Issac.BMP"));
@@ -57,8 +57,11 @@ void TestLevel::ImageLoad() {
 }
 void TestLevel::Loading()
 {
-	
-	ImageLoad();
+	if (true == LoadImageBool) {
+		ImageLoad();
+		LoadImageBool = false;
+	}
+
 
 	Issac* NewIssac = CreateActor<Issac>();
 	NewIssac->SetPos({ 500,500 });

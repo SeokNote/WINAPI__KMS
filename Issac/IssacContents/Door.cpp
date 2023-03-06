@@ -4,6 +4,9 @@
 #include <GameEngineCore/GameEngineRender.h>
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEngineCore/GameEngineCollision.h>
+#include <GameEngineCore/GameEngineLevel.h>
+#include <GameEngineCore/GameEngineCore.h>
+
 Door::Door()
 {
 }
@@ -28,12 +31,12 @@ void Door::Start()
 	DoorCol->SetScale({ 50,50 });
 }
 
-void Door::UpDate()
+void Door::UpDate(float _DeltaTime)
 {
-	if (true == Issac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Player),
-		.TargetColType = CT_Rect, .ThisColType = CT_Rect })) 
+	if (true == Issac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Door),
+	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
 	{
-		int a = 0;
+		GameEngineCore::GetInst()->ChangeLevel("Stage2Level");
 	}
 }
  

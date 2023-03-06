@@ -29,5 +29,6 @@ private:
 	float Time = 0.0f;
 	float4 Start = float4::Zero;
 	float4 End = float4::Zero;
+	bool LoadImageBool = true;
 };
 

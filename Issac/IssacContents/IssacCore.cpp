@@ -30,6 +30,7 @@ void IssacCore::Start()
 	CreateLevel<TitleLevel>("TitleLevel");
 	CreateLevel<TestLevel>("TestLevel");
 	CreateLevel<IntroLevel>("IntroLevel");
+	CreateLevel<IntroLevel>("Stage2Level");
 
 	ChangeLevel("TitleLevel");
 }
