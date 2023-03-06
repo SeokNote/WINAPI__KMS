@@ -69,10 +69,10 @@ void Issac::UpdateState(float _Time)
 void Issac::IdleStart() {
 
 
-	IssacHeadRender->ChangeAnimation(DirString + "HMove");
-	IssacBodyRender->ChangeAnimation(DirString + "BMove");
+	IssacHeadRender->ChangeAnimation(DirString + "HIdle");
+	IssacBodyRender->ChangeAnimation(DirString + "BIdle");
 //	DirCheck("HIdle");
-//	DirCheck("BIdle");
+	//DirCheck("BIdle");
 
 }
 void Issac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
@@ -103,25 +103,26 @@ void Issac::MoveUpdate(float _Time) {
 		ChangeState(IssacState::IDLE);
 		return; //최종 결정후 무조건 리턴
 	}
+	float4 Dir;
 	if (true == GameEngineInput::IsPress("LeftMove"))
 	{
-		SetMove(float4::Left * MoveSpeed * _Time);
+		Dir += float4::Left;
 	}
 	if (true == GameEngineInput::IsPress("RightMove"))
 	{
-		 SetMove(float4::Right * MoveSpeed * _Time);
+		Dir += float4::Right;
 	}
 	if (true == GameEngineInput::IsPress("DownMove"))
 	{
-		SetMove(float4::Down * MoveSpeed * _Time);
+		Dir += float4::Down;
 	}
 	if (true == GameEngineInput::IsPress("UpMove"))
 	{
-		SetMove(float4::Up * MoveSpeed * _Time);
+		Dir += float4::Up;
 	}
-	//DirCheck("HMove");
-	//DirCheck("BMove");
-
+	Dir.Normalize();
+	MoveDir = Dir * MoveSpeed;
+	SetMove(MoveDir);
 }
 void Issac::MoveEnd() {
 

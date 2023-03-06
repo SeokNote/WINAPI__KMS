@@ -29,6 +29,9 @@ public:
 	Issac& operator=(const Issac& _Other) = delete;
 	Issac& operator=(Issac&& _Other) noexcept = delete;
 
+	void Movecalculation(float _DeltaTime);
+
+
 protected:
 	void Start() override;
 	void Update(float _DeltaTime) override;
@@ -39,7 +42,8 @@ private:
 	float AccTime = 0.0f;
 	int StartFrame = 0;
 	float MoveSpeed = 150.0f;
-
+	float4 MoveDir = float4::Zero;
+	float4 Dir = float4::Zero;
 	std::string DirString = "Right_";
 	IssacState StateValue = IssacState::IDLE;
 

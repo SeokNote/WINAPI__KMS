@@ -66,10 +66,40 @@ void Issac::Start()
 
 void Issac::Update(float _DeltaTime)
 {
+	if (false == GameEngineInput::IsPress("LeftMove") &&
+		false == GameEngineInput::IsPress("RightMove") &&
+		false == GameEngineInput::IsPress("DownMove") &&
+		false == GameEngineInput::IsPress("UpMove"))
+	{
+		MoveDir = float4::Zero;
+	}
+
 	DirCheck();
 	UpdateState(_DeltaTime);
-}
+	Movecalculation(_DeltaTime);
+	SetMove(MoveDir * _DeltaTime*MoveSpeed);
 
+}
+void Issac::Movecalculation(float _DeltaTime)
+{
+	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("ColMap.BMP");
+	if (nullptr == ColImage)
+	{
+		MsgAssert("충돌용 맵 이미지가 없습니다.");
+	}
+	bool Check = true;
+	float4 NextPos = GetPos() + MoveDir * _DeltaTime;
+
+	if (RGB(0, 0, 0) == ColImage->GetPixelColor(NextPos, RGB(0, 0, 0)))
+	{
+		Check = false;
+	}
+	if (false == Check)
+	{
+		MoveDir = float4::Zero;
+	}
+
+}
 void Issac::DirCheck()
 {
 	/*std::string PrevDirString = DirString;
@@ -95,11 +125,11 @@ void Issac::DirCheck()
 		DirString = "Down_";
 	}
 
-	//if (PrevDirString != DirString)
-	//{
-	//	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-	//	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
-	//}
+	/*if (PrevDirString != DirString)
+	{
+		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
+		IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+	}*/
 
 }
 
