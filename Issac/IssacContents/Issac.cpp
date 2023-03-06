@@ -77,7 +77,7 @@ void Issac::Update(float _DeltaTime)
 	DirCheck();
 	UpdateState(_DeltaTime);
 	Movecalculation(_DeltaTime);
-	SetMove(MoveDir * _DeltaTime*MoveSpeed);
+	SetMove(MoveDir * _DeltaTime);
 
 }
 void Issac::Movecalculation(float _DeltaTime)

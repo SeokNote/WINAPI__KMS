@@ -108,7 +108,7 @@ void Issac::MoveUpdate(float _Time) {
 	{
 		Dir += float4::Left;
 	}
-	if (true == GameEngineInput::IsPress("RightMove"))
+	else if (true == GameEngineInput::IsPress("RightMove"))
 	{
 		Dir += float4::Right;
 	}
