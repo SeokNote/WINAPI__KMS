@@ -54,19 +54,25 @@ void Issac::Start()
 		IssacBodyRender->CreateAnimation({ .AnimationName = "Up_BMove", .ImageName = "Left_Issac.bmp", .Start = 6, .End = 13, .InterTime = 0.1f });
 
 
-
+		//Idle
 		IssacHeadRender = CreateRender(IssacRenderOrder::Player);
 		IssacHeadRender->SetScale({ 70, 70 });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_HIdle",  .ImageName = "Right_Issac.bmp",.Start = 0, .End = 0, });//기본상태
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_HIdle",  .ImageName = "Right_Issac.bmp",.Start = 0, .End = 0, });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_HIdle",  .ImageName = "Left_Issac.bmp",.Start = 0, .End = 0, });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_HIdle",  .ImageName = "Right_Issac.bmp",.Start = 0, .End = 0, });
-
+		//Move
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_HMove",  .ImageName = "Right_Issac.bmp",.Start = 2, .End = 2});
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_HMove", .ImageName = "Left_Issac.bmp", .Start = 2, .End = 2 });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_HMove", .ImageName = "Left_Issac.bmp", .Start = 4, .End = 5,.InterTime = 0.2f });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_HMove", .ImageName = "Left_Issac.bmp", .Start = 0, .End = 0,.InterTime = 0.2f });
-		
+		//Attack
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_Attack",  .ImageName = "Right_Issac.bmp",.Start = 0, .End = 1, });//기본상태
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_Attack",  .ImageName = "Right_Issac.bmp",.Start = 4, .End = 5, });
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_Attack",  .ImageName = "Left_Issac.bmp",.Start = 2, .End = 3, });
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_Attack",  .ImageName = "Right_Issac.bmp",.Start = 2, .End = 3, });
+
+
 	}
 	{
 		IssacColltion = CreateCollision(IssacCollisionOrder::Player);
@@ -178,6 +184,7 @@ void Issac::TearsAttack(float _DeltaTime)
 	float4 Dir;
 	if (true == GameEngineInput::IsPress("LeftTears"))
 	{
+		
 		Dir += float4::Left;
 		NewTears->SetLeftMoveDir(Dir); 
 		NewTears->SetPos(GetPos());

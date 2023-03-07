@@ -11,23 +11,11 @@
     <ClCompile Include="STLevel.cpp">
       <Filter>Global</Filter>
     </ClCompile>
-    <ClCompile Include="IntroBack.cpp">
-      <Filter>Title\intro</Filter>
-    </ClCompile>
-    <ClCompile Include="IntroLevel.cpp">
-      <Filter>Title\intro</Filter>
-    </ClCompile>
     <ClCompile Include="MapOne.cpp">
-      <Filter>Play\TestLevel\Level1</Filter>
+      <Filter>Play\Level\TestLevel</Filter>
     </ClCompile>
     <ClCompile Include="TestLevel.cpp">
-      <Filter>Play\TestLevel\Level1</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleBack.cpp">
-      <Filter>Title\title</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleLevel.cpp">
-      <Filter>Title\title</Filter>
+      <Filter>Play\Level\TestLevel</Filter>
     </ClCompile>
     <ClCompile Include="Monster_State.cpp">
       <Filter>Play\Monster\MonsterOne</Filter>
@@ -36,19 +24,31 @@
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClCompile>
     <ClCompile Include="Stage2Level.cpp">
-      <Filter>Play\TestLevel\Stage2</Filter>
+      <Filter>Play\Level\Stage2</Filter>
     </ClCompile>
     <ClCompile Include="Door.cpp">
       <Filter>Play\Object\Door</Filter>
     </ClCompile>
-    <ClCompile Include="Issac.cpp">
-      <Filter>Play</Filter>
-    </ClCompile>
-    <ClCompile Include="Issac_State.cpp">
-      <Filter>Play</Filter>
-    </ClCompile>
     <ClCompile Include="Tears.cpp">
       <Filter>Play\Object\Tears</Filter>
+    </ClCompile>
+    <ClCompile Include="Issac.cpp">
+      <Filter>Play\Issac</Filter>
+    </ClCompile>
+    <ClCompile Include="Issac_State.cpp">
+      <Filter>Play\Issac</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroBack.cpp">
+      <Filter>Play\Level\IntroLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="IntroLevel.cpp">
+      <Filter>Play\Level\IntroLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleBack.cpp">
+      <Filter>Play\Level\TiltleLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleLevel.cpp">
+      <Filter>Play\Level\TiltleLevel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -63,38 +63,38 @@
     <ClInclude Include="STLevel.h">
       <Filter>Global</Filter>
     </ClInclude>
-    <ClInclude Include="IntroBack.h">
-      <Filter>Title\intro</Filter>
-    </ClInclude>
-    <ClInclude Include="IntroLevel.h">
-      <Filter>Title\intro</Filter>
-    </ClInclude>
     <ClInclude Include="MapOne.h">
-      <Filter>Play\TestLevel\Level1</Filter>
+      <Filter>Play\Level\TestLevel</Filter>
     </ClInclude>
     <ClInclude Include="TestLevel.h">
-      <Filter>Play\TestLevel\Level1</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleBack.h">
-      <Filter>Title\title</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleLevel.h">
-      <Filter>Title\title</Filter>
+      <Filter>Play\Level\TestLevel</Filter>
     </ClInclude>
     <ClInclude Include="MonsterOne.h">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClInclude>
     <ClInclude Include="Stage2Level.h">
-      <Filter>Play\TestLevel\Stage2</Filter>
+      <Filter>Play\Level\Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
       <Filter>Play\Object\Door</Filter>
     </ClInclude>
-    <ClInclude Include="Issac.h">
-      <Filter>Play</Filter>
-    </ClInclude>
     <ClInclude Include="Tears.h">
       <Filter>Play\Object\Tears</Filter>
+    </ClInclude>
+    <ClInclude Include="Issac.h">
+      <Filter>Play\Issac</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroBack.h">
+      <Filter>Play\Level\IntroLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="IntroLevel.h">
+      <Filter>Play\Level\IntroLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleBack.h">
+      <Filter>Play\Level\TiltleLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleLevel.h">
+      <Filter>Play\Level\TiltleLevel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -103,21 +103,6 @@
     </Filter>
     <Filter Include="Play">
       <UniqueIdentifier>{0be46e33-8f91-46f9-a0f3-b7bd8d85009a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Title">
-      <UniqueIdentifier>{8a7cd66c-6bf1-4618-a123-dccaffa21eac}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Title\title">
-      <UniqueIdentifier>{8b5dec33-b033-40db-a52f-c9f1b8d0d1af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Title\intro">
-      <UniqueIdentifier>{c3838e38-58fd-4327-be6f-e1a1cb5781a2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Play\TestLevel">
-      <UniqueIdentifier>{fd30ec2d-1129-431d-bf56-4f820081321d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Play\TestLevel\Level1">
-      <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Monster">
       <UniqueIdentifier>{55d74f9c-0fe1-4830-a8df-c0040e9db8e7}</UniqueIdentifier>
@@ -128,14 +113,29 @@
     <Filter Include="Play\Object">
       <UniqueIdentifier>{12661614-7348-4100-9f64-b4c0903889da}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Play\TestLevel\Stage2">
-      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Play\Object\Door">
       <UniqueIdentifier>{f303b0d4-bbd7-4bc4-be8b-5df48fca0031}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Object\Tears">
       <UniqueIdentifier>{c19da15a-d74d-4f7b-b1d2-1872cd5dd8df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level">
+      <UniqueIdentifier>{fd30ec2d-1129-431d-bf56-4f820081321d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\Stage2">
+      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\TestLevel">
+      <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Issac">
+      <UniqueIdentifier>{36e70e4d-24ab-4c12-86b0-e1c7d89feb7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\TiltleLevel">
+      <UniqueIdentifier>{7b27dc91-29f7-407b-99a8-4bdca5d30c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\IntroLevel">
+      <UniqueIdentifier>{b1bdb18e-bea5-4b9d-a9cd-b01fabea993f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
