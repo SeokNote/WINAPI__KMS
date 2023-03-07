@@ -31,7 +31,7 @@ void Door::Start()
 	DoorCol->SetScale({ 50,50 });
 }
 
-void Door::UpDate(float _DeltaTime)
+void Door::Update(float _DeltaTime)
 {
 	if (true == Issac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Door),
 	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))

@@ -32,6 +32,7 @@
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="Stage2Level.cpp" />
     <ClCompile Include="STLevel.cpp" />
+    <ClCompile Include="Tears.cpp" />
     <ClCompile Include="TestLevel.cpp" />
     <ClCompile Include="TitleBack.cpp" />
     <ClCompile Include="TitleLevel.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="MouseObject.h" />
     <ClInclude Include="Stage2Level.h" />
     <ClInclude Include="STLevel.h" />
+    <ClInclude Include="Tears.h" />
     <ClInclude Include="TestLevel.h" />
     <ClInclude Include="TitleBack.h" />
     <ClInclude Include="TitleLevel.h" />

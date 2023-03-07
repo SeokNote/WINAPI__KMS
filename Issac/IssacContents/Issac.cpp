@@ -1,10 +1,13 @@
 #include "Issac.h"
+#include "Tears.h"
+
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEngineBase/GameEnginePath.h>
 #include <GameEngineCore/GameEngineResources.h>
 #include <GameEngineCore/GameEngineCollision.h>
 #include <GameEngineCore/GameEngineRender.h>
 #include <GameEnginePlatform/GameEngineInput.h>
+#include <GameEngineCore/GameEngineLevel.h>
 #include "ContentsEnums.h"
 
 Issac* Issac::MainPlayer;
@@ -28,6 +31,10 @@ void Issac::Start()
 		GameEngineInput::CreateKey("RightMove", 'D');
 		GameEngineInput::CreateKey("DownMove", 'S');
 		GameEngineInput::CreateKey("UpMove", 'W');
+		GameEngineInput::CreateKey("LeftTears", VK_LEFT);
+		GameEngineInput::CreateKey("RightTears", VK_RIGHT);
+		GameEngineInput::CreateKey("UpTears", VK_UP);
+		GameEngineInput::CreateKey("DownTears", VK_DOWN);
 
 	}
 
@@ -86,6 +93,7 @@ void Issac::Update(float _DeltaTime)
 
 	DirCheck();
 	UpdateState(_DeltaTime);
+	TearsAttack(_DeltaTime);
 	Movecalculation(_DeltaTime);
 	SetMove(MoveDir * _DeltaTime);
 
@@ -142,9 +150,61 @@ void Issac::DirCheck()
 	}*/
 
 }
+void Issac::TearsAttack(float _DeltaTime)
+{
+	ResetTimeTears += _DeltaTime;
 
+	if (false == GameEngineInput::IsDown("LeftTears") &&
+		false == GameEngineInput::IsDown("RightTears") &&
+		false == GameEngineInput::IsDown("UpTears") &&
+		false == GameEngineInput::IsDown("DownTears"))
+	{
+		return;
+	}
+	if (ResetTimeTears > 0.3f)
+	{
+		ResetTimeTears = 0.0f;
+	}
+	else {
+		return;
+	}
+	//Tears* NewTears = GetLevel()->CreateActor<Tears>(IssacRenderOrder::Player);
+	//float4 FireDir1 = float4::Left;
+
+	//NewTears->SetLeftMoveDir(FireDir1); //방향설정
+	//NewTears->SetPos(GetPos());
+	Tears* NewTears = GetLevel()->CreateActor<Tears>(IssacRenderOrder::Player);
+
+	float4 Dir;
+	if (true == GameEngineInput::IsPress("LeftTears"))
+	{
+		Dir += float4::Left;
+		NewTears->SetLeftMoveDir(Dir); 
+		NewTears->SetPos(GetPos());
+	}
+	else if (true == GameEngineInput::IsPress("RightTears"))
+	{
+		Dir += float4::Right;
+		NewTears->SetLeftMoveDir(Dir); 
+		NewTears->SetPos(GetPos());
+	}
+	if (true == GameEngineInput::IsPress("UpTears"))
+	{
+		Dir += float4::Up;
+		NewTears->SetLeftMoveDir(Dir); 
+		NewTears->SetPos(GetPos());
+	}
+	if (true == GameEngineInput::IsPress("DownTears"))
+	{
+		Dir += float4::Down;
+		NewTears->SetLeftMoveDir(Dir); 
+		NewTears->SetPos(GetPos());
+	}
+
+	
+}
 void Issac::Render(float _DeltaTime)
 {
-	IssacColltion->DebugRender();
+	//IssacColltion->DebugRender();
 
 }

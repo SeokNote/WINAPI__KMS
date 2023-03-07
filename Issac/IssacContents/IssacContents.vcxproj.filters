@@ -17,16 +17,10 @@
     <ClCompile Include="IntroLevel.cpp">
       <Filter>Title\intro</Filter>
     </ClCompile>
-    <ClCompile Include="Issac.cpp">
-      <Filter>Play\TestLevel</Filter>
-    </ClCompile>
     <ClCompile Include="MapOne.cpp">
       <Filter>Play\TestLevel\Level1</Filter>
     </ClCompile>
     <ClCompile Include="TestLevel.cpp">
-      <Filter>Play\TestLevel\Level1</Filter>
-    </ClCompile>
-    <ClCompile Include="Issac_State.cpp">
       <Filter>Play\TestLevel\Level1</Filter>
     </ClCompile>
     <ClCompile Include="TitleBack.cpp">
@@ -41,11 +35,20 @@
     <ClCompile Include="MonsterOne.cpp">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClCompile>
-    <ClCompile Include="Door.cpp">
-      <Filter>Play\Object</Filter>
-    </ClCompile>
     <ClCompile Include="Stage2Level.cpp">
       <Filter>Play\TestLevel\Stage2</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>Play\Object\Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Issac.cpp">
+      <Filter>Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Issac_State.cpp">
+      <Filter>Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Tears.cpp">
+      <Filter>Play\Object\Tears</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -66,9 +69,6 @@
     <ClInclude Include="IntroLevel.h">
       <Filter>Title\intro</Filter>
     </ClInclude>
-    <ClInclude Include="Issac.h">
-      <Filter>Play\TestLevel</Filter>
-    </ClInclude>
     <ClInclude Include="MapOne.h">
       <Filter>Play\TestLevel\Level1</Filter>
     </ClInclude>
@@ -84,11 +84,17 @@
     <ClInclude Include="MonsterOne.h">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClInclude>
-    <ClInclude Include="Door.h">
-      <Filter>Play\Object</Filter>
-    </ClInclude>
     <ClInclude Include="Stage2Level.h">
       <Filter>Play\TestLevel\Stage2</Filter>
+    </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>Play\Object\Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Issac.h">
+      <Filter>Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Tears.h">
+      <Filter>Play\Object\Tears</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +130,12 @@
     </Filter>
     <Filter Include="Play\TestLevel\Stage2">
       <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Door">
+      <UniqueIdentifier>{f303b0d4-bbd7-4bc4-be8b-5df48fca0031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Tears">
+      <UniqueIdentifier>{c19da15a-d74d-4f7b-b1d2-1872cd5dd8df}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

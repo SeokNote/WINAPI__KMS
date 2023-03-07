@@ -45,9 +45,12 @@ protected:
 
 
 private:
+
 	float AccTime = 0.0f;
 	int StartFrame = 0;
 	float MoveSpeed = 200.0f;
+	float ResetTimeTears = 0.0f;
+	float ResetTimeBooms = 0.0f;
 	float4 MoveDir = float4::Zero;
 	float4 Dir = float4::Zero;
 	std::string DirString = "Right_";
@@ -70,6 +73,8 @@ private:
 	void MoveStart();
 	void MoveUpdate(float _Time);
 	void MoveEnd();
+
+	void TearsAttack(float _DeltaTime);
 
 };
 

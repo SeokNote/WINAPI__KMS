@@ -44,6 +44,12 @@ void TestLevel::ImageLoad() {
 			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Issac.BMP"));
 			Image2->Cut(8, 4);
 		}
+		{
+			GameEngineImage* T_Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear.BMP"));
+			T_Image->Cut(8, 4);
+			GameEngineImage* T_ImagePop = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear_Pop.BMP"));
+			T_ImagePop->Cut(4, 4);
+		}
 		/*{
 			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Monster1.BMP"));
 			MonsterImage1->Cut(4, 4);

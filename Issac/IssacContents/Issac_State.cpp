@@ -122,6 +122,9 @@ void Issac::MoveUpdate(float _Time) {
 	Dir.Normalize();
 	MoveDir = Dir * MoveSpeed;
 }
+
+
+
 void Issac::MoveEnd() {
 
 
