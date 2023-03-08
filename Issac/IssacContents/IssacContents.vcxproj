@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BloodTear.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BombRock.cpp" />
     <ClCompile Include="ContentsValue.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="Fire.cpp" />
+    <ClCompile Include="Glasses.cpp" />
+    <ClCompile Include="Heart.cpp" />
     <ClCompile Include="IntroBack.cpp" />
     <ClCompile Include="IntroLevel.cpp" />
     <ClCompile Include="Issac.cpp" />
@@ -33,9 +36,10 @@
     <ClCompile Include="ItemCoin.cpp" />
     <ClCompile Include="ItemHeart.cpp" />
     <ClCompile Include="ItemKey.cpp" />
+    <ClCompile Include="Leo.cpp" />
     <ClCompile Include="MapOne.cpp" />
     <ClCompile Include="MonsterOne.cpp" />
-    <ClCompile Include="Monster_State.cpp" />
+    <ClCompile Include="MonsterTwo.cpp" />
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Rock.cpp" />
@@ -48,12 +52,15 @@
     <ClCompile Include="TitleLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BloodTear.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BombRock.h" />
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h" />
     <ClInclude Include="Door.h" />
     <ClInclude Include="Fire.h" />
+    <ClInclude Include="Glasses.h" />
+    <ClInclude Include="Heart.h" />
     <ClInclude Include="IntroBack.h" />
     <ClInclude Include="IntroLevel.h" />
     <ClInclude Include="Issac.h" />
@@ -62,8 +69,10 @@
     <ClInclude Include="ItemCoin.h" />
     <ClInclude Include="ItemHeart.h" />
     <ClInclude Include="ItemKey.h" />
+    <ClInclude Include="Leo.h" />
     <ClInclude Include="MapOne.h" />
     <ClInclude Include="MonsterOne.h" />
+    <ClInclude Include="MonsterTwo.h" />
     <ClInclude Include="MouseObject.h" />
     <ClInclude Include="Poop.h" />
     <ClInclude Include="Rock.h" />

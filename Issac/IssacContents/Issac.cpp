@@ -158,14 +158,23 @@ void Issac::CollisionCheck(float _DeltaTime)
 			HP -= 1;
 			IssacColltion->Off();
 		}
+		if (true == IssacColltion->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Monster), .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
+		{
 
+			CollTime += _DeltaTime;
+			HP -= 1;
+			IssacColltion->Off();
+		}
 		std::vector<GameEngineCollision*> ICollisions;
-		CollisionCheckParameter CheckHeart = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemHeart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckHp = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemHeart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckKey = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemKey), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckBomb = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemBomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckCoin = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemCoin), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckGlasses = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemGlasses), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckLeo = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemLeo), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckHeart = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Heart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		//Heart
-		if (true == IssacColltion->Collision(CheckHeart, ICollisions) && 6 != HP)
+		if (true == IssacColltion->Collision(CheckHp, ICollisions) && 6 != HP)
 		{
 			ICollisions[0]->GetActor()->Death();
 			HP += 2;
@@ -194,7 +203,24 @@ void Issac::CollisionCheck(float _DeltaTime)
 			ICollisions[0]->GetActor()->Death();
 			CoinCount += 1;
 		}
-		
+		if (true == IssacColltion->Collision(CheckGlasses, ICollisions))
+		{
+
+			ICollisions[0]->GetActor()->Death();
+
+		}
+		if (true == IssacColltion->Collision(CheckLeo, ICollisions))
+		{
+
+			ICollisions[0]->GetActor()->Death();
+
+		}
+		if (true == IssacColltion->Collision(CheckHeart, ICollisions))
+		{
+
+			ICollisions[0]->GetActor()->Death();
+
+		}
 	}
 	
 }
@@ -311,6 +337,6 @@ void Issac::TearsAttack(float _DeltaTime)
 }
 void Issac::Render(float _DeltaTime)
 {
-	IssacColltion->DebugRender();
+//	IssacColltion->DebugRender();
 
 }

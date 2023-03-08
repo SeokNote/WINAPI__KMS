@@ -9,6 +9,7 @@ enum class IssacRenderOrder
 	Object,
 	Player,
 	Monster,
+	Dead,
 };
 
 enum class  IssacCollisionOrder
@@ -18,6 +19,9 @@ enum class  IssacCollisionOrder
 	ItemCoin,
 	ItemKey,
 	ItemHeart,
+	ItemGlasses,
+	ItemLeo,
+	Heart,
 //-----------
 	Door,
 	Poop,
@@ -30,4 +34,5 @@ enum class  IssacCollisionOrder
 
 	Monster,
 	MonsterAttack,
+	MonsterSet,
 };

@@ -11,6 +11,11 @@
 #include "ItemCoin.h"
 #include "ItemKey.h"
 #include "ItemHeart.h"
+#include "Glasses.h"
+#include "Leo.h"
+#include "Heart.h"
+#include "MonsterOne.h"
+#include "MonsterTwo.h"
 
 #include <GameEngineBase/GameEngineDirectory.h>
 #include <GameEngineCore/GameEngineResources.h>
@@ -113,6 +118,20 @@ void TestLevel::Loading()
 
 	ItemHeart* NewItemHeart = CreateActor<ItemHeart>();
 	NewItemHeart->SetPos({ 400,500 });
+
+	MonsterTwo* NewMonsterTwo = CreateActor<MonsterTwo>();
+	NewMonsterTwo->SetPos({ 600,500 });
+
+	Glasses* NewGlasses = CreateActor<Glasses>();
+	NewGlasses->SetPos({ 700,500 });
+	
+	Leo* NewLeo = CreateActor<Leo>();
+	NewLeo->SetPos({ 800,500 });
+
+	Heart* NewHeart = CreateActor<Heart>();
+	NewHeart->SetPos({ 900,500 });
+	/*MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
+	NewMonsterOne->SetPos({ 600,500 });*/
 
 	CreateActor<MapOne>();
 	CreateActor<Door>();
