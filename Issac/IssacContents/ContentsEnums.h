@@ -4,17 +4,30 @@ enum class IssacRenderOrder
 {
 	title,
 	BackGround,
-	Object,
 	Map,
+	Door,
+	Object,
 	Player,
 	Monster,
 };
 
 enum class  IssacCollisionOrder
 {
+//-----------
+	ItemBomb,
+	ItemCoin,
+	ItemKey,
+	ItemHeart,
+//-----------
 	Door,
+	Poop,
+	Rock,
+	Bomb,
+	Spike,
+//-----------	
 	Player,
-	Monster,
 	PlayerAttack,
+
+	Monster,
 	MonsterAttack,
 };

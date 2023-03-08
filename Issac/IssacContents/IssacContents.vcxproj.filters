@@ -50,6 +50,36 @@
     <ClCompile Include="TitleLevel.cpp">
       <Filter>Play\Level\TiltleLevel</Filter>
     </ClCompile>
+    <ClCompile Include="Bomb.cpp">
+      <Filter>Play\Object\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="Spike.cpp">
+      <Filter>Play\Object\Spike</Filter>
+    </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>Play\Object\Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="Poop.cpp">
+      <Filter>Play\Object\Poop</Filter>
+    </ClCompile>
+    <ClCompile Include="Rock.cpp">
+      <Filter>Play\Object\Rock</Filter>
+    </ClCompile>
+    <ClCompile Include="BombRock.cpp">
+      <Filter>Play\Object\BombRock</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemBomb.cpp">
+      <Filter>Play\Object\Items\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemKey.cpp">
+      <Filter>Play\Object\Items\Key</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemHeart.cpp">
+      <Filter>Play\Object\Items\Heart</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemCoin.cpp">
+      <Filter>Play\Object\Items\Coin</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -96,6 +126,36 @@
     <ClInclude Include="TitleLevel.h">
       <Filter>Play\Level\TiltleLevel</Filter>
     </ClInclude>
+    <ClInclude Include="Bomb.h">
+      <Filter>Play\Object\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="Spike.h">
+      <Filter>Play\Object\Spike</Filter>
+    </ClInclude>
+    <ClInclude Include="Fire.h">
+      <Filter>Play\Object\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Poop.h">
+      <Filter>Play\Object\Poop</Filter>
+    </ClInclude>
+    <ClInclude Include="Rock.h">
+      <Filter>Play\Object\Rock</Filter>
+    </ClInclude>
+    <ClInclude Include="BombRock.h">
+      <Filter>Play\Object\BombRock</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemBomb.h">
+      <Filter>Play\Object\Items\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemKey.h">
+      <Filter>Play\Object\Items\Key</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemHeart.h">
+      <Filter>Play\Object\Items\Heart</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemCoin.h">
+      <Filter>Play\Object\Items\Coin</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -119,23 +179,59 @@
     <Filter Include="Play\Object\Tears">
       <UniqueIdentifier>{c19da15a-d74d-4f7b-b1d2-1872cd5dd8df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Play\Issac">
+      <UniqueIdentifier>{36e70e4d-24ab-4c12-86b0-e1c7d89feb7c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Play\Level">
       <UniqueIdentifier>{fd30ec2d-1129-431d-bf56-4f820081321d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Play\Level\Stage2">
-      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Level\TestLevel">
       <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Play\Issac">
-      <UniqueIdentifier>{36e70e4d-24ab-4c12-86b0-e1c7d89feb7c}</UniqueIdentifier>
+    <Filter Include="Play\Level\Stage2">
+      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Level\TiltleLevel">
       <UniqueIdentifier>{7b27dc91-29f7-407b-99a8-4bdca5d30c72}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Level\IntroLevel">
       <UniqueIdentifier>{b1bdb18e-bea5-4b9d-a9cd-b01fabea993f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\Stage1">
+      <UniqueIdentifier>{b364452e-7379-42c0-83c6-e21dea2eb2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Bomb">
+      <UniqueIdentifier>{e79f4c1f-0382-4644-ac75-e91e16c75175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Spike">
+      <UniqueIdentifier>{42729946-c6e7-4055-919c-28227788fd92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Fire">
+      <UniqueIdentifier>{4db40431-7f79-444a-84d3-840a93d1c17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Rock">
+      <UniqueIdentifier>{d92456c2-6edd-4b1e-a6a5-21e8d3315429}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Poop">
+      <UniqueIdentifier>{d51a9673-141e-4fea-a4ee-7ac36959f3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\BombRock">
+      <UniqueIdentifier>{1db5d7ed-eba2-4023-a91d-e321b2e29774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Items">
+      <UniqueIdentifier>{066b40a1-12c8-442e-b7af-3ed974f7c6ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Items\Bomb">
+      <UniqueIdentifier>{c80da9d4-14c6-4f5b-9fb2-99b15e412c9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Items\Key">
+      <UniqueIdentifier>{61f07da0-a16f-4e09-b38d-187d5c37222d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Items\Heart">
+      <UniqueIdentifier>{3f9a435e-81ee-4cea-9218-9e6678dbc960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\Items\Coin">
+      <UniqueIdentifier>{5fa1ddc3-48db-4bd4-8278-51fa68b11e0b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

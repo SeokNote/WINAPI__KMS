@@ -21,7 +21,7 @@ void Door::Start()
 	float4 Size = GameEngineWindow::GetScreenSize();
 
 
-	GameEngineRender* Render = CreateRender("Door_Down.bmp", IssacRenderOrder::Object);
+	GameEngineRender* Render = CreateRender("Door_Down.bmp", IssacRenderOrder::Door);
 	Render->SetPosition(GameEngineWindow::GetScreenSize().half() -float4({0,-240}));
 	Render->SetScale({250,250});
 

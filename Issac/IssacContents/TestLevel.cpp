@@ -2,6 +2,15 @@
 #include "Issac.h"
 #include "MonsterOne.h"
 #include "Door.h"
+#include "Poop.h"
+#include "Rock.h"
+#include "BombRock.h"
+#include "Spike.h"
+
+#include "ItemBomb.h"
+#include "ItemCoin.h"
+#include "ItemKey.h"
+#include "ItemHeart.h"
 
 #include <GameEngineBase/GameEngineDirectory.h>
 #include <GameEngineCore/GameEngineResources.h>
@@ -34,6 +43,7 @@ void TestLevel::ImageLoad() {
 	{
 		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP")); 
 		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ColMap.BMP"));//¸Ê
+
 		GameEngineImage* Image3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
 		{
@@ -74,6 +84,35 @@ void TestLevel::Loading()
 
 	/*MonsterOne* NewMonster1 = CreateActor<MonsterOne>();
 	NewMonster1->SetPos({ 200,200 });*/
+
+	Poop* NewPoop = CreateActor<Poop>();
+	NewPoop->SetPos({ 200,150 });
+
+
+	Rock* NewRock = CreateActor<Rock>();
+	NewRock->SetPos({ 200,250 });
+
+
+	BombRock* NewBombRock = CreateActor<BombRock>();
+	NewBombRock->SetPos({ 200,450 });
+
+
+	Spike* NewSpike = CreateActor<Spike>();
+	NewSpike->SetPos({ 600,450 });
+
+	ItemBomb* NewItemBomb = CreateActor<ItemBomb>();
+	NewItemBomb->SetPos({ 200,500 });
+
+
+	ItemCoin* NewItemCoin = CreateActor<ItemCoin>();
+	NewItemCoin->SetPos({ 200,550 });
+
+	ItemKey* NewItemKey = CreateActor<ItemKey>();
+	NewItemKey->SetPos({ 300,500 });
+
+
+	ItemHeart* NewItemHeart = CreateActor<ItemHeart>();
+	NewItemHeart->SetPos({ 400,500 });
 
 	CreateActor<MapOne>();
 	CreateActor<Door>();

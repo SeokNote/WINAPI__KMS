@@ -19,17 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="BombRock.cpp" />
     <ClCompile Include="ContentsValue.cpp" />
     <ClCompile Include="Door.cpp" />
+    <ClCompile Include="Fire.cpp" />
     <ClCompile Include="IntroBack.cpp" />
     <ClCompile Include="IntroLevel.cpp" />
     <ClCompile Include="Issac.cpp" />
     <ClCompile Include="IssacCore.cpp" />
     <ClCompile Include="Issac_State.cpp" />
+    <ClCompile Include="ItemBomb.cpp" />
+    <ClCompile Include="ItemCoin.cpp" />
+    <ClCompile Include="ItemHeart.cpp" />
+    <ClCompile Include="ItemKey.cpp" />
     <ClCompile Include="MapOne.cpp" />
     <ClCompile Include="MonsterOne.cpp" />
     <ClCompile Include="Monster_State.cpp" />
     <ClCompile Include="MouseObject.cpp" />
+    <ClCompile Include="Poop.cpp" />
+    <ClCompile Include="Rock.cpp" />
+    <ClCompile Include="Spike.cpp" />
     <ClCompile Include="Stage2Level.cpp" />
     <ClCompile Include="STLevel.cpp" />
     <ClCompile Include="Tears.cpp" />
@@ -38,16 +48,26 @@
     <ClCompile Include="TitleLevel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bomb.h" />
+    <ClInclude Include="BombRock.h" />
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h" />
     <ClInclude Include="Door.h" />
+    <ClInclude Include="Fire.h" />
     <ClInclude Include="IntroBack.h" />
     <ClInclude Include="IntroLevel.h" />
     <ClInclude Include="Issac.h" />
     <ClInclude Include="IssacCore.h" />
+    <ClInclude Include="ItemBomb.h" />
+    <ClInclude Include="ItemCoin.h" />
+    <ClInclude Include="ItemHeart.h" />
+    <ClInclude Include="ItemKey.h" />
     <ClInclude Include="MapOne.h" />
     <ClInclude Include="MonsterOne.h" />
     <ClInclude Include="MouseObject.h" />
+    <ClInclude Include="Poop.h" />
+    <ClInclude Include="Rock.h" />
+    <ClInclude Include="Spike.h" />
     <ClInclude Include="Stage2Level.h" />
     <ClInclude Include="STLevel.h" />
     <ClInclude Include="Tears.h" />

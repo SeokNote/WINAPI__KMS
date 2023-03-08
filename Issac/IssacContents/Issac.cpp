@@ -1,6 +1,6 @@
 #include "Issac.h"
 #include "Tears.h"
-
+#include "Bomb.h"
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEngineBase/GameEnginePath.h>
 #include <GameEngineCore/GameEngineResources.h>
@@ -35,6 +35,8 @@ void Issac::Start()
 		GameEngineInput::CreateKey("RightTears", VK_RIGHT);
 		GameEngineInput::CreateKey("UpTears", VK_UP);
 		GameEngineInput::CreateKey("DownTears", VK_DOWN);
+		GameEngineInput::CreateKey("Bomb", 'E');
+
 
 	}
 
@@ -76,7 +78,7 @@ void Issac::Start()
 	}
 	{
 		IssacColltion = CreateCollision(IssacCollisionOrder::Player);
-		IssacColltion->SetScale({ 80,80 });
+		IssacColltion->SetScale({ 50,50 });
 		IssacColltion->On();
 		IssacColltion->SetDebugRenderType(CollisionType::CT_Rect);
 	}
@@ -100,9 +102,12 @@ void Issac::Update(float _DeltaTime)
 	DirCheck();
 	UpdateState(_DeltaTime);
 	TearsAttack(_DeltaTime);
+	BombCheck(_DeltaTime);
 	Movecalculation(_DeltaTime);
+	CollisionCheck(_DeltaTime);
 	SetMove(MoveDir * _DeltaTime);
 
+	
 }
 void Issac::Movecalculation(float _DeltaTime)
 {
@@ -123,6 +128,100 @@ void Issac::Movecalculation(float _DeltaTime)
 		MoveDir = float4::Zero;
 	}
 
+}
+
+void Issac::CollisionCheck(float _DeltaTime)
+{
+	CollTime += _DeltaTime;
+	if (CollTime >= 2.0f)
+	{
+		CollTime = 0.0f;
+		IssacColltion->On();
+	
+
+
+	}
+	if (nullptr != IssacColltion) //아이작의 콜리전이 null이아니어야 상호작용가능
+	{
+		if (true == IssacColltion->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
+		{
+
+			CollTime += _DeltaTime;
+			HP -= 2;
+			IssacColltion->Off();
+		}
+
+		if (true == IssacColltion->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Spike), .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
+		{
+
+			CollTime += _DeltaTime;
+			HP -= 1;
+			IssacColltion->Off();
+		}
+
+		std::vector<GameEngineCollision*> ICollisions;
+		CollisionCheckParameter CheckHeart = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemHeart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckKey = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemKey), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckBomb = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemBomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckCoin = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemCoin), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		//Heart
+		if (true == IssacColltion->Collision(CheckHeart, ICollisions) && 6 != HP)
+		{
+			ICollisions[0]->GetActor()->Death();
+			HP += 2;
+			if (HP > MaxHP)
+			{
+				HP = MaxHP;
+			}
+		}
+		//Key
+		if (true == IssacColltion->Collision(CheckKey, ICollisions))
+		{
+	
+			ICollisions[0]->GetActor()->Death();
+			KeyCount += 1;
+		}
+		//Bomb
+		if (true == IssacColltion->Collision(CheckBomb, ICollisions))
+		{
+			ICollisions[0]->GetActor()->Death();
+			BombCount += 1;
+		}
+		//Coin
+		if (true == IssacColltion->Collision(CheckCoin, ICollisions))
+		{
+			
+			ICollisions[0]->GetActor()->Death();
+			CoinCount += 1;
+		}
+		
+	}
+	
+}
+
+void Issac::BombCheck(float _DeltaTime)
+{
+	ResetTimeBombs += _DeltaTime;
+	if (false == GameEngineInput::IsDown("Bomb"))
+	{
+		return;
+	}
+	if (ResetTimeBombs > 1.0f) 
+	{ 
+		ResetTimeBombs = 0.0f;
+	} 
+	else { 
+		return; 
+	}
+
+	if (true == GameEngineInput::IsDown("Bomb"))
+	{
+		if (0 != BombCount)
+		{
+			Bomb* NewBomb = GetLevel()->CreateActor<Bomb>(IssacRenderOrder::Player);
+			BombCount -= 1;
+		}
+	}
 }
 void Issac::DirCheck()
 {
@@ -212,6 +311,6 @@ void Issac::TearsAttack(float _DeltaTime)
 }
 void Issac::Render(float _DeltaTime)
 {
-	//IssacColltion->DebugRender();
+	IssacColltion->DebugRender();
 
 }

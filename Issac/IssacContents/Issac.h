@@ -32,12 +32,39 @@ public:
 	Issac& operator=(Issac&& _Other) noexcept = delete;
 
 	void Movecalculation(float _DeltaTime);
+	void CollisionCheck(float _DeltaTime);
+	void BombCheck(float _DeltaTime);
 
 	GameEngineCollision* GetIsaacCollision()
 	{
 		return IssacColltion;
 	}
-
+	//-----------------
+	int GetKeyCount()
+	{
+		return KeyCount;
+	}
+	int GetBombCount()
+	{
+		return BombCount;
+	}
+	int GetCoinCount()
+	{
+		return CoinCount;
+	}
+	//-----------------
+	int GetTearDamage()
+	{
+		return TearDamage;
+	}
+	int GetPlayerHP()
+	{
+		return HP;
+	}
+	int SetPlayerHP(int _HP)
+	{
+		return HP = _HP;
+	}
 protected:
 	void Start() override;
 	void Update(float _DeltaTime) override;
@@ -50,7 +77,23 @@ private:
 	int StartFrame = 0;
 	float MoveSpeed = 200.0f;
 	float ResetTimeTears = 0.0f;
-	float ResetTimeBooms = 0.0f;
+	float ResetTimeBombs = 0.0f;
+
+	float BlinkTime = 0.0f;
+	float DeadTime = 0.0f;
+	float CollTime = 0.0f;
+
+	int BombCount = 5;
+	int KeyCount = 0;
+	int CoinCount = 0;
+
+	int TearDamage = 1;
+
+	bool HitIssac = false;
+	int HP = 6;
+	int MaxHP = 6;
+
+
 	float4 MoveDir = float4::Zero;
 	float4 Dir = float4::Zero;
 	std::string DirString = "Right_";

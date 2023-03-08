@@ -53,7 +53,6 @@ void Tears::Start()
 	{
 		Collision = CreateCollision(IssacCollisionOrder::PlayerAttack);
 		Collision->SetScale({ 20, 20 });
-		Collision->SetPosition({ 0, -20 });
 		Collision->SetDebugRenderType(CollisionType::CT_Rect);
 	}
 
@@ -83,7 +82,7 @@ void Tears::Update(float _DeltaTime)
 void Tears::MoveCalculation(float _DeltaTime)
 {
 
-	float4 NextPos = GetPos() - GetLevel()->GetCameraPos() + MoveDir * _DeltaTime;
+	float4 NextPos = GetPos() - MoveDir * _DeltaTime;
 	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("ColMap.BMP");
 
 	if (nullptr == ColImage)

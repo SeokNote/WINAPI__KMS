@@ -43,5 +43,4 @@ void IssacCore::Update()
 }
 void IssacCore::End()
 {
-
 }
