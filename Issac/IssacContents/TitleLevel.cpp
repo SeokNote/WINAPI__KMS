@@ -64,5 +64,5 @@ void TitleLevel::Update(float _DeltaTime)
 
 void TitleLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
-	ContentsValue::CameraScale = { 2000, 3000 };
+
 }

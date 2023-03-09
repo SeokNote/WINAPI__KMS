@@ -81,7 +81,7 @@ void BloodTear::MoveCalculation(float _DeltaTime)
 {
 	float4 NextPos = GetPos() - GetLevel()->GetCameraPos() + MoveDir * _DeltaTime;
 
-	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("ColMap.BMP");
+	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("BaseColMap.BMP");
 	if (nullptr == ColImage)
 	{
 		MsgAssert("충돌용 맵 이미지가 없습니다.");

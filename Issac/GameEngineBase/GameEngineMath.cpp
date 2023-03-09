@@ -13,6 +13,11 @@ const float4 float4::Right = { 1.0f, 0.0f, 0.0f, 1.0f };
 const float4 float4::Up = { 0.0f, -1.0f, 0.0f, 1.0f };
 const float4 float4::Down = { 0.0f, 1.0f, 0.0f, 1.0f };
 
+const float4 float4::LeftU = { -1.0f, 1.0f, 0.0f, 1.0f };
+const float4 float4::RightU = { 1.0f, 1.0f, 0.0f, 1.0f };
+const float4 float4::LeftD = { -1.0f, -1.0f, 0.0f, 1.0f };
+const float4 float4::RightD = { 1.0f, -1.0f, 0.0f, 1.0f };
+
 // 2d때는 쓸일이 없을것이다.
 const float4 float4::Forward = { 0.0f, 0.0f, 1.0f, 1.0f };
 const float4 float4::Back = { 0.0f, 0.0f, -1.0f, 1.0f };

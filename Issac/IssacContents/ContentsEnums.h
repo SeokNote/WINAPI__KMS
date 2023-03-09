@@ -5,15 +5,18 @@ enum class IssacRenderOrder
 	title,
 	BackGround,
 	Map,
+	UI,
 	Door,
 	Object,
 	Player,
 	Monster,
 	Dead,
+	Boss,
 };
 
 enum class  IssacCollisionOrder
 {
+
 //-----------
 	ItemBomb,
 	ItemCoin,
@@ -35,4 +38,11 @@ enum class  IssacCollisionOrder
 	Monster,
 	MonsterAttack,
 	MonsterSet,
+
+	Boss,
+	BossAttack,
+
+
+	MonsterSetting,
+	BossSetting,
 };

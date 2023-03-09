@@ -83,7 +83,7 @@ void Tears::MoveCalculation(float _DeltaTime)
 {
 
 	float4 NextPos = GetPos() - MoveDir * _DeltaTime;
-	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("ColMap.BMP");
+	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("BaseColMap.BMP");
 
 	if (nullptr == ColImage)
 	{

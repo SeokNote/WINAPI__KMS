@@ -32,12 +32,13 @@ void Door::Start()
 }
 
 void Door::Update(float _DeltaTime)
-{
+{/*
 	if (true == Issac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Door),
 	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
 	{
-		GameEngineCore::GetInst()->ChangeLevel("Stage2Level");
-	}
+		asd* newasd=GetLevel()->CreateActor
+
+	}*/
 }
  
 void Door::Render(float _DeltaTime)

@@ -30,13 +30,10 @@ void Stage2Level::ImageLoad() {
 void Stage2Level::Loading()
 {
 
-	ImageLoad();
+	
 
-	CreateActor<MapOne>();
-	CreateActor<Door>();
+	
 
-	Start = float4::Zero;
-	End = float4(0.0f, GameEngineWindow::GetScreenSize().half().y);
 
 }
 
@@ -50,5 +47,5 @@ void Stage2Level::Update(float _DeltaTime)
 
 void Stage2Level::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
-	ContentsValue::CameraScale = { 2000, 3000 };
+	
 }

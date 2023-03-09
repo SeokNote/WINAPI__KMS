@@ -40,10 +40,6 @@ void IntroLevel::Loading()
 
 
 	CreateActor<IntroBack>();
-
-	Start = float4::Zero;
-	End = float4(0.0f, GameEngineWindow::GetScreenSize().half().y);
-
 }
 
 
@@ -63,5 +59,5 @@ void IntroLevel::Update(float _DeltaTime)
 
 void IntroLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
-	ContentsValue::CameraScale = { 2000, 3000 };
+	
 }

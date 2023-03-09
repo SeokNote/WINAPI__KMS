@@ -31,6 +31,10 @@ public:
 	static const float4 Right;
 	static const float4 Up;
 	static const float4 Down;
+	static const float4 LeftU;
+	static const float4 RightU;
+	static const float4 LeftD;
+	static const float4 RightD;
 	static const float4 Forward;
 	static const float4 Back;
 	static const float4 Zero;

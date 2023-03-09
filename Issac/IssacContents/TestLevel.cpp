@@ -8,6 +8,11 @@
 #include "BombRock.h"
 #include "Spike.h"
 
+#include "MonsterSet.h"
+
+#include "HP.h"
+
+
 #include "ItemBomb.h"
 #include "ItemCoin.h"
 #include "ItemKey.h"
@@ -18,7 +23,10 @@
 
 #include "MonsterOne.h"
 #include "MonsterTwo.h"
+#include "Loki.h"
 
+#include <GameEngineCore/GameEngineActor.h>
+#include <GameEngineCore/GameEngineCollision.h>
 #include <GameEngineBase/GameEngineDirectory.h>
 #include <GameEngineCore/GameEngineResources.h>
 #include <GameEngineCore/GameEngineCore.h>
@@ -48,8 +56,8 @@ void TestLevel::ImageLoad() {
 
 	// 이미지 로드
 	{
-		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("StartOne.BMP")); 
-		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ColMap.BMP"));//맵
+		GameEngineImage* Image1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("BaseMap.BMP")); 
+		GameEngineImage* ColImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("BaseColMap.BMP"));//맵
 
 		GameEngineImage* Image3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
@@ -74,6 +82,16 @@ void TestLevel::ImageLoad() {
 			GameEngineImage* TearImagePop = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear_Pop.BMP"));
 			TearImagePop->Cut(4, 4);
 		}
+		{
+			GameEngineImage* Hp = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP0.BMP"));
+			GameEngineImage* Hp1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP1.BMP"));
+			GameEngineImage* Hp2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP2.BMP"));
+			GameEngineImage* Hp3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP3.BMP"));
+			GameEngineImage* Hp4 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP4.BMP"));
+			GameEngineImage* Hp5 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP5.BMP"));
+			GameEngineImage* Hp6 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP6.BMP"));
+
+		}
 		/*{
 			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Monster1.BMP"));
 			MonsterImage1->Cut(4, 4);
@@ -89,6 +107,9 @@ bool LoadImageBool = true;
 
 void TestLevel::Loading()
 {
+
+	
+
 	if (true == LoadImageBool) {
 		ImageLoad();
 		LoadImageBool = false;
@@ -96,7 +117,7 @@ void TestLevel::Loading()
 
 
 	Issac* NewIssac = CreateActor<Issac>();
-	NewIssac->SetPos({ 500,500 });
+	NewIssac->SetPos({ 300,300 });
 
 	/*MonsterOne* NewMonster1 = CreateActor<MonsterOne>();
 	NewMonster1->SetPos({ 200,200 });*/
@@ -134,38 +155,115 @@ void TestLevel::Loading()
 	ItemHeart* NewItemHeart = CreateActor<ItemHeart>();
 	NewItemHeart->SetPos({ 400,500 });
 
-	MonsterTwo* NewMonsterTwo = CreateActor<MonsterTwo>();
-	NewMonsterTwo->SetPos({ 1000,500 });
 
+// Stage 2
 	Glasses* NewGlasses = CreateActor<Glasses>();
-	NewGlasses->SetPos({ 700,500 });
-	
+	NewGlasses->SetPos({ 315,1100 });
+
+	STone* NewSTone1 = CreateActor<STone>();
+	NewSTone1->SetPos({ 370,1100 });
+	STone* NewSTone2 = CreateActor<STone>();
+	NewSTone2->SetPos({ 315,1150 });
+	STone* NewSTone3 = CreateActor<STone>();
+	NewSTone3->SetPos({ 260,1100 });
+	STone* NewSTone4 = CreateActor<STone>();
+	NewSTone4->SetPos({ 315,1050 });
+
 	Leo* NewLeo = CreateActor<Leo>();
-	NewLeo->SetPos({ 800,500 });
+	NewLeo->SetPos({ 630,1100 });
 
+	Rock* NewRock1 = CreateActor<Rock>();
+	NewRock1->SetPos({315+ 370,1100 });
+	Rock* NewRock2 = CreateActor<Rock>();
+	NewRock2->SetPos({ 315 + 315,1150 });
+	Rock* NewRock3 = CreateActor<Rock>();
+	NewRock3->SetPos({ 315 + 260,1100 });
+	Rock* NewRock4 = CreateActor<Rock>();
+	NewRock4->SetPos({ 315 + 315,1050 });
+
+	
+	
 	Heart* NewHeart = CreateActor<Heart>();
-	NewHeart->SetPos({ 900,500 });
-	MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
-	NewMonsterOne->SetPos({ 600,500 });
+	NewHeart->SetPos({ 930,1100 });
+	
+	STone* NewSTone5 = CreateActor<STone>();
+	NewSTone5->SetPos({ 615+370,1100 });
+	STone* NewSTone6 = CreateActor<STone>();
+	NewSTone6->SetPos({ 615 + 315,1150 });
+	STone* NewSTone7 = CreateActor<STone>();
+	NewSTone7->SetPos({ 615 + 260,1100 });
+	STone* NewSTone8 = CreateActor<STone>();
+	NewSTone8->SetPos({ 615 + 315,1050 });
 
+// Stage 2
+
+
+	//MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
+	//NewMonsterOne->SetPos({ 600,500 });
+	
+	//MonsterTwo* NewMonsterTwo = CreateActor<MonsterTwo>();
+	//NewMonsterTwo->SetPos({ 1000,500 });
+
+
+	//Loki* NewLoki = CreateActor<Loki>();
+	//NewLoki->SetPos({ 1000,500 });
+
+	
 	CreateActor<MapOne>();
-	CreateActor<Door>();
+	CreateActor<MonsterSet>();
+	CreateActor<HP>();
 
-	Start = float4::Zero;
-	End = float4(0.0f, GameEngineWindow::GetScreenSize().half().y);
+	
 
 }
 
 
 void TestLevel::Update(float _DeltaTime)
 {
-
-
-
+	MoveMaps();
+	
+	if (false == MoveMap)
+	{
+		_Time += _DeltaTime * 3.0f;
+	}
 }
 
 
 void TestLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
-	ContentsValue::CameraScale = { 2000, 3000 };
+
+}
+int MoveY = 0;
+void TestLevel::MoveMaps()
+{
+	float IssacY = Issac::MainPlayer->GetPos().y;
+	float YSize= GameEngineWindow::GetScreenSize().y;
+	if (IssacY > YSize)
+	{
+		IssacY = IssacY - (YSize * MoveY);
+	}
+	//플레이어의 위치세팅
+
+	float4 Pos = float4::LerpClamp(Start, End, _Time);
+
+	if (_Time >= 1.0f)
+	{
+		MoveMap = true;
+		_Time = 0.0f;
+		Start = Pos;
+	}
+
+	SetCameraPos(Pos);
+
+	if (true == MoveMap)
+	{
+		if (IssacY > 570.0f)
+		{
+			End = Start + float4(0, YSize);
+			MoveMap = false;
+			MoveY = MoveY + 1;
+			Issac::MainPlayer->SetPos({640,200+(YSize*(float)MoveY)});
+			int a = 0;
+		}
+	}
 }

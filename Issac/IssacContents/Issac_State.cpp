@@ -26,8 +26,11 @@ void Issac::ChangeState(IssacState _State)
 	case IssacState::MOVE:
 		MoveStart();
 		break;
-	case IssacState::GET:
-		GETStart();
+	//case IssacState::GET:
+	//	GETStart();
+	//	break;
+	case IssacState::Attack:
+		AttackStart();
 		break;
 	default:
 		break;
@@ -40,8 +43,11 @@ void Issac::ChangeState(IssacState _State)
 		break;
 	case IssacState::MOVE:
 		MoveEnd();
-	case IssacState::GET:
-		GETEnd();
+	//case IssacState::GET:
+	//	GETEnd();
+	//	break;
+	case IssacState::Attack:
+		AttackEnd();
 		break;
 	default:
 		break;
@@ -60,8 +66,11 @@ void Issac::UpdateState(float _Time)
 	case IssacState::MOVE:
 		MoveUpdate(_Time);
 		break;
-	case IssacState::GET:
+	/*case IssacState::GET:
 		GETUpdate(_Time);
+		break;*/
+	case IssacState::Attack:
+		AttackUpdate(_Time);
 		break;
 	default:
 		break;
@@ -77,11 +86,11 @@ void Issac::UpdateState(float _Time)
 void Issac::IdleStart() {
 
 
-	IssacHeadRender->ChangeAnimation(DirString + "HIdle");
-	IssacBodyRender->ChangeAnimation(DirString + "BIdle");
+//	IssacHeadRender->ChangeAnimation(DirString + "HIdle");
+//	IssacBodyRender->ChangeAnimation(DirString + "BIdle");
 //	GetRender->ChangeAnimation("GetItem");
 
-//	DirCheck("HIdle");
+	DirCheck("HIdle", "BIdle");
 	//DirCheck("BIdle");
 
 }
@@ -91,6 +100,7 @@ void Issac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
 	{
 		ChangeState(IssacState::MOVE);
 	}
+
 }
 void Issac::IdleEnd() {
 
@@ -101,8 +111,10 @@ void Issac::MoveStart() {
 
 	//DirCheck("HMove");
 	//DirCheck("BMove");
-	IssacHeadRender->ChangeAnimation(DirString +"HMove");
-	IssacBodyRender->ChangeAnimation(DirString +"BMove");
+	DirCheck("HMove", "BMove");
+
+//	IssacHeadRender->ChangeAnimation(DirString +"HMove");
+//	IssacBodyRender->ChangeAnimation(DirString +"BMove");
 //	GetRender->ChangeAnimation("GetItem");
 
 }
@@ -133,6 +145,31 @@ void Issac::MoveUpdate(float _Time) {
 	}
 	Dir.Normalize();
 	MoveDir = Dir * MoveSpeed;
+
+	DirCheck("HMove","BMove");
+
+/*if (
+		false == GameEngineInput::IsPress("LeftMove") && 
+		false == GameEngineInput::IsPress("RightMove")
+		)
+	{
+		// 
+		ChangeState(PlayerState::IDLE);
+		return;
+	}
+
+	// float4 MoveDir = float4::Zero;
+
+	if (true == GameEngineInput::IsPress("LeftMove"))
+	{
+		MoveDir += float4::Left * MoveSpeed;
+	} else if (true == GameEngineInput::IsPress("RightMove"))
+	{
+		MoveDir += float4::Right * MoveSpeed;
+	}
+
+
+	DirCheck("Move");*/
 }
 
 
@@ -143,25 +180,63 @@ void Issac::MoveEnd() {
 }
 
 
-void Issac::GETStart() {
+//void Issac::GETStart() {
+//
+//
+//	DirCheck("GetItem");
+//
+//}
+//
+//void Issac::GETUpdate(float _Time) //가만히 있을때 뭘해야할까
+//{
+//	GetTime += _Time;
+//	
+//	
+//		if (1.0f < GetTime) {
+//			ChangeState(IssacState::IDLE);
+//		}
+//
+//
+//}
+//void Issac::GETEnd() {
+//
+//	GetTime = 0.0f;
+//}
 
-
-	GetRender->ChangeAnimation("GetItem");
-
-
-}
-void Issac::GETUpdate(float _Time) //가만히 있을때 뭘해야할까
+void Issac::AttackStart()
 {
-	GetTime += _Time;
-	
-	
-		if (1.0f < GetTime) {
-			ChangeState(IssacState::IDLE);
-		}
-
+	DirCheck("Attack", "BMove");
 
 }
-void Issac::GETEnd() {
 
-	GetTime = 0.0f;
+void Issac::AttackUpdate(float _Time)
+{
+	if (false == GameEngineInput::IsPress("LeftTears") && false == GameEngineInput::IsPress("RightTears") && false == GameEngineInput::IsPress("DownTears") && false == GameEngineInput::IsPress("UpTears"))
+	{
+		ChangeState(IssacState::MOVE);
+		return; //최종 결정후 무조건 리턴
+	}
+	//float4 Dir;
+	//if (true == GameEngineInput::IsPress("LeftTears"))
+	//{
+	//	Dir += float4::Left;
+	//}
+	//else if (true == GameEngineInput::IsPress("RightTears"))
+	//{
+	//	Dir += float4::Right;
+	//}
+	//if (true == GameEngineInput::IsPress("DownTears"))
+	//{
+	//	Dir += float4::Down;
+	//}
+	//if (true == GameEngineInput::IsPress("UpTears"))
+	//{
+	//	Dir += float4::Up;
+	//}
+
+	DirCheck("Attack", "BMove");
+}
+
+void Issac::AttackEnd()
+{
 }

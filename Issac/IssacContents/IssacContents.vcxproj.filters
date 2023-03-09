@@ -21,7 +21,7 @@
       <Filter>Play\Level\Stage2</Filter>
     </ClCompile>
     <ClCompile Include="Door.cpp">
-      <Filter>Play\Object\Door</Filter>
+      <Filter>Play\Object\SetMonster</Filter>
     </ClCompile>
     <ClCompile Include="Tears.cpp">
       <Filter>Play\Object\Tears</Filter>
@@ -95,6 +95,15 @@
     <ClCompile Include="MapOne.cpp">
       <Filter>Play\Map</Filter>
     </ClCompile>
+    <ClCompile Include="Loki.cpp">
+      <Filter>Play\Monster\Loki</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterSet.cpp">
+      <Filter>Play\Object\SetMonster</Filter>
+    </ClCompile>
+    <ClCompile Include="Hp.cpp">
+      <Filter>Play\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -118,7 +127,7 @@
       <Filter>Play\Level\Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
-      <Filter>Play\Object\Door</Filter>
+      <Filter>Play\Object\SetMonster</Filter>
     </ClInclude>
     <ClInclude Include="Tears.h">
       <Filter>Play\Object\Tears</Filter>
@@ -189,6 +198,15 @@
     <ClInclude Include="MapOne.h">
       <Filter>Play\Map</Filter>
     </ClInclude>
+    <ClInclude Include="Loki.h">
+      <Filter>Play\Monster\Loki</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterSet.h">
+      <Filter>Play\Object\SetMonster</Filter>
+    </ClInclude>
+    <ClInclude Include="Hp.h">
+      <Filter>Play\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -205,9 +223,6 @@
     </Filter>
     <Filter Include="Play\Object">
       <UniqueIdentifier>{12661614-7348-4100-9f64-b4c0903889da}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Play\Object\Door">
-      <UniqueIdentifier>{f303b0d4-bbd7-4bc4-be8b-5df48fca0031}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Object\Tears">
       <UniqueIdentifier>{c19da15a-d74d-4f7b-b1d2-1872cd5dd8df}</UniqueIdentifier>
@@ -277,6 +292,15 @@
     </Filter>
     <Filter Include="Play\Level\Stage2">
       <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Monster\Loki">
+      <UniqueIdentifier>{d1f16bd9-53f5-40b3-9bad-d190de494637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Object\SetMonster">
+      <UniqueIdentifier>{f303b0d4-bbd7-4bc4-be8b-5df48fca0031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI">
+      <UniqueIdentifier>{de84a139-c463-4f3b-b734-90094a5416d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

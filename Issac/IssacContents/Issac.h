@@ -8,6 +8,7 @@ enum class IssacState
 	IDLE,
 	MOVE,
 	GET,
+	Attack,
 };
 //enum class IssacDir
 //{
@@ -36,7 +37,7 @@ public:
 	void CollisionCheck(float _DeltaTime);
 	void BombCheck(float _DeltaTime);
 
-	GameEngineCollision* GetIsaacCollision()
+	GameEngineCollision* GetIssacCollision()
 	{
 		return IssacColltion;
 	}
@@ -99,16 +100,18 @@ private:
 	float4 MoveDir = float4::Zero;
 	float4 Dir = float4::Zero;
 	std::string DirString = "Right_";
+	std::string BDirString = "Right_";
+
 	IssacState StateValue = IssacState::IDLE;
 
 	GameEngineRender* IssacHeadRender = nullptr;
 	GameEngineRender* IssacBodyRender = nullptr;
-	GameEngineRender* GetRender = nullptr;
+	//GameEngineRender* GetRender = nullptr;
 
 	GameEngineCollision* IssacColltion = nullptr;
 	
-	void DirCheck();
-
+	//void DirCheck(const std::string_view& _AnimationName);
+	void DirCheck(const std::string_view& _AnimationName, const std::string_view& _AnimationName1);
 	void ChangeState(IssacState _State);
 	void UpdateState(float _Time);
 
@@ -124,6 +127,10 @@ private:
 	void GETStart();
 	void GETUpdate(float _Time);
 	void GETEnd();
+
+	void AttackStart();
+	void AttackUpdate(float _Time);
+	void AttackEnd();
 
 	void TearsAttack(float _DeltaTime);
 

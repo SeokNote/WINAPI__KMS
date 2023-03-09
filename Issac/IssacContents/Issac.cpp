@@ -69,16 +69,16 @@ void Issac::Start()
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_HMove", .ImageName = "Left_Issac.bmp", .Start = 4, .End = 5,.InterTime = 0.2f });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_HMove", .ImageName = "Left_Issac.bmp", .Start = 0, .End = 0,.InterTime = 0.2f });
 		//Attack
-		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_Attack",  .ImageName = "Right_Issac.bmp",.Start = 0, .End = 1, });//기본상태
-		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_Attack",  .ImageName = "Right_Issac.bmp",.Start = 4, .End = 5, });
-		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_Attack",  .ImageName = "Left_Issac.bmp",.Start = 2, .End = 3, });
-		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_Attack",  .ImageName = "Right_Issac.bmp",.Start = 2, .End = 3, });
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Down_Attack",  .ImageName = "Right_Issac.bmp",.Start = 1, .End = 1,.InterTime = 0.2f });//기본상태
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Up_Attack",  .ImageName = "Right_Issac.bmp",.Start = 5, .End = 5,.InterTime = 0.2f });
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_Attack",  .ImageName = "Left_Issac.bmp",.Start = 3, .End = 3,.InterTime = 0.2f });
+		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_Attack",  .ImageName = "Right_Issac.bmp",.Start = 3, .End = 3, .InterTime = 0.2f });
 
 	//	IssacHeadRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });
 
-		//GetRender = CreateRender(IssacRenderOrder::Player);
-		//GetRender->SetScale({ 125, 125 });
-		//GetRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });
+		/*GetRender = CreateRender(IssacRenderOrder::Player);
+		GetRender->SetScale({ 125, 125 });
+		GetRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });*/
 
 	}
 	{
@@ -104,7 +104,7 @@ void Issac::Update(float _DeltaTime)
 		MoveDir = float4::Zero;
 	}
 
-	DirCheck();
+//	DirCheck();
 	UpdateState(_DeltaTime);
 	TearsAttack(_DeltaTime);
 	BombCheck(_DeltaTime);
@@ -112,11 +112,10 @@ void Issac::Update(float _DeltaTime)
 	CollisionCheck(_DeltaTime);
 	SetMove(MoveDir * _DeltaTime);
 
-	
 }
 void Issac::Movecalculation(float _DeltaTime)
 {
-	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("ColMap.BMP");
+	GameEngineImage* ColImage = GameEngineResources::GetInst().ImageFind("BaseColMap.BMP");
 	if (nullptr == ColImage)
 	{
 		MsgAssert("충돌용 맵 이미지가 없습니다.");
@@ -212,21 +211,21 @@ void Issac::CollisionCheck(float _DeltaTime)
 		}
 		if (true == IssacColltion->Collision(CheckGlasses, ICollisions))
 		{
-		//	ChangeState(IssacState::GET);
+//			ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckLeo, ICollisions))
 		{
-		//	ChangeState(IssacState::GET);
+//			ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckHeart, ICollisions))
 		{
-		//	ChangeState(IssacState::GET);
+	//		ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
@@ -268,65 +267,83 @@ void Issac::BombCheck(float _DeltaTime)
 		}
 	}
 }
-void Issac::DirCheck()
-{
-	
 
-
-	if (GameEngineInput::IsPress("LeftMove"))
-	{
-		DirString = "Left_";
-	}
-	else if (GameEngineInput::IsPress("RightMove"))
-	{
-		DirString = "Right_";
-	}
-	else if (GameEngineInput::IsPress("UpMove"))
-	{
-		DirString = "Up_";
-	}
-
-	else if (GameEngineInput::IsPress("DownMove"))
-	{
-		DirString = "Down_";
-	}
-
-	/*if (PrevDirString != DirString)
-	{
-		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-		IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
-	}*/
-
-}
-/*void Issac::DirCheck(const std::string_view& _AnimationName)
+//void Issac::DirCheck(const std::string_view& _AnimationName)
+//{
+//	GetRender->ChangeAnimation(_AnimationName.data());
+//
+//
+//
+//	/*if (PrevDirString != DirString)
+//	{
+//		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
+//		IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+//	}*/
+//
+//}
+void Issac::DirCheck(const std::string_view& _AnimationName, const std::string_view& _AnimationName1)
 {
 	std::string PrevDirString = DirString;
 	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+
+	std::string PrevDirStringB = BDirString;
+	IssacBodyRender->ChangeAnimation(BDirString + _AnimationName1.data());
 
 	if (GameEngineInput::IsPress("LeftMove"))
 	{
 		DirString = "Left_";
+		BDirString = "Left_";
 	}
 	else if (GameEngineInput::IsPress("RightMove"))
 	{
 		DirString = "Right_";
+		BDirString = "Right_";
+
 	}
 	else if (GameEngineInput::IsPress("UpMove"))
 	{
 		DirString = "Up_";
+		BDirString = "Up_";
+
 	}
 
 	else if (GameEngineInput::IsPress("DownMove"))
 	{
 		DirString = "Down_";
+		BDirString = "Down_";
+
+	}
+	if (GameEngineInput::IsPress("LeftTears"))
+	{
+		DirString = "Left_";
+		BDirString = "Right_";
+	}
+	else if (GameEngineInput::IsPress("RightTears"))
+	{
+		DirString = "Right_";
+		BDirString = "Right_";
+
+	}
+	else if (GameEngineInput::IsPress("UpTears"))
+	{
+		DirString = "Up_";
+		BDirString = "Up_";
+
+	}
+
+	else if (GameEngineInput::IsPress("DownTears"))
+	{
+		DirString = "Down_";
+		BDirString = "Down_";
+
 	}
 	if (PrevDirString != DirString)
 	{
-		AnimationRender->ChangeAnimation(DirString + _AnimationName.data());
+		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
+		IssacBodyRender->ChangeAnimation(DirString + _AnimationName1.data());
 	}
 }
-*/
+
 void Issac::TearsAttack(float _DeltaTime)
 {
 	ResetTimeTears += _DeltaTime;
