@@ -73,10 +73,10 @@ void Loki::Start()
 
 }
 
-
+//죽으면 데드하고 1초뒤에 레벨체인지
 void Loki::Update(float _DeltaTime)
 {
-	if (true == LokiDeathcheck) //hp가 떨어진게 확인되면
+	if (true == LokiDeathcheck) 
 	{
 
 		LokiRender->ChangeAnimation("Loki_Dead");

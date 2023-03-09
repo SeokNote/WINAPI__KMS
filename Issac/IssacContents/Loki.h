@@ -36,6 +36,7 @@ private:
 
 	float LokiAttTime = 0.0f;
 	float LokiAttTime2 = 0.0f;
+	float EndingTime = 0.0f;
 
 	float NowTime = 0.0f;
 	int LokiHp = 33;

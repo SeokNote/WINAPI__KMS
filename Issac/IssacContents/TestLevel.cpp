@@ -95,14 +95,7 @@ void TestLevel::ImageLoad() {
 			GameEngineImage* Hp6 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP6.BMP"));
 
 		}
-		/*{
-			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Monster1.BMP"));
-			MonsterImage1->Cut(4, 4);
-		}
-		{
-			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Monster1.BMP"));
-			MonsterImage1->Cut(4, 4);
-		}*/
+		
 	}
 
 }
@@ -199,7 +192,6 @@ void TestLevel::Loading()
 	STone* NewSTone8 = CreateActor<STone>();
 	NewSTone8->SetPos({ 615 + 315,1050 });
 
-// Stage 2
 
 
 	//MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();

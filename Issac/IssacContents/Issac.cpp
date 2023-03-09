@@ -74,7 +74,7 @@ void Issac::Start()
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_Attack",  .ImageName = "Left_Issac.bmp",.Start = 3, .End = 3,.InterTime = 0.2f });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_Attack",  .ImageName = "Right_Issac.bmp",.Start = 3, .End = 3, .InterTime = 0.2f });
 
-	//	IssacHeadRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });
+
 
 		/*GetRender = CreateRender(IssacRenderOrder::Player);
 		GetRender->SetScale({ 125, 125 });
@@ -268,19 +268,6 @@ void Issac::BombCheck(float _DeltaTime)
 	}
 }
 
-//void Issac::DirCheck(const std::string_view& _AnimationName)
-//{
-//	GetRender->ChangeAnimation(_AnimationName.data());
-//
-//
-//
-//	/*if (PrevDirString != DirString)
-//	{
-//		IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-//		IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
-//	}*/
-//
-//}
 void Issac::DirCheck(const std::string_view& _AnimationName, const std::string_view& _AnimationName1)
 {
 	std::string PrevDirString = DirString;
