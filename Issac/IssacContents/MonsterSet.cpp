@@ -28,20 +28,13 @@ void MonsterSet::Start()
 {
 	MonsterSetCol = CreateCollision(IssacCollisionOrder::MonsterSetting);
 	MonsterSetCol->SetDebugRenderType(CollisionType::CT_Rect);
-	MonsterSetCol->SetPosition({ 640,1350 });
+	MonsterSetCol->SetPosition({ 640,1580 });
 	MonsterSetCol->SetScale({ 100,30 });
 }
 
 void MonsterSet::Update(float _DeltaTime)
 {
-	if (true == Issac::MainPlayer->GetIssacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::MonsterSetting),
-	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
-	{
-		int A = 0;
-		MonsterOne* NewMonster1 = GetLevel()->CreateActor<MonsterOne>();
-		NewMonster1->SetPos({ 600,1640 });
 
-	}
 }
 
 void MonsterSet::Render(float _DeltaTime)

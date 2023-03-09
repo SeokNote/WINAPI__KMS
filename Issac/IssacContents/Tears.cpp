@@ -61,11 +61,11 @@ void Tears::Start()
 void Tears::Update(float _DeltaTime)
 {
 	GravityTime += _DeltaTime;
-	if (GravityTime > 0.8f)
+	if (GravityTime > 1.0f)
 	{
 		MoveDir = float4::Left * LTearfallValue + float4::Down * (0.4f);
 	}
-	if (GravityTime > 0.9f)
+	if (GravityTime > 1.1f)
 	{
 		TearsRender->ChangeAnimation("Pop");
 
@@ -76,7 +76,7 @@ void Tears::Update(float _DeltaTime)
 		}
 	}
 	MoveCalculation(_DeltaTime);
-	SetMove(MoveDir * 400.0f * _DeltaTime);
+	SetMove(MoveDir * Issac::MainPlayer->GetTearSpeed() * _DeltaTime);
 }
 
 void Tears::MoveCalculation(float _DeltaTime)

@@ -95,12 +95,11 @@ bool Invincible = false;
 void MonsterTwo::CollisionCheck(float _DeltaTime)
 {
 	CollTime += _DeltaTime;
-	if (CollTime >= 1.0f)
+	if (CollTime >= 0.1f)
 	{
 		CollTime = 0.0f;
 		MonsterTwoCol->On();
 		Invincible = true;
-		SetMove(float4::Zero);
 	}
 
 	std::vector<GameEngineCollision*> Collisions;
@@ -111,6 +110,8 @@ void MonsterTwo::CollisionCheck(float _DeltaTime)
 	{
 		MonsterTwoRender->ChangeAnimation("MonsterOneHit");
 		Collisions[0]->GetActor()->Death(); 
+		SetMove(float4::Right * 20);
+
 		if (true == Invincible)
 		{
 			MonsterTwoHp -= Issac::MainPlayer->GetTearDamage();
@@ -128,5 +129,5 @@ void MonsterTwo::CollisionCheck(float _DeltaTime)
 
 void MonsterTwo::Render(float _DeltaTime)
 {
-	//M_fly_Coll->DebugRender();
+
 }

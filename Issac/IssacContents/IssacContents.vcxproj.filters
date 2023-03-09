@@ -17,9 +17,6 @@
     <ClCompile Include="MonsterOne.cpp">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClCompile>
-    <ClCompile Include="Stage2Level.cpp">
-      <Filter>Play\Level\Stage2</Filter>
-    </ClCompile>
     <ClCompile Include="Door.cpp">
       <Filter>Play\Object\SetMonster</Filter>
     </ClCompile>
@@ -101,8 +98,20 @@
     <ClCompile Include="MonsterSet.cpp">
       <Filter>Play\Object\SetMonster</Filter>
     </ClCompile>
+    <ClCompile Include="BossSet.cpp">
+      <Filter>Play\Object\SetMonster</Filter>
+    </ClCompile>
     <ClCompile Include="Hp.cpp">
-      <Filter>Play\UI</Filter>
+      <Filter>Play\UI\Hp</Filter>
+    </ClCompile>
+    <ClCompile Include="HpBar.cpp">
+      <Filter>Play\UI\HpBar</Filter>
+    </ClCompile>
+    <ClCompile Include="EndBack.cpp">
+      <Filter>Play\Level\EndLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="EndLevel.cpp">
+      <Filter>Play\Level\EndLevel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +131,6 @@
     </ClInclude>
     <ClInclude Include="MonsterOne.h">
       <Filter>Play\Monster\MonsterOne</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage2Level.h">
-      <Filter>Play\Level\Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
       <Filter>Play\Object\SetMonster</Filter>
@@ -204,8 +210,20 @@
     <ClInclude Include="MonsterSet.h">
       <Filter>Play\Object\SetMonster</Filter>
     </ClInclude>
+    <ClInclude Include="BossSet.h">
+      <Filter>Play\Object\SetMonster</Filter>
+    </ClInclude>
     <ClInclude Include="Hp.h">
-      <Filter>Play\UI</Filter>
+      <Filter>Play\UI\Hp</Filter>
+    </ClInclude>
+    <ClInclude Include="HpBar.h">
+      <Filter>Play\UI\HpBar</Filter>
+    </ClInclude>
+    <ClInclude Include="EndBack.h">
+      <Filter>Play\Level\EndLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="EndLevel.h">
+      <Filter>Play\Level\EndLevel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -290,9 +308,6 @@
     <Filter Include="Play\Map">
       <UniqueIdentifier>{12add85e-83e1-46d6-81ec-6b21d6b9e3ac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Play\Level\Stage2">
-      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Play\Monster\Loki">
       <UniqueIdentifier>{d1f16bd9-53f5-40b3-9bad-d190de494637}</UniqueIdentifier>
     </Filter>
@@ -301,6 +316,15 @@
     </Filter>
     <Filter Include="Play\UI">
       <UniqueIdentifier>{de84a139-c463-4f3b-b734-90094a5416d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI\Hp">
+      <UniqueIdentifier>{b6789da4-b6ef-4123-906e-2902be76202d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI\HpBar">
+      <UniqueIdentifier>{e891bd5a-ba7b-4888-b28d-a94d991b4b3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\EndLevel">
+      <UniqueIdentifier>{cd3922a8-0857-4a5b-a100-7da137e0d0d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

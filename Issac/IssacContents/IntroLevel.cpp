@@ -40,6 +40,8 @@ void IntroLevel::Loading()
 
 
 	CreateActor<IntroBack>();
+
+
 }
 
 
@@ -56,8 +58,7 @@ void IntroLevel::Update(float _DeltaTime)
 
 }
 
-
 void IntroLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
 {
-	
+
 }

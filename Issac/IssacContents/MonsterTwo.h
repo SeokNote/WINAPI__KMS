@@ -28,7 +28,7 @@ private:
 	GameEngineCollision* MonsterTwoCol = nullptr;
 
 	float CollTime = 0.0f;
-	int MonsterTwoHp = 4;
+	int MonsterTwoHp = 3;
 	float4 MoveA = float4::Zero;
 };
 

@@ -59,6 +59,15 @@ public:
 	{
 		return TearDamage;
 	}
+
+	float GetTearSpeed()
+	{
+		return TearSpeed;
+	}
+	float GetTearAttSpeed()
+	{
+		return TearAttSpeed;
+	}
 	int GetPlayerHP()
 	{
 		return HP;
@@ -75,9 +84,14 @@ protected:
 
 private:
 
+
+	float TearSpeed = 400.0f;
+	int TearDamage = 1;
+	float TearAttSpeed = 0.4f;
+
 	float AccTime = 0.0f;
 	int StartFrame = 0;
-	float MoveSpeed = 200.0f;
+	float MoveSpeed = 250.0f;
 	float ResetTimeTears = 0.0f;
 	float ResetTimeBombs = 0.0f;
 	float GetTime = 0.0f;
@@ -90,7 +104,6 @@ private:
 	int KeyCount = 0;
 	int CoinCount = 0;
 
-	int TearDamage = 1;
 
 	bool HitIssac = false;
 	int HP = 6;

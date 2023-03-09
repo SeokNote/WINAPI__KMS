@@ -17,7 +17,9 @@ public:
 
 protected:
 	void Start() override;
-	GameEngineRender* TitleRender;
+
+	GameEngineRender* TitleRender= nullptr;
+
 private:
 };
 

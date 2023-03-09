@@ -6,9 +6,10 @@
 class Loki : public GameEngineActor
 {
 public:
+	static Loki* MainBoss;
+
 	Loki();
 	~Loki();
-
 
 	Loki(const Loki& _Other) = delete;
 	Loki(Loki&& _Other) noexcept = delete;
@@ -16,12 +17,18 @@ public:
 	Loki& operator=(Loki&& _Other) noexcept = delete;
 	void ImageLoad();
 
+	int GetLokiHp()
+	{
+		return LokiHp;
+	}
+
 protected:
 	void Start() override;
 	void Update(float _DeltaTime) override;
 	void Render(float _DeltaTime);
 	void Movecalculation(float _DeltaTime);
 	void CollisionCheck(float _DeltaTime);
+
 
 private:
 	GameEngineRender* LokiRender = nullptr;
@@ -31,7 +38,7 @@ private:
 	float LokiAttTime2 = 0.0f;
 
 	float NowTime = 0.0f;
-	int LokiHp = 30;
+	int LokiHp = 33;
 	int RESET = 1;
 	bool LokiDeathcheck = false;
 	bool Countbool = true;

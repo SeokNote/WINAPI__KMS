@@ -211,22 +211,22 @@ void Issac::CollisionCheck(float _DeltaTime)
 		}
 		if (true == IssacColltion->Collision(CheckGlasses, ICollisions))
 		{
-//			ChangeState(IssacState::GET);
-
+			//ChangeState(IssacState::GET);
+			TearAttSpeed -= 0.1f;
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckLeo, ICollisions))
 		{
-//			ChangeState(IssacState::GET);
-
+			//ChangeState(IssacState::GET);
+			TearDamage += 2;
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckHeart, ICollisions))
 		{
-	//		ChangeState(IssacState::GET);
-
+			//ChangeState(IssacState::GET);
+			TearSpeed += 100;
 			ICollisions[0]->GetActor()->Death();
 
 		}
@@ -355,18 +355,14 @@ void Issac::TearsAttack(float _DeltaTime)
 	{
 		return;
 	}
-	if (ResetTimeTears > 0.3f)
+	if (ResetTimeTears > TearAttSpeed)
 	{
 		ResetTimeTears = 0.0f;
 	}
 	else {
 		return;
 	}
-	//Tears* NewTears = GetLevel()->CreateActor<Tears>(IssacRenderOrder::Player);
-	//float4 FireDir1 = float4::Left;
 
-	//NewTears->SetLeftMoveDir(FireDir1); //방향설정
-	//NewTears->SetPos(GetPos());
 	Tears* NewTears = GetLevel()->CreateActor<Tears>(IssacRenderOrder::Player);
 
 	float4 Dir;

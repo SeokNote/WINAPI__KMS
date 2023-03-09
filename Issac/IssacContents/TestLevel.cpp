@@ -9,7 +9,8 @@
 #include "Spike.h"
 
 #include "MonsterSet.h"
-
+#include "BossSet.h"
+#include "HpBar.h"
 #include "HP.h"
 
 
@@ -36,6 +37,8 @@
 #include "MapOne.h"
 #include "MouseObject.h"
 #include "ContentsValue.h"
+#include "ContentsEnums.h"
+
 
 TestLevel::TestLevel()
 {
@@ -131,6 +134,7 @@ void TestLevel::Loading()
 
 
 
+
 	STone* NewSTone = CreateActor<STone>();
 	NewSTone->SetPos({ 200,200 });
 
@@ -211,12 +215,15 @@ void TestLevel::Loading()
 	
 	CreateActor<MapOne>();
 	CreateActor<MonsterSet>();
+	CreateActor<BossSet>();
 	CreateActor<HP>();
 
 	
 
 }
 
+bool SetMonster = true;
+bool SetBoss = true;
 
 void TestLevel::Update(float _DeltaTime)
 {
@@ -226,7 +233,39 @@ void TestLevel::Update(float _DeltaTime)
 	{
 		_Time += _DeltaTime * 3.0f;
 	}
+
+	if (true== SetMonster && true == Issac::MainPlayer->GetIssacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::MonsterSetting),
+	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
+	{
+		SetMonster = false;
+		MonsterOne* NewMonster1 =CreateActor<MonsterOne>();
+		NewMonster1->SetPos({ 230,1690 });
+		MonsterOne* NewMonster2 = CreateActor<MonsterOne>();
+		NewMonster2->SetPos({ 230,1790 });
+		MonsterOne* NewMonster3 = CreateActor<MonsterOne>();
+		NewMonster3->SetPos({ 230,1890 });
+
+		MonsterTwo* NewMonster4 = CreateActor<MonsterTwo>();
+		NewMonster4->SetPos({ 830,1690 });
+		MonsterTwo* NewMonster5 = CreateActor<MonsterTwo>();
+		NewMonster5->SetPos({ 830,1790 });
+		MonsterTwo* NewMonster6 = CreateActor<MonsterTwo>();
+		NewMonster6->SetPos({ 830,1890 });
+
+	}
+
+	if (true == SetBoss && true == Issac::MainPlayer->GetIssacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::BossSetting),
+	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
+	{
+		SetBoss = false;
+		Loki* NewLoki = CreateActor<Loki>();
+		NewLoki->SetPos({ 1000,2500 });
+		HpBar* NewHpbar = CreateActor<HpBar>();
+		NewHpbar->SetPos({ 600,2800 });
+
+	}
 }
+
 
 
 void TestLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
@@ -242,8 +281,6 @@ void TestLevel::MoveMaps()
 	{
 		IssacY = IssacY - (YSize * MoveY);
 	}
-	//플레이어의 위치세팅
-
 	float4 Pos = float4::LerpClamp(Start, End, _Time);
 
 	if (_Time >= 1.0f)
@@ -262,7 +299,7 @@ void TestLevel::MoveMaps()
 			End = Start + float4(0, YSize);
 			MoveMap = false;
 			MoveY = MoveY + 1;
-			Issac::MainPlayer->SetPos({640,200+(YSize*(float)MoveY)});
+			Issac::MainPlayer->SetPos({640,120+(YSize*(float)MoveY)});
 			int a = 0;
 		}
 	}

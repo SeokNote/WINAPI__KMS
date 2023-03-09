@@ -7,13 +7,14 @@
 #include <GameEngineCore/GameEngineResources.h>
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
-
+#include <GameEngineCore/GameEngineCore.h>
 
 #include "Issac.h"
 #include "ContentsEnums.h"
 #include "Loki.h"
 #include "BloodTear.h"
 
+Loki* Loki::MainBoss;
 
 Loki::Loki()
 {
@@ -43,6 +44,7 @@ void Loki::ImageLoad()
 
 void Loki::Start()
 {
+	MainBoss=this;
 	if (true == LokiImage)
 	{
 		ImageLoad();
@@ -63,7 +65,7 @@ void Loki::Start()
 	{
 
 		LokiCol = CreateCollision(IssacCollisionOrder::Boss);
-		LokiCol->SetScale({ 35, 35 });
+		LokiCol->SetScale({ 120, 100 });
 		LokiCol->On();
 		LokiCol->SetDebugRenderType(CollisionType::CT_Rect);
 
@@ -81,6 +83,8 @@ void Loki::Update(float _DeltaTime)
 		if (true == LokiRender->IsAnimationEnd())
 		{
 			Death();
+			GameEngineCore::GetInst()->ChangeLevel("EndLevel");
+
 		}
 
 	}
@@ -239,4 +243,5 @@ void Loki::CollisionCheck(float _DeltaTime)
 
 void Loki::Render(float _DeltaTime)
 {
+//	LokiCol->DebugRender();
 }

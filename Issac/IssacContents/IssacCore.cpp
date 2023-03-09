@@ -3,7 +3,7 @@
 #include "TitleLevel.h"
 #include "IntroLevel.h"
 #include "TestLevel.h"
-#include "Stage2Level.h"
+#include "EndLevel.h"
 
 // StudyGameCore StudyGameCore::Core = new StudyGameCore();
 
@@ -32,7 +32,7 @@ void IssacCore::Start()
 	CreateLevel<TitleLevel>("TitleLevel");
 	CreateLevel<TestLevel>("TestLevel");
 	CreateLevel<IntroLevel>("IntroLevel");
-	CreateLevel<Stage2Level>("Stage2Level");
+	CreateLevel<EndLevel>("EndLevel");
 
 	ChangeLevel("TitleLevel");
 }

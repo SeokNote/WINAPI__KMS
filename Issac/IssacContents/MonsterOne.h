@@ -30,7 +30,7 @@ private:
 
 	float MonsterOneAttTime = 0.0f;
 	float NowTime = 0.0f;
-	int PooterHp = 3;
+	int PooterHp = 5;
 	int RESET = 1;
 	bool PooterDeathcheck = false;
 	bool Countbool = true;
