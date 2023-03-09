@@ -11,9 +11,6 @@
     <ClCompile Include="STLevel.cpp">
       <Filter>Global</Filter>
     </ClCompile>
-    <ClCompile Include="MapOne.cpp">
-      <Filter>Play\Level\TestLevel</Filter>
-    </ClCompile>
     <ClCompile Include="TestLevel.cpp">
       <Filter>Play\Level\TestLevel</Filter>
     </ClCompile>
@@ -95,6 +92,9 @@
     <ClCompile Include="Stone.cpp">
       <Filter>Play\Object\Rock</Filter>
     </ClCompile>
+    <ClCompile Include="MapOne.cpp">
+      <Filter>Play\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -107,9 +107,6 @@
     </ClInclude>
     <ClInclude Include="STLevel.h">
       <Filter>Global</Filter>
-    </ClInclude>
-    <ClInclude Include="MapOne.h">
-      <Filter>Play\Level\TestLevel</Filter>
     </ClInclude>
     <ClInclude Include="TestLevel.h">
       <Filter>Play\Level\TestLevel</Filter>
@@ -189,6 +186,9 @@
     <ClInclude Include="Stone.h">
       <Filter>Play\Object\Rock</Filter>
     </ClInclude>
+    <ClInclude Include="MapOne.h">
+      <Filter>Play\Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -221,17 +221,11 @@
     <Filter Include="Play\Level\TestLevel">
       <UniqueIdentifier>{b48e03c3-4a05-4975-8c4a-8b2a10811c4e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Play\Level\Stage2">
-      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Play\Level\TiltleLevel">
       <UniqueIdentifier>{7b27dc91-29f7-407b-99a8-4bdca5d30c72}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Level\IntroLevel">
       <UniqueIdentifier>{b1bdb18e-bea5-4b9d-a9cd-b01fabea993f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Play\Level\Stage1">
-      <UniqueIdentifier>{b364452e-7379-42c0-83c6-e21dea2eb2c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Object\Bomb">
       <UniqueIdentifier>{e79f4c1f-0382-4644-ac75-e91e16c75175}</UniqueIdentifier>
@@ -277,6 +271,12 @@
     </Filter>
     <Filter Include="Play\Object\Items\Heart">
       <UniqueIdentifier>{500f54fb-ab07-43d9-9ad8-43d11a5074e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Map">
+      <UniqueIdentifier>{12add85e-83e1-46d6-81ec-6b21d6b9e3ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\Level\Stage2">
+      <UniqueIdentifier>{e66ffed3-b723-4c9f-aa5c-6fc18325d2ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

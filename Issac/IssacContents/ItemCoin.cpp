@@ -75,6 +75,6 @@ void ItemCoin::Update(float _DeltaTime)
 
 void ItemCoin::Render(float _DeltaTime)
 {
-	CoinCol->DebugRender();
+//	CoinCol->DebugRender();
 
 }

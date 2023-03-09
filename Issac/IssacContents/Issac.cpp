@@ -146,7 +146,7 @@ void Issac::CollisionCheck(float _DeltaTime)
 
 
 	}
-	if (nullptr != IssacColltion) //아이작의 콜리전이 null이아니어야 상호작용가능
+	if (nullptr != IssacColltion)
 	{
 		if (true == IssacColltion->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
 		{
@@ -270,9 +270,7 @@ void Issac::BombCheck(float _DeltaTime)
 }
 void Issac::DirCheck()
 {
-	/*std::string PrevDirString = DirString;
-	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
-	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());*/
+	
 
 
 	if (GameEngineInput::IsPress("LeftMove"))
@@ -300,6 +298,35 @@ void Issac::DirCheck()
 	}*/
 
 }
+/*void Issac::DirCheck(const std::string_view& _AnimationName)
+{
+	std::string PrevDirString = DirString;
+	IssacHeadRender->ChangeAnimation(DirString + _AnimationName.data());
+	IssacBodyRender->ChangeAnimation(DirString + _AnimationName.data());
+
+	if (GameEngineInput::IsPress("LeftMove"))
+	{
+		DirString = "Left_";
+	}
+	else if (GameEngineInput::IsPress("RightMove"))
+	{
+		DirString = "Right_";
+	}
+	else if (GameEngineInput::IsPress("UpMove"))
+	{
+		DirString = "Up_";
+	}
+
+	else if (GameEngineInput::IsPress("DownMove"))
+	{
+		DirString = "Down_";
+	}
+	if (PrevDirString != DirString)
+	{
+		AnimationRender->ChangeAnimation(DirString + _AnimationName.data());
+	}
+}
+*/
 void Issac::TearsAttack(float _DeltaTime)
 {
 	ResetTimeTears += _DeltaTime;
