@@ -4,6 +4,7 @@
 #include "Door.h"
 #include "Poop.h"
 #include "Rock.h"
+#include "Stone.h"
 #include "BombRock.h"
 #include "Spike.h"
 
@@ -14,6 +15,7 @@
 #include "Glasses.h"
 #include "Leo.h"
 #include "Heart.h"
+
 #include "MonsterOne.h"
 #include "MonsterTwo.h"
 
@@ -51,6 +53,9 @@ void TestLevel::ImageLoad() {
 
 		GameEngineImage* Image3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
+		GameEngineImage* MonsterTwoDead = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02_Dead.BMP"));
+		MonsterTwoDead->Cut(5, 3);
+
 		{
 			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Issac.BMP"));
 			Image->Cut(8, 4);
@@ -59,11 +64,15 @@ void TestLevel::ImageLoad() {
 			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Issac.BMP"));
 			Image2->Cut(8, 4);
 		}
+		
+			
 		{
-			GameEngineImage* T_Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear.BMP"));
-			T_Image->Cut(8, 4);
-			GameEngineImage* T_ImagePop = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear_Pop.BMP"));
-			T_ImagePop->Cut(4, 4);
+			GameEngineImage* GetImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Isaac_Anim.BMP"));
+			GetImage->Cut(4, 3);
+			GameEngineImage* TearImage = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear.BMP"));
+			TearImage->Cut(8, 4);
+			GameEngineImage* TearImagePop = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Tear_Pop.BMP"));
+			TearImagePop->Cut(4, 4);
 		}
 		/*{
 			GameEngineImage* MonsterImage1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Monster1.BMP"));
@@ -76,6 +85,8 @@ void TestLevel::ImageLoad() {
 	}
 
 }
+bool LoadImageBool = true;
+
 void TestLevel::Loading()
 {
 	if (true == LoadImageBool) {
@@ -91,12 +102,16 @@ void TestLevel::Loading()
 	NewMonster1->SetPos({ 200,200 });*/
 
 	Poop* NewPoop = CreateActor<Poop>();
-	NewPoop->SetPos({ 200,150 });
+	NewPoop->SetPos({ 200,140 });
 
 
 	Rock* NewRock = CreateActor<Rock>();
-	NewRock->SetPos({ 200,250 });
+	NewRock->SetPos({ 200,260 });
 
+
+
+	STone* NewSTone = CreateActor<STone>();
+	NewSTone->SetPos({ 200,200 });
 
 	BombRock* NewBombRock = CreateActor<BombRock>();
 	NewBombRock->SetPos({ 200,450 });
@@ -120,7 +135,7 @@ void TestLevel::Loading()
 	NewItemHeart->SetPos({ 400,500 });
 
 	MonsterTwo* NewMonsterTwo = CreateActor<MonsterTwo>();
-	NewMonsterTwo->SetPos({ 600,500 });
+	NewMonsterTwo->SetPos({ 1000,500 });
 
 	Glasses* NewGlasses = CreateActor<Glasses>();
 	NewGlasses->SetPos({ 700,500 });
@@ -130,8 +145,8 @@ void TestLevel::Loading()
 
 	Heart* NewHeart = CreateActor<Heart>();
 	NewHeart->SetPos({ 900,500 });
-	/*MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
-	NewMonsterOne->SetPos({ 600,500 });*/
+	MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
+	NewMonsterOne->SetPos({ 600,500 });
 
 	CreateActor<MapOne>();
 	CreateActor<Door>();

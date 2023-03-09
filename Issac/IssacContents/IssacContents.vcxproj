@@ -43,6 +43,7 @@
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Rock.cpp" />
+    <ClCompile Include="Stone.cpp" />
     <ClCompile Include="Spike.cpp" />
     <ClCompile Include="Stage2Level.cpp" />
     <ClCompile Include="STLevel.cpp" />
@@ -79,6 +80,7 @@
     <ClInclude Include="Spike.h" />
     <ClInclude Include="Stage2Level.h" />
     <ClInclude Include="STLevel.h" />
+    <ClInclude Include="Stone.h" />
     <ClInclude Include="Tears.h" />
     <ClInclude Include="TestLevel.h" />
     <ClInclude Include="TitleBack.h" />

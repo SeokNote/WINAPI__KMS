@@ -53,7 +53,7 @@ void BloodTear::Start()
 	BloodTearRender->ChangeAnimation("Base");
 
 	{
-		BloodTearCol = CreateCollision(IssacCollisionOrder::Monster);
+		BloodTearCol = CreateCollision(IssacCollisionOrder::MonsterAttack);
 		BloodTearCol->SetScale({ 20, 20 });
 		BloodTearCol->SetDebugRenderType(CollisionType::CT_Rect);
 	}

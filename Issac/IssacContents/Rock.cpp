@@ -54,8 +54,8 @@ void Rock::Start()
 	RockRender->SetScale({ 70, 70 });
 
 
-	RockRender->CreateAnimation({ .AnimationName = "Rock_On",  .ImageName = "Rock.bmp", .Start = 0, .End = 0, .InterTime = 1.0f , .Loop = false });
-	RockRender->CreateAnimation({ .AnimationName = "Rock_Break",  .ImageName = "Rock.bmp", .Start = 3, .End = 3, .InterTime = 1.0f , .Loop = false });
+	RockRender->CreateAnimation({ .AnimationName = "Rock_On",  .ImageName = "Rock.bmp", .Start = 4, .End = 4, .InterTime = 1.0f , .Loop = false });
+	RockRender->CreateAnimation({ .AnimationName = "Rock_Break",  .ImageName = "Rock.bmp", .Start = 7, .End = 7, .InterTime = 1.0f , .Loop = false });
 
 
 

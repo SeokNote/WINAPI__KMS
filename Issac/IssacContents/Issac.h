@@ -7,6 +7,7 @@ enum class IssacState
 {
 	IDLE,
 	MOVE,
+	GET,
 };
 //enum class IssacDir
 //{
@@ -78,6 +79,7 @@ private:
 	float MoveSpeed = 200.0f;
 	float ResetTimeTears = 0.0f;
 	float ResetTimeBombs = 0.0f;
+	float GetTime = 0.0f;
 
 	float BlinkTime = 0.0f;
 	float DeadTime = 0.0f;
@@ -101,6 +103,7 @@ private:
 
 	GameEngineRender* IssacHeadRender = nullptr;
 	GameEngineRender* IssacBodyRender = nullptr;
+	GameEngineRender* GetRender = nullptr;
 
 	GameEngineCollision* IssacColltion = nullptr;
 	
@@ -116,6 +119,11 @@ private:
 	void MoveStart();
 	void MoveUpdate(float _Time);
 	void MoveEnd();
+
+
+	void GETStart();
+	void GETUpdate(float _Time);
+	void GETEnd();
 
 	void TearsAttack(float _DeltaTime);
 

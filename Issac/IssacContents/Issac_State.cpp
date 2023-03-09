@@ -26,6 +26,9 @@ void Issac::ChangeState(IssacState _State)
 	case IssacState::MOVE:
 		MoveStart();
 		break;
+	case IssacState::GET:
+		GETStart();
+		break;
 	default:
 		break;
 	}
@@ -37,6 +40,8 @@ void Issac::ChangeState(IssacState _State)
 		break;
 	case IssacState::MOVE:
 		MoveEnd();
+	case IssacState::GET:
+		GETEnd();
 		break;
 	default:
 		break;
@@ -55,6 +60,9 @@ void Issac::UpdateState(float _Time)
 	case IssacState::MOVE:
 		MoveUpdate(_Time);
 		break;
+	case IssacState::GET:
+		GETUpdate(_Time);
+		break;
 	default:
 		break;
 	}
@@ -71,6 +79,8 @@ void Issac::IdleStart() {
 
 	IssacHeadRender->ChangeAnimation(DirString + "HIdle");
 	IssacBodyRender->ChangeAnimation(DirString + "BIdle");
+//	GetRender->ChangeAnimation("GetItem");
+
 //	DirCheck("HIdle");
 	//DirCheck("BIdle");
 
@@ -93,6 +103,8 @@ void Issac::MoveStart() {
 	//DirCheck("BMove");
 	IssacHeadRender->ChangeAnimation(DirString +"HMove");
 	IssacBodyRender->ChangeAnimation(DirString +"BMove");
+//	GetRender->ChangeAnimation("GetItem");
+
 }
 void Issac::MoveUpdate(float _Time) {
 
@@ -128,4 +140,28 @@ void Issac::MoveUpdate(float _Time) {
 void Issac::MoveEnd() {
 
 
+}
+
+
+void Issac::GETStart() {
+
+
+	GetRender->ChangeAnimation("GetItem");
+
+
+}
+void Issac::GETUpdate(float _Time) //가만히 있을때 뭘해야할까
+{
+	GetTime += _Time;
+	
+	
+		if (1.0f < GetTime) {
+			ChangeState(IssacState::IDLE);
+		}
+
+
+}
+void Issac::GETEnd() {
+
+	GetTime = 0.0f;
 }

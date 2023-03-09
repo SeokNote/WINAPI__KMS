@@ -53,9 +53,6 @@ void MonsterOne::Start()
 	MonsterOneRender = CreateRender("Right_Monster1.BMP",IssacRenderOrder::Monster);
 	MonsterOneRender->SetScale({ 80, 80 });
 
-	MonsterOneDead = CreateRender(IssacRenderOrder::Dead);
-	MonsterOneDead->SetScale({ 80, 80 });
-
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Right_Monster1_Idle",  .ImageName = "Right_Monster1.bmp", .Start = 0, .End = 1, .InterTime = 0.1f });
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Right_Monster1_Damage",  .ImageName = "Right_Monster1.bmp", .Start = 14, .End = 15, .InterTime = 0.1f });
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Right_Monster1_Shoot",  .ImageName = "Right_Monster1.bmp", .Start = 2, .End = 11, .InterTime = 0.03f , .Loop = false });
@@ -63,7 +60,7 @@ void MonsterOne::Start()
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Left_Monster1_Idle",  .ImageName = "Left_Monster1.bmp", .Start = 0, .End = 1, .InterTime = 0.1f });
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Left_Monster1_Damage",  .ImageName = "Left_Monster1.bmp", .Start = 14, .End = 15, .InterTime = 0.1f });
 	MonsterOneRender->CreateAnimation({ .AnimationName = "Left_Monster1_Shoot",  .ImageName = "Left_Monster1.bmp", .Start = 2, .End = 11, .InterTime = 0.03f , .Loop = false });
-	MonsterOneRender->CreateAnimation({ .AnimationName = "Left_Monster1_Dead",  .ImageName = "Left_Monster1.bmp", .Start = 0, .End = 11, .InterTime = 0.03f, .Loop = false });
+	MonsterOneRender->CreateAnimation({ .AnimationName = "Left_Monster1_Dead",  .ImageName = "Monster02_Dead.bmp", .Start = 0, .End = 11, .InterTime = 0.03f, .Loop = false });
 	MonsterOneRender->ChangeAnimation("Right_Monster1_Idle");
 
 
@@ -95,10 +92,9 @@ void MonsterOne::Update(float _DeltaTime)
 		MonsterOneRender->ChangeAnimation("Left_Monster1_Dead");
 		if (true == MonsterOneRender->IsAnimationEnd())
 		{
-			MonsterOneDead->On();
-			MonsterOneRender->Death();
+			Death();
 		}
-		Death();
+		
 	}
 	MonsterOneAttTime += _DeltaTime;
 	if (MonsterOneAttTime > 3.0f)
@@ -137,8 +133,8 @@ void MonsterOne::Update(float _DeltaTime)
 		}
 	}
 
-//	Movecalculation(_DeltaTime);
-//	CollisionCheck(_DeltaTime);
+	Movecalculation(_DeltaTime);
+	CollisionCheck(_DeltaTime);
 }
 
 void MonsterOne::Movecalculation(float _DeltaTime)
@@ -150,7 +146,7 @@ void MonsterOne::Movecalculation(float _DeltaTime)
 		M_Move = float4::Zero;
 	}
 
-	SetMove(M_Move * 15.0f * _DeltaTime); //안따라다니게할때는 M_Move를 다르게설정하면될듯 >>움직이는 제한pos를 BackGround_CS로 해야함
+	SetMove(M_Move * 15.0f * _DeltaTime); 
 }
 
 
@@ -158,10 +154,10 @@ void MonsterOne::CollisionCheck(float _DeltaTime)
 {
 	NowTime += _DeltaTime;
 
-	if (NowTime >= 0.5f) //다음상호작용이 되려면 이만큼의 시간이 흘러야한다(몬스터가 죽는애니메이션시간보다는 길어야함)
+	if (NowTime >= 0.5f) 
 	{
 		NowTime = 0.0f;
-		MonsterOneSet->On();  //시간이지나면 다시collision을킨다
+		MonsterOneSet->On();
 		RESET = 1;
 
 	}
@@ -169,21 +165,24 @@ void MonsterOne::CollisionCheck(float _DeltaTime)
 	std::vector<GameEngineCollision*> FCollisions;
 	CollisionCheckParameter Check = { .TargetGroup = static_cast<int>(IssacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 
-	if (true == MonsterOneSet->Collision(Check, FCollisions)) //PlayerAtt에 닿았을때
+	if (true == MonsterOneCol->Collision(Check, FCollisions)) 
 	{
 		MonsterOneRender->ChangeAnimation("Right_Monster1_Damage");
-		FCollisions[0]->GetActor()->Death(); //닿은 ATT는 지워버리고
-		SetMove(float4::Left * 20); //맞으면 밀려남(매끄럽게안밀려남) 방향에따른 설정도해야할듯
+		FCollisions[0]->GetActor()->Death();
+		SetMove(float4::Left * 20); 
 
 		if (1 == RESET)
 		{
 			PooterHp = PooterHp - Issac::MainPlayer->GetTearDamage();
 			RESET = 0;
-			MonsterOneSet->Off(); //맞아도 일정시간동안 상호작용이안된다.
+			MonsterOneSet->Off(); 
 		}
 		if (0 >= PooterHp)
 		{
+			
 			PooterDeathcheck = true;
+			
+
 		}
 	}
 	
@@ -192,17 +191,17 @@ void MonsterOne::CollisionCheck(float _DeltaTime)
 	CollisionCheckParameter B_Check = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 	if (true == MonsterOneSet->Collision(B_Check, FCollisions))
 	{
-		PooterHp = PooterHp - 5; //이것은 폭탄의 데미지여
+		PooterHp = PooterHp - 5; 
+
 		if (0 >= PooterHp)
 		{
-			MonsterOneRender->ChangeAnimation("Right_Monster1_Dead");
 			PooterDeathcheck = true;
+			
+
 		}
 	}
 }
 
 void MonsterOne::Render(float _DeltaTime)
 {
-	//M_fly_Pooter->DebugRender();
-	//M_fly_Pooter_Set->DebugRender();
 }

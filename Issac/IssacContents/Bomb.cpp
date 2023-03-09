@@ -119,5 +119,5 @@ void Bomb::BlinkSet(float _DeltaTime)
 
 void Bomb::Render(float _DeltaTime)
 {
-	BombCol->DebugRender();
+//	BombCol->DebugRender();
 }

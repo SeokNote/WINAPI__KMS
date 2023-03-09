@@ -74,6 +74,11 @@ void Issac::Start()
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Left_Attack",  .ImageName = "Left_Issac.bmp",.Start = 2, .End = 3, });
 		IssacHeadRender->CreateAnimation({ .AnimationName = "Right_Attack",  .ImageName = "Right_Issac.bmp",.Start = 2, .End = 3, });
 
+	//	IssacHeadRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });
+
+		//GetRender = CreateRender(IssacRenderOrder::Player);
+		//GetRender->SetScale({ 125, 125 });
+		//GetRender->CreateAnimation({ .AnimationName = "GetItem",  .ImageName = "Isaac_Anim.bmp",.Start = 5, .End = 5, });
 
 	}
 	{
@@ -165,6 +170,7 @@ void Issac::CollisionCheck(float _DeltaTime)
 			HP -= 1;
 			IssacColltion->Off();
 		}
+		
 		std::vector<GameEngineCollision*> ICollisions;
 		CollisionCheckParameter CheckHp = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemHeart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckKey = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemKey), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
@@ -173,6 +179,7 @@ void Issac::CollisionCheck(float _DeltaTime)
 		CollisionCheckParameter CheckGlasses = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemGlasses), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckLeo = { .TargetGroup = static_cast<int>(IssacCollisionOrder::ItemLeo), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		CollisionCheckParameter CheckHeart = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Heart), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+		CollisionCheckParameter CheckMonsterA = { .TargetGroup = static_cast<int>(IssacCollisionOrder::MonsterAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 		//Heart
 		if (true == IssacColltion->Collision(CheckHp, ICollisions) && 6 != HP)
 		{
@@ -205,22 +212,34 @@ void Issac::CollisionCheck(float _DeltaTime)
 		}
 		if (true == IssacColltion->Collision(CheckGlasses, ICollisions))
 		{
+		//	ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckLeo, ICollisions))
 		{
+		//	ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
 		}
 		if (true == IssacColltion->Collision(CheckHeart, ICollisions))
 		{
+		//	ChangeState(IssacState::GET);
 
 			ICollisions[0]->GetActor()->Death();
 
 		}
+		if (true == IssacColltion->Collision(CheckMonsterA, ICollisions))
+		{
+
+			ICollisions[0]->GetActor()->Death();
+			HP -= 1;
+			IssacColltion->Off();
+
+		}
+		
 	}
 	
 }

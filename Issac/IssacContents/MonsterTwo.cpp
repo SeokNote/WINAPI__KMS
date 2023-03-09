@@ -35,8 +35,7 @@ void MonsterTwo::ImageLoad()
 
 	GameEngineImage* MonsterTwo = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02.BMP"));
 	MonsterTwo->Cut(4, 2);
-	GameEngineImage* MonsterTwoDead = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02_Dead.BMP"));
-	MonsterTwoDead->Cut(5, 3);
+
 
 }
 bool LoadMonster = true;

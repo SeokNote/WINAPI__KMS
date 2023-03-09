@@ -92,6 +92,9 @@
     <ClCompile Include="Heart.cpp">
       <Filter>Play\Object\Items\Heart</Filter>
     </ClCompile>
+    <ClCompile Include="Stone.cpp">
+      <Filter>Play\Object\Rock</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -182,6 +185,9 @@
     </ClInclude>
     <ClInclude Include="Heart.h">
       <Filter>Play\Object\Items\Heart</Filter>
+    </ClInclude>
+    <ClInclude Include="Stone.h">
+      <Filter>Play\Object\Rock</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,6 @@ protected:
 
 private:
 	GameEngineRender* MonsterOneRender = nullptr;
-	GameEngineRender* MonsterOneDead = nullptr;
 	GameEngineCollision* MonsterOneCol = nullptr;
 	GameEngineCollision* MonsterOneSet = nullptr;
 
