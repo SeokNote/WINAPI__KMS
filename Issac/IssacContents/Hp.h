@@ -31,7 +31,7 @@ private:
 
 	int IsaacHP = 0;
 
-	void GetandSetIsaacHP();
+	void SetIsaacHP();
 	void HpSet(int _PlayerHP);
 };
 

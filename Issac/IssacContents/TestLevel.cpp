@@ -115,42 +115,36 @@ void TestLevel::Loading()
 	Issac* NewIssac = CreateActor<Issac>();
 	NewIssac->SetPos({ 300,300 });
 
-	/*MonsterOne* NewMonster1 = CreateActor<MonsterOne>();
-	NewMonster1->SetPos({ 200,200 });*/
+	Rock* NewRR = CreateActor<Rock>();
+	NewRR->SetPos({ 165,145 });
 
-	Poop* NewPoop = CreateActor<Poop>();
-	NewPoop->SetPos({ 200,140 });
+	Rock* NewRR1 = CreateActor<Rock>();
+	NewRR1->SetPos({ 1115,145 });
 
+	Rock* NewRR2 = CreateActor<Rock>();
+	NewRR2->SetPos({ 165,580 });
 
-	Rock* NewRock = CreateActor<Rock>();
-	NewRock->SetPos({ 200,260 });
-
-
-
-
-	STone* NewSTone = CreateActor<STone>();
-	NewSTone->SetPos({ 200,200 });
-
-	BombRock* NewBombRock = CreateActor<BombRock>();
-	NewBombRock->SetPos({ 200,450 });
-
+	Rock* NewRR3 = CreateActor<Rock>();
+	NewRR3->SetPos({ 1115,580 });
 
 	Spike* NewSpike = CreateActor<Spike>();
 	NewSpike->SetPos({ 600,450 });
 
+	//
+
 	ItemBomb* NewItemBomb = CreateActor<ItemBomb>();
-	NewItemBomb->SetPos({ 200,500 });
+	NewItemBomb->SetPos({ 300,200 });
 
 
 	ItemCoin* NewItemCoin = CreateActor<ItemCoin>();
-	NewItemCoin->SetPos({ 200,550 });
+	NewItemCoin->SetPos({ 500,200 });
 
 	ItemKey* NewItemKey = CreateActor<ItemKey>();
-	NewItemKey->SetPos({ 300,500 });
+	NewItemKey->SetPos({ 700,200 });
 
 
 	ItemHeart* NewItemHeart = CreateActor<ItemHeart>();
-	NewItemHeart->SetPos({ 400,500 });
+	NewItemHeart->SetPos({ 900,200 });
 
 
 // Stage 2
@@ -169,13 +163,13 @@ void TestLevel::Loading()
 	Leo* NewLeo = CreateActor<Leo>();
 	NewLeo->SetPos({ 630,1100 });
 
-	Rock* NewRock1 = CreateActor<Rock>();
+	Poop* NewRock1 = CreateActor<Poop>();
 	NewRock1->SetPos({315+ 370,1100 });
-	Rock* NewRock2 = CreateActor<Rock>();
+	Poop* NewRock2 = CreateActor<Poop>();
 	NewRock2->SetPos({ 315 + 315,1150 });
-	Rock* NewRock3 = CreateActor<Rock>();
+	Poop* NewRock3 = CreateActor<Poop>();
 	NewRock3->SetPos({ 315 + 260,1100 });
-	Rock* NewRock4 = CreateActor<Rock>();
+	Poop* NewRock4 = CreateActor<Poop>();
 	NewRock4->SetPos({ 315 + 315,1050 });
 
 	
@@ -187,24 +181,13 @@ void TestLevel::Loading()
 	NewSTone5->SetPos({ 615+370,1100 });
 	STone* NewSTone6 = CreateActor<STone>();
 	NewSTone6->SetPos({ 615 + 315,1150 });
-	STone* NewSTone7 = CreateActor<STone>();
+	BombRock* NewSTone7 = CreateActor<BombRock>();
 	NewSTone7->SetPos({ 615 + 260,1100 });
 	STone* NewSTone8 = CreateActor<STone>();
 	NewSTone8->SetPos({ 615 + 315,1050 });
 
 
 
-	//MonsterOne* NewMonsterOne = CreateActor<MonsterOne>();
-	//NewMonsterOne->SetPos({ 600,500 });
-	
-	//MonsterTwo* NewMonsterTwo = CreateActor<MonsterTwo>();
-	//NewMonsterTwo->SetPos({ 1000,500 });
-
-
-	//Loki* NewLoki = CreateActor<Loki>();
-	//NewLoki->SetPos({ 1000,500 });
-
-	
 	CreateActor<MapOne>();
 	CreateActor<MonsterSet>();
 	CreateActor<BossSet>();

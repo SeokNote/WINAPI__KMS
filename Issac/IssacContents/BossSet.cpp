@@ -37,6 +37,6 @@ void BossSet::Update(float _DeltaTime)
 
 void BossSet::Render(float _DeltaTime)
 {
-	BossSetCol->DebugRender();
+//	BossSetCol->DebugRender();
 }
 

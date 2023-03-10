@@ -39,6 +39,6 @@ void MonsterSet::Update(float _DeltaTime)
 
 void MonsterSet::Render(float _DeltaTime)
 {
-	MonsterSetCol->DebugRender();
+//	MonsterSetCol->DebugRender();
 }
 

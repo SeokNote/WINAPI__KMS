@@ -30,7 +30,7 @@ void Issac::ChangeState(IssacState _State)
 	//	GETStart();
 	//	break;
 	case IssacState::Attack:
-		AttackStart();
+		//AttackStart();
 		break;
 	default:
 		break;
@@ -47,7 +47,7 @@ void Issac::ChangeState(IssacState _State)
 	//	GETEnd();
 	//	break;
 	case IssacState::Attack:
-		AttackEnd();
+	//	AttackEnd();
 		break;
 	default:
 		break;
@@ -70,7 +70,7 @@ void Issac::UpdateState(float _Time)
 		GETUpdate(_Time);
 		break;*/
 	case IssacState::Attack:
-		AttackUpdate(_Time);
+		//AttackUpdate(_Time);
 		break;
 	default:
 		break;
@@ -203,40 +203,40 @@ void Issac::MoveEnd() {
 //	GetTime = 0.0f;
 //}
 
-void Issac::AttackStart()
-{
-	DirCheck("Attack", "BMove");
-
-}
-
-void Issac::AttackUpdate(float _Time)
-{
-	if (false == GameEngineInput::IsPress("LeftTears") && false == GameEngineInput::IsPress("RightTears") && false == GameEngineInput::IsPress("DownTears") && false == GameEngineInput::IsPress("UpTears"))
-	{
-		ChangeState(IssacState::MOVE);
-		return; //최종 결정후 무조건 리턴
-	}
-	//float4 Dir;
-	//if (true == GameEngineInput::IsPress("LeftTears"))
-	//{
-	//	Dir += float4::Left;
-	//}
-	//else if (true == GameEngineInput::IsPress("RightTears"))
-	//{
-	//	Dir += float4::Right;
-	//}
-	//if (true == GameEngineInput::IsPress("DownTears"))
-	//{
-	//	Dir += float4::Down;
-	//}
-	//if (true == GameEngineInput::IsPress("UpTears"))
-	//{
-	//	Dir += float4::Up;
-	//}
-
-	DirCheck("Attack", "BMove");
-}
-
-void Issac::AttackEnd()
-{
-}
+//void Issac::AttackStart()
+//{
+//	DirCheck("Attack", "BMove");
+//
+//}
+//
+//void Issac::AttackUpdate(float _Time)
+//{
+//	if (false == GameEngineInput::IsPress("LeftTears") && false == GameEngineInput::IsPress("RightTears") && false == GameEngineInput::IsPress("DownTears") && false == GameEngineInput::IsPress("UpTears"))
+//	{
+//		ChangeState(IssacState::MOVE);
+//		return; //최종 결정후 무조건 리턴
+//	}
+//	//float4 Dir;
+//	//if (true == GameEngineInput::IsPress("LeftTears"))
+//	//{
+//	//	Dir += float4::Left;
+//	//}
+//	//else if (true == GameEngineInput::IsPress("RightTears"))
+//	//{
+//	//	Dir += float4::Right;
+//	//}
+//	//if (true == GameEngineInput::IsPress("DownTears"))
+//	//{
+//	//	Dir += float4::Down;
+//	//}
+//	//if (true == GameEngineInput::IsPress("UpTears"))
+//	//{
+//	//	Dir += float4::Up;
+//	//}
+//
+//	DirCheck("Attack", "BMove");
+//}
+//
+//void Issac::AttackEnd()
+//{
+//}

@@ -141,9 +141,9 @@ private:
 	void GETUpdate(float _Time);
 	void GETEnd();
 
-	void AttackStart();
+	/*void AttackStart();
 	void AttackUpdate(float _Time);
-	void AttackEnd();
+	void AttackEnd();*/
 
 	void TearsAttack(float _DeltaTime);
 
