@@ -21,6 +21,9 @@
 #include "Glasses.h"
 #include "Leo.h"
 #include "Heart.h"
+#include "BoomCount.h"
+#include "CoinCount.h"
+#include "KeyCount.h"
 
 #include "MonsterOne.h"
 #include "MonsterTwo.h"
@@ -64,6 +67,10 @@ void TestLevel::ImageLoad() {
 
 		GameEngineImage* Image3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Door_Down.BMP"));
 
+		GameEngineImage* ItemUI = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("ItemsUI.BMP"));
+		ItemUI->Cut(3, 2);
+		GameEngineImage* Number = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Number.BMP"));
+		Number->Cut(10, 1);
 		GameEngineImage* MonsterTwoDead = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02_Dead.BMP"));
 		MonsterTwoDead->Cut(5, 3);
 
@@ -86,13 +93,15 @@ void TestLevel::ImageLoad() {
 			TearImagePop->Cut(4, 4);
 		}
 		{
-			GameEngineImage* Hp = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP0.BMP"));
-			GameEngineImage* Hp1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP1.BMP"));
-			GameEngineImage* Hp2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP2.BMP"));
-			GameEngineImage* Hp3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP3.BMP"));
-			GameEngineImage* Hp4 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP4.BMP"));
-			GameEngineImage* Hp5 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP5.BMP"));
-			GameEngineImage* Hp6 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP6.BMP"));
+			GameEngineImage* Hp = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("HP.BMP"));
+			Hp->Cut(5, 2);
+	
+			//GameEngineImage* Hp1 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP1.BMP"));
+			//GameEngineImage* Hp2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP2.BMP"));
+			//GameEngineImage* Hp3 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP3.BMP"));
+			//GameEngineImage* Hp4 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP4.BMP"));
+			//GameEngineImage* Hp5 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP5.BMP"));
+			//GameEngineImage* Hp6 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("PlayerHP6.BMP"));
 
 		}
 		
@@ -192,9 +201,10 @@ void TestLevel::Loading()
 	CreateActor<MonsterSet>();
 	CreateActor<BossSet>();
 	CreateActor<HP>();
-
+	CreateActor<BoomCount>();
+	CreateActor<CoinCount>();
+	CreateActor<KeyCount>();
 	
-
 }
 
 bool SetMonster = true;

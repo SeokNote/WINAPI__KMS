@@ -113,6 +113,15 @@
     <ClCompile Include="EndLevel.cpp">
       <Filter>Play\Level\EndLevel</Filter>
     </ClCompile>
+    <ClCompile Include="BoomCount.cpp">
+      <Filter>Play\UI\Bomb</Filter>
+    </ClCompile>
+    <ClCompile Include="CoinCount.cpp">
+      <Filter>Play\UI\Coin</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyCount.cpp">
+      <Filter>Play\UI\Key</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IssacCore.h" />
@@ -225,6 +234,15 @@
     <ClInclude Include="EndLevel.h">
       <Filter>Play\Level\EndLevel</Filter>
     </ClInclude>
+    <ClInclude Include="BoomCount.h">
+      <Filter>Play\UI\Bomb</Filter>
+    </ClInclude>
+    <ClInclude Include="CoinCount.h">
+      <Filter>Play\UI\Coin</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCount.h">
+      <Filter>Play\UI\Key</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -325,6 +343,15 @@
     </Filter>
     <Filter Include="Play\Level\EndLevel">
       <UniqueIdentifier>{cd3922a8-0857-4a5b-a100-7da137e0d0d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI\Bomb">
+      <UniqueIdentifier>{c79b768e-cc2d-46e9-90e5-14c9dea14265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI\Coin">
+      <UniqueIdentifier>{85f3cd43-4a8a-4465-9cd3-fe166248f21d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Play\UI\Key">
+      <UniqueIdentifier>{a02f36c5-3625-4e58-b0c6-b9e900866e00}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

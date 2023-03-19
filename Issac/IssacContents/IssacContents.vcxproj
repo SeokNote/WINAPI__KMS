@@ -22,7 +22,9 @@
     <ClCompile Include="BloodTear.cpp" />
     <ClCompile Include="Bomb.cpp" />
     <ClCompile Include="BombRock.cpp" />
+    <ClCompile Include="BoomCount.cpp" />
     <ClCompile Include="BossSet.cpp" />
+    <ClCompile Include="CoinCount.cpp" />
     <ClCompile Include="ContentsValue.cpp" />
     <ClCompile Include="Door.cpp" />
     <ClCompile Include="EndBack.cpp" />
@@ -41,6 +43,7 @@
     <ClCompile Include="ItemCoin.cpp" />
     <ClCompile Include="ItemHeart.cpp" />
     <ClCompile Include="ItemKey.cpp" />
+    <ClCompile Include="KeyCount.cpp" />
     <ClCompile Include="Leo.cpp" />
     <ClCompile Include="Loki.cpp" />
     <ClCompile Include="MapOne.cpp" />
@@ -62,7 +65,9 @@
     <ClInclude Include="BloodTear.h" />
     <ClInclude Include="Bomb.h" />
     <ClInclude Include="BombRock.h" />
+    <ClInclude Include="BoomCount.h" />
     <ClInclude Include="BossSet.h" />
+    <ClInclude Include="CoinCount.h" />
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h" />
     <ClInclude Include="Door.h" />
@@ -81,6 +86,7 @@
     <ClInclude Include="ItemCoin.h" />
     <ClInclude Include="ItemHeart.h" />
     <ClInclude Include="ItemKey.h" />
+    <ClInclude Include="KeyCount.h" />
     <ClInclude Include="Leo.h" />
     <ClInclude Include="Loki.h" />
     <ClInclude Include="MapOne.h" />

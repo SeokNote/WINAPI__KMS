@@ -21,17 +21,13 @@ protected:
 	void Update(float _DeltaTime);
 
 private:
-	GameEngineRender* HpRender0 = nullptr;
 	GameEngineRender* HpRender1 = nullptr;
 	GameEngineRender* HpRender2 = nullptr;
 	GameEngineRender* HpRender3 = nullptr;
-	GameEngineRender* HpRender4 = nullptr;
-	GameEngineRender* HpRender5 = nullptr;
-	GameEngineRender* HpRender6 = nullptr;
 
 	int IsaacHP = 0;
 
-	void SetIsaacHP();
+	void SetIssacHP();
 	void HpSet(int _PlayerHP);
 };
 
