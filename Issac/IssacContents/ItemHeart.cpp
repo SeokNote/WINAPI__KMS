@@ -8,7 +8,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 
 #include "ItemHeart.h"
@@ -45,14 +45,14 @@ void ItemHeart::Start()
 		ImageLoad();
 		Load = false;
 	}
-	HeartRender = CreateRender(IssacRenderOrder::Object);
+	HeartRender = CreateRender(IsaacRenderOrder::Object);
 	HeartRender->SetScale({ 70, 70 });
 	
 	HeartRender->CreateAnimation({ .AnimationName = "Heart",  .ImageName = "Heart.bmp", .Start = 0, .End = 0, .InterTime = 1.0f , .Loop = false });
 	HeartRender->ChangeAnimation("Heart");
 
 	{
-		HeartCol = CreateCollision(IssacCollisionOrder::ItemHeart);
+		HeartCol = CreateCollision(IsaacCollisionOrder::ItemHeart);
 		HeartCol->SetScale({ 10, 10 });
 		HeartCol->On();
 		HeartCol->SetDebugRenderType(CollisionType::CT_Rect);

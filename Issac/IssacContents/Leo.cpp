@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineResources.h>
 
 #include "ContentsEnums.h"
-#include "issac.h"
+#include "Isaac.h"
 
 
 
@@ -46,13 +46,13 @@ void Leo::Start()
 	}
 	// 兄希 持失
 	{
-		LeoRender = CreateRender(IssacRenderOrder::Object);
+		LeoRender = CreateRender(IsaacRenderOrder::Object);
 		LeoRender->SetScale({ 60, 60 });
 		LeoRender->SetImage("Item_Leo.BMP");
 	}
 	//Colliison持失
 	{
-		LeoCol = CreateCollision(IssacCollisionOrder::ItemLeo);
+		LeoCol = CreateCollision(IsaacCollisionOrder::ItemLeo);
 		LeoCol->SetScale({ 30,30 });
 		LeoCol->SetDebugRenderType(CollisionType::CT_Rect);
 	}

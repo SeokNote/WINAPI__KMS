@@ -42,12 +42,12 @@ void HpBar::Start()
 		ImageLoad();
 		HpbarLoad = false;
 	}
-	HpbarRender = CreateRender(IssacRenderOrder::Object);
+	HpbarRender = CreateRender(IsaacRenderOrder::Object);
 	HpbarRender->CreateAnimation({ .AnimationName = "HpBar",  .ImageName = "Hpbar.bmp", .Start = 1, .End = 1 });
 	HpbarRender->SetScale({ 450, 96 });
 	HpbarRender->ChangeAnimation("HpBar");
 
-	HpbarBackRender = CreateRender("Hpbar2.BMP", IssacRenderOrder::Object);
+	HpbarBackRender = CreateRender("Hpbar2.BMP", IsaacRenderOrder::Object);
 	HpbarBackRender->SetScale({ 330, 96 });
 	HpbarBackRender->SetPosition({ 5,0 });
 

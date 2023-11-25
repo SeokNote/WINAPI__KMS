@@ -3,14 +3,14 @@
 #include <GameEngineCore/GameEngineCollision.h>
 #include <GameEngineCore/GameEngineResources.h>
 
-enum class IssacState
+enum class IsaacState
 {
 	IDLE,
 	MOVE,
 	GET,
 	Attack,
 };
-//enum class IssacDir
+//enum class IsaacDir
 //{
 //	Left,
 //	Right,
@@ -18,28 +18,28 @@ enum class IssacState
 //	Down,
 //};
 // Ό³Έν :
-class Issac : public GameEngineActor
+class Isaac : public GameEngineActor
 {
 public:
-	static Issac* MainPlayer;
+	static Isaac* MainPlayer;
 
 	// constrcuter destructer
-	Issac();
-	~Issac();
+	Isaac();
+	~Isaac();
 
 	// delete Function
-	Issac(const Issac& _Other) = delete;
-	Issac(Issac&& _Other) noexcept = delete;
-	Issac& operator=(const Issac& _Other) = delete;
-	Issac& operator=(Issac&& _Other) noexcept = delete;
+	Isaac(const Isaac& _Other) = delete;
+	Isaac(Isaac&& _Other) noexcept = delete;
+	Isaac& operator=(const Isaac& _Other) = delete;
+	Isaac& operator=(Isaac&& _Other) noexcept = delete;
 
 	void Movecalculation(float _DeltaTime);
 	void CollisionCheck(float _DeltaTime);
 	void BombCheck(float _DeltaTime);
 
-	GameEngineCollision* GetIssacCollision()
+	GameEngineCollision* GetIsaacCollision()
 	{
-		return IssacColltion;
+		return IsaacColltion;
 	}
 	//-----------------
 	int GetKeyCount()
@@ -105,7 +105,7 @@ private:
 	int CoinCount = 0;
 
 
-	bool HitIssac = false;
+	bool HitIsaac = false;
 	int HP = 6;
 	int MaxHP = 6;
 
@@ -115,17 +115,17 @@ private:
 	std::string DirString = "Right_";
 	std::string BDirString = "Right_";
 
-	IssacState StateValue = IssacState::IDLE;
+	IsaacState StateValue = IsaacState::IDLE;
 
-	GameEngineRender* IssacHeadRender = nullptr;
-	GameEngineRender* IssacBodyRender = nullptr;
+	GameEngineRender* IsaacHeadRender = nullptr;
+	GameEngineRender* IsaacBodyRender = nullptr;
 	//GameEngineRender* GetRender = nullptr;
 
-	GameEngineCollision* IssacColltion = nullptr;
+	GameEngineCollision* IsaacColltion = nullptr;
 	
 	//void DirCheck(const std::string_view& _AnimationName);
 	void DirCheck(const std::string_view& _AnimationName, const std::string_view& _AnimationName1);
-	void ChangeState(IssacState _State);
+	void ChangeState(IsaacState _State);
 	void UpdateState(float _Time);
 
 	void IdleStart();
@@ -135,15 +135,6 @@ private:
 	void MoveStart();
 	void MoveUpdate(float _Time);
 	void MoveEnd();
-
-
-	void GETStart();
-	void GETUpdate(float _Time);
-	void GETEnd();
-
-	/*void AttackStart();
-	void AttackUpdate(float _Time);
-	void AttackEnd();*/
 
 	void TearsAttack(float _DeltaTime);
 

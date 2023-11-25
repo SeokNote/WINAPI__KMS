@@ -1,4 +1,4 @@
-#include "IssacCore.h"
+#include "IsaacCore.h"
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include "TitleLevel.h"
 #include "IntroLevel.h"
@@ -9,17 +9,17 @@
 
 // 중간에 절대로 지워지지 않을애를 포인터형으로 만들어서 동적할당해서 사용한다는건
 // 제가보기에는 왜??? 그래야하지?
-IssacCore IssacCore::Core;
+IsaacCore IsaacCore::Core;
 
-IssacCore::IssacCore()
+IsaacCore::IsaacCore()
 {
 }
 
-IssacCore::~IssacCore()
+IsaacCore::~IsaacCore()
 {
 }
 
-void IssacCore::Start()
+void IsaacCore::Start()
 {
 	// GameEngineDebug::LeakPointBreak(557);
 	new int();
@@ -37,10 +37,10 @@ void IssacCore::Start()
 	ChangeLevel("TitleLevel");
 }
 
-void IssacCore::Update()
+void IsaacCore::Update()
 {
 
 }
-void IssacCore::End()
+void IsaacCore::End()
 {
 }

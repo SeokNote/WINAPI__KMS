@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 
 #include "ItemBomb.h"
@@ -50,13 +50,13 @@ void ItemBomb::Start()
 		ImageLoad();
 		LoadItemBomb = false;
 	}
-	ItemBombRender = CreateRender(IssacRenderOrder::Object);
+	ItemBombRender = CreateRender(IsaacRenderOrder::Object);
 	ItemBombRender->SetScale({ 65, 65 });
 
 	ItemBombRender->CreateAnimation({ .AnimationName = "ItemBomb",  .ImageName = "ItemBomb.bmp", .Start = 0, .End = 0, .InterTime = 1.0f , .Loop = false });
 	ItemBombRender->ChangeAnimation("ItemBomb");
 	{
-		ItemBombCol = CreateCollision(IssacCollisionOrder::ItemBomb);
+		ItemBombCol = CreateCollision(IsaacCollisionOrder::ItemBomb);
 		ItemBombCol->SetScale({ 10, 10 });
 		ItemBombCol->On();
 		ItemBombCol->SetDebugRenderType(CollisionType::CT_Rect);

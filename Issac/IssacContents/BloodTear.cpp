@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineResources.h>
 
 #include "ContentsEnums.h"
-#include "issac.h"
+#include "Isaac.h"
 
 
 
@@ -45,7 +45,7 @@ void BloodTear::Start()
 		BloodTearLoad = false;
 	}
 	{
-		BloodTearRender = CreateRender(IssacRenderOrder::Player);
+		BloodTearRender = CreateRender(IsaacRenderOrder::Player);
 		BloodTearRender->SetScale({ 90, 90 });
 		BloodTearRender->CreateAnimation({ .AnimationName = "Base", .ImageName = "BloodTear_Pop.BMP", .Start = 0, .End = 0, .InterTime = 0.1f });
 		BloodTearRender->CreateAnimation({ .AnimationName = "Pop", .ImageName = "BloodTear_Pop.BMP", .Start = 1, .End = 15, .InterTime = 0.03f , .Loop = false });
@@ -53,7 +53,7 @@ void BloodTear::Start()
 	BloodTearRender->ChangeAnimation("Base");
 
 	{
-		BloodTearCol = CreateCollision(IssacCollisionOrder::MonsterAttack);
+		BloodTearCol = CreateCollision(IsaacCollisionOrder::MonsterAttack);
 		BloodTearCol->SetScale({ 20, 20 });
 		BloodTearCol->SetDebugRenderType(CollisionType::CT_Rect);
 	}

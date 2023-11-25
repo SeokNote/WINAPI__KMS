@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineResources.h>
 
 #include "ContentsEnums.h"
-#include "issac.h"
+#include "Isaac.h"
 
 
 
@@ -41,7 +41,7 @@ void Tears::Start()
 	//	T_ImagePop->Cut(4, 4);
 	//}
 	{
-		TearsRender = CreateRender(IssacRenderOrder::Player);
+		TearsRender = CreateRender(IsaacRenderOrder::Player);
 		TearsRender->SetScale({ 64, 64 });
 		TearsRender->SetPosition({ 0,0 });
 		TearsRender->CreateAnimation({ .AnimationName = "Tears", .ImageName = "Tear.BMP", .Start = 6, .End = 6, .InterTime = 0.1f });
@@ -51,7 +51,7 @@ void Tears::Start()
 
 	// Collision »ý¼º
 	{
-		Collision = CreateCollision(IssacCollisionOrder::PlayerAttack);
+		Collision = CreateCollision(IsaacCollisionOrder::PlayerAttack);
 		Collision->SetScale({ 20, 20 });
 		Collision->SetDebugRenderType(CollisionType::CT_Rect);
 	}
@@ -76,7 +76,7 @@ void Tears::Update(float _DeltaTime)
 		}
 	}
 	MoveCalculation(_DeltaTime);
-	SetMove(MoveDir * Issac::MainPlayer->GetTearSpeed() * _DeltaTime);
+	SetMove(MoveDir * Isaac::MainPlayer->GetTearSpeed() * _DeltaTime);
 }
 
 void Tears::MoveCalculation(float _DeltaTime)

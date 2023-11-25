@@ -9,7 +9,7 @@
 #include <GameEngineCore/GameEngineCollision.h>
 #include <GameEngineCore/GameEngineCore.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "Loki.h"
 #include "BloodTear.h"
@@ -50,7 +50,7 @@ void Loki::Start()
 		ImageLoad();
 		LokiImage = false;
 	}
-	LokiRender = CreateRender("Loki.BMP", IssacRenderOrder::Boss);
+	LokiRender = CreateRender("Loki.BMP", IsaacRenderOrder::Boss);
 	LokiRender->SetScale({ 150, 150 });
 
 	LokiRender->CreateAnimation({ .AnimationName = "Loki_Idle",  .ImageName = "Loki.bmp", .Start = 0, .End = 0, .InterTime = 0.1f });
@@ -64,7 +64,7 @@ void Loki::Start()
 
 	{
 
-		LokiCol = CreateCollision(IssacCollisionOrder::Boss);
+		LokiCol = CreateCollision(IsaacCollisionOrder::Boss);
 		LokiCol->SetScale({ 120, 100 });
 		LokiCol->On();
 		LokiCol->SetDebugRenderType(CollisionType::CT_Rect);
@@ -174,24 +174,9 @@ void Loki::Update(float _DeltaTime)
 		LokiRender->ChangeAnimation("Loki_Idle");
 
 	}
-	Movecalculation(_DeltaTime);
+	MonsterBase::Movecalculation(_DeltaTime, LokiDeathcheck);
 	CollisionCheck(_DeltaTime);
 }
-
-void Loki::Movecalculation(float _DeltaTime)
-{
-	LokiSpeed = 20.0f;
-
-	float4 M_Move = Issac::MainPlayer->GetPos() - GetPos();
-	M_Move.Normalize();
-	if (true == LokiDeathcheck)
-	{
-		M_Move = float4::Zero;
-	}
-
-	SetMove(M_Move * LokiSpeed * _DeltaTime);
-}
-
 
 void Loki::CollisionCheck(float _DeltaTime)
 {
@@ -205,7 +190,7 @@ void Loki::CollisionCheck(float _DeltaTime)
 	}
 
 	std::vector<GameEngineCollision*> FCollisions;
-	CollisionCheckParameter Check = { .TargetGroup = static_cast<int>(IssacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter Check = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 
 	if (true == LokiCol->Collision(Check, FCollisions))
 	{
@@ -215,7 +200,7 @@ void Loki::CollisionCheck(float _DeltaTime)
 
 		if (1 == RESET)
 		{
-			LokiHp = LokiHp - Issac::MainPlayer->GetTearDamage();
+			LokiHp = LokiHp - Isaac::MainPlayer->GetTearDamage();
 			RESET = 0;
 		}
 		if (0 >= LokiHp)
@@ -227,7 +212,7 @@ void Loki::CollisionCheck(float _DeltaTime)
 
 
 
-	CollisionCheckParameter B_Check = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter B_Check = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 	if (true == LokiCol->Collision(B_Check, FCollisions))
 	{
 		LokiHp = LokiHp - 5;

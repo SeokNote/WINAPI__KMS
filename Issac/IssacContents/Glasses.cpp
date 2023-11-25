@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineResources.h>
 
 #include "ContentsEnums.h"
-#include "issac.h"
+#include "Isaac.h"
 
 
 
@@ -46,13 +46,13 @@ void Glasses::Start()
 	}
 	// 兄希 持失
 	{
-		GlassesRender = CreateRender(IssacRenderOrder::Object);
+		GlassesRender = CreateRender(IsaacRenderOrder::Object);
 		GlassesRender->SetScale({ 60, 60 });
 		GlassesRender->SetImage("Item_Glasses.BMP");
 	}
 	//Colliison持失
 	{
-		GlassesCol = CreateCollision(IssacCollisionOrder::ItemGlasses);
+		GlassesCol = CreateCollision(IsaacCollisionOrder::ItemGlasses);
 		GlassesCol->SetScale({ 30,30 });
 		GlassesCol->SetDebugRenderType(CollisionType::CT_Rect);
 	}

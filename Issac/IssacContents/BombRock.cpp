@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "BombRock.h"
 
@@ -46,7 +46,7 @@ void BombRock::ImageLoad()
 void BombRock::Start()
 {
 
-	BombRockRender = CreateRender(IssacRenderOrder::Object);
+	BombRockRender = CreateRender(IsaacRenderOrder::Object);
 	BombRockRender->SetScale({ 70, 70 });
 
 
@@ -57,7 +57,7 @@ void BombRock::Start()
 
 	{
 
-		BombRockCol = CreateCollision(IssacCollisionOrder::Rock);
+		BombRockCol = CreateCollision(IsaacCollisionOrder::Rock);
 		BombRockCol->SetScale({ 50, 50 });
 		BombRockCol->On();
 		BombRockCol->SetDebugRenderType(CollisionType::CT_Rect);
@@ -76,15 +76,15 @@ bool DropItemBomb = true;
 void BombRock::CollisionCheck(float _DeltaTime)
 {
 	std::vector<GameEngineCollision*> RCollisions;
-	CollisionCheckParameter CheckBombRock = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
-	CollisionCheckParameter CheckAttack = { .TargetGroup = static_cast<int>(IssacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter CheckBombRock = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter CheckAttack = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 
 	if (true == BombRockCol->Collision(CheckBombRock, RCollisions)) //ÆøÅº¿¡´êÀ¸¸é
 	{
 		if (true == DropItemBomb)
 		{
 			BombRockRender->ChangeAnimation("BombRockBreaks");
-			ItemBomb* RockItem = GetLevel()->CreateActor<ItemBomb>(IssacRenderOrder::Object);
+			ItemBomb* RockItem = GetLevel()->CreateActor<ItemBomb>(IsaacRenderOrder::Object);
 			RockItem->SetPos(GetPos());
 			BombRockCol->Off();
 			DropItemBomb = false;

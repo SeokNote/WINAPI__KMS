@@ -1,6 +1,5 @@
 #include "TestLevel.h"
-#include "Issac.h"
-#include "MonsterOne.h"
+#include "Isaac.h"
 #include "Door.h"
 #include "Poop.h"
 #include "Rock.h"
@@ -25,8 +24,8 @@
 #include "CoinCount.h"
 #include "KeyCount.h"
 
-#include "MonsterOne.h"
-#include "MonsterTwo.h"
+#include "Pooter.h"
+#include "Fly.h"
 #include "Loki.h"
 
 #include <GameEngineCore/GameEngineActor.h>
@@ -71,15 +70,15 @@ void TestLevel::ImageLoad() {
 		ItemUI->Cut(3, 2);
 		GameEngineImage* Number = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Number.BMP"));
 		Number->Cut(10, 1);
-		GameEngineImage* MonsterTwoDead = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02_Dead.BMP"));
-		MonsterTwoDead->Cut(5, 3);
+		GameEngineImage* FlyDead = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Monster02_Dead.BMP"));
+		FlyDead->Cut(5, 3);
 
 		{
-			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Issac.BMP"));
+			GameEngineImage* Image = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Right_Isaac.BMP"));
 			Image->Cut(8, 4);
 		}
 		{
-			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Issac.BMP"));
+			GameEngineImage* Image2 = GameEngineResources::GetInst().ImageLoad(Dir.GetPlusFileName("Left_Isaac.BMP"));
 			Image2->Cut(8, 4);
 		}
 		
@@ -121,8 +120,8 @@ void TestLevel::Loading()
 	}
 
 
-	Issac* NewIssac = CreateActor<Issac>();
-	NewIssac->SetPos({ 300,300 });
+	Isaac* NewIsaac = CreateActor<Isaac>();
+	NewIsaac->SetPos({ 300,300 });
 
 	Rock* NewRR = CreateActor<Rock>();
 	NewRR->SetPos({ 165,145 });
@@ -219,27 +218,27 @@ void TestLevel::Update(float _DeltaTime)
 		_Time += _DeltaTime * 3.0f;
 	}
 
-	if (true== SetMonster && true == Issac::MainPlayer->GetIssacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::MonsterSetting),
+	if (true== SetMonster && true == Isaac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IsaacCollisionOrder::MonsterSetting),
 	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
 	{
 		SetMonster = false;
-		MonsterOne* NewMonster1 =CreateActor<MonsterOne>();
+		Pooter* NewMonster1 =CreateActor<Pooter>();
 		NewMonster1->SetPos({ 230,1690 });
-		MonsterOne* NewMonster2 = CreateActor<MonsterOne>();
+		Pooter* NewMonster2 = CreateActor<Pooter>();
 		NewMonster2->SetPos({ 230,1790 });
-		MonsterOne* NewMonster3 = CreateActor<MonsterOne>();
+		Pooter* NewMonster3 = CreateActor<Pooter>();
 		NewMonster3->SetPos({ 230,1890 });
 
-		MonsterTwo* NewMonster4 = CreateActor<MonsterTwo>();
+		Fly* NewMonster4 = CreateActor<Fly>();
 		NewMonster4->SetPos({ 830,1690 });
-		MonsterTwo* NewMonster5 = CreateActor<MonsterTwo>();
+		Fly* NewMonster5 = CreateActor<Fly>();
 		NewMonster5->SetPos({ 830,1790 });
-		MonsterTwo* NewMonster6 = CreateActor<MonsterTwo>();
+		Fly* NewMonster6 = CreateActor<Fly>();
 		NewMonster6->SetPos({ 830,1890 });
 
 	}
 
-	if (true == SetBoss && true == Issac::MainPlayer->GetIssacCollision()->Collision({ .TargetGroup = static_cast<int>(IssacCollisionOrder::BossSetting),
+	if (true == SetBoss && true == Isaac::MainPlayer->GetIsaacCollision()->Collision({ .TargetGroup = static_cast<int>(IsaacCollisionOrder::BossSetting),
 	  .TargetColType = CT_Rect, .ThisColType = CT_Rect }))
 	{
 		SetBoss = false;
@@ -260,11 +259,11 @@ void TestLevel::LevelChangeStart(GameEngineLevel* _PrevLevel)
 int MoveY = 0;
 void TestLevel::MoveMaps()
 {
-	float IssacY = Issac::MainPlayer->GetPos().y;
+	float IsaacY = Isaac::MainPlayer->GetPos().y;
 	float YSize= GameEngineWindow::GetScreenSize().y;
-	if (IssacY > YSize)
+	if (IsaacY > YSize)
 	{
-		IssacY = IssacY - (YSize * MoveY);
+		IsaacY = IsaacY - (YSize * MoveY);
 	}
 	float4 Pos = float4::LerpClamp(Start, End, _Time);
 
@@ -279,12 +278,12 @@ void TestLevel::MoveMaps()
 
 	if (true == MoveMap)
 	{
-		if (IssacY > 570.0f)
+		if (IsaacY > 570.0f)
 		{
 			End = Start + float4(0, YSize);
 			MoveMap = false;
 			MoveY = MoveY + 1;
-			Issac::MainPlayer->SetPos({640,120+(YSize*(float)MoveY)});
+			Isaac::MainPlayer->SetPos({640,140+(YSize*(float)MoveY)});
 			int a = 0;
 		}
 	}

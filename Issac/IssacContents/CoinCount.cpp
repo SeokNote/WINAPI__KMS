@@ -7,7 +7,7 @@
 
 #include "ContentsEnums.h"
 
-#include "Issac.h"
+#include "Isaac.h"
 
 CoinCount* CoinCount::CoinNumberPtr = nullptr;
 
@@ -21,7 +21,7 @@ CoinCount::~CoinCount()
 
 void CoinCount::Start()
 {
-	CoinRender = CreateRender("ItemsUI.Bmp", IssacRenderOrder::UI);
+	CoinRender = CreateRender("ItemsUI.Bmp", IsaacRenderOrder::UI);
 	CoinRender->CreateAnimation({ .AnimationName = "CoinNumber",  .ImageName = "ItemsUI.bmp", .Start = 0, .End = 0 });
 	CoinRender->SetPosition({ 50, 200 });
 	CoinRender->SetScale({ 50, 50 });
@@ -44,7 +44,7 @@ void CoinCount::Update(float _DeltaTime)
 
 void CoinCount::GetCoinNumberSet()
 {
-	CoinNumbers = Issac::MainPlayer->GetCoinCount();
+	CoinNumbers = Isaac::MainPlayer->GetCoinCount();
 }
 
 void CoinCount::NumberSet()

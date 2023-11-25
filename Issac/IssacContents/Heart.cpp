@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineResources.h>
 
 #include "ContentsEnums.h"
-#include "issac.h"
+#include "Isaac.h"
 
 
 
@@ -46,13 +46,13 @@ void Heart::Start()
 	}
 	// 兄希 持失
 	{
-		HeartRender = CreateRender(IssacRenderOrder::Object);
+		HeartRender = CreateRender(IsaacRenderOrder::Object);
 		HeartRender->SetScale({ 60, 60 });
 		HeartRender->SetImage("Item_Heart.BMP");
 	}
 	//Colliison持失
 	{
-		HeartCol = CreateCollision(IssacCollisionOrder::Heart);
+		HeartCol = CreateCollision(IsaacCollisionOrder::Heart);
 		HeartCol->SetScale({ 30,30 });
 		HeartCol->SetDebugRenderType(CollisionType::CT_Rect);
 	}

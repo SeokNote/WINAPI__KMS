@@ -7,7 +7,7 @@
 
 #include "ContentsEnums.h"
 
-#include "Issac.h"
+#include "Isaac.h"
 
 BoomCount* BoomCount::BombNumberPtr = nullptr;
 
@@ -21,7 +21,7 @@ BoomCount::~BoomCount()
 
 void BoomCount::Start()
 {
-	BombRender = CreateRender("ItemsUI.Bmp", IssacRenderOrder::UI);
+	BombRender = CreateRender("ItemsUI.Bmp", IsaacRenderOrder::UI);
 	BombRender->CreateAnimation({ .AnimationName = "BombNumber",  .ImageName = "ItemsUI.bmp", .Start = 3, .End = 3 });
 	BombRender->SetPosition({ 50, 150 });
 	BombRender->SetScale({ 50, 50 });
@@ -44,7 +44,7 @@ void BoomCount::Update(float _DeltaTime)
 
 void BoomCount::GetBombNumberSet()
 {
-	BombNumbers = Issac::MainPlayer->GetBombCount();
+	BombNumbers = Isaac::MainPlayer->GetBombCount();
 }
 
 void BoomCount::NumberSet()

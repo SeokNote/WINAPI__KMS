@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 
 #include "ItemKey.h"
@@ -50,13 +50,13 @@ void ItemKey::Start()
 		ImageLoad();
 		LoadKey = false;
 	}
-	KeyRender = CreateRender(IssacRenderOrder::Object);
+	KeyRender = CreateRender(IsaacRenderOrder::Object);
 	KeyRender->SetScale({ 70, 70 });
 
 	KeyRender->CreateAnimation({ .AnimationName = "Key",  .ImageName = "Key.bmp", .Start = 0, .End = 0, .InterTime = 1.0f , .Loop = false });
 	KeyRender->ChangeAnimation("Key");
 	{
-		KeyCol = CreateCollision(IssacCollisionOrder::ItemKey);
+		KeyCol = CreateCollision(IsaacCollisionOrder::ItemKey);
 		KeyCol->SetScale({ 10, 10 });
 		KeyCol->On();
 		KeyCol->SetDebugRenderType(CollisionType::CT_Rect);

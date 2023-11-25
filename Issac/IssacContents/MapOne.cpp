@@ -17,7 +17,7 @@ void MapOne::Start()
 	float4 Size = GameEngineWindow::GetScreenSize();
 
 
-	GameEngineRender* Render = CreateRender("BaseMap.bmp", IssacRenderOrder::BackGround);
+	GameEngineRender* Render = CreateRender("BaseMap.bmp", IsaacRenderOrder::BackGround);
 	Render->SetPosition(Render->GetImage()->GetImageScale().half());
 	Render->SetScaleToImage();
 

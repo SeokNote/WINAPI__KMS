@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 
 #include "ItemCoin.h"
@@ -50,14 +50,14 @@ void ItemCoin::Start()
 		ImageLoad();
 		LoadCoin = false;
 	}
-	CoinRender = CreateRender(IssacRenderOrder::Object);
+	CoinRender = CreateRender(IsaacRenderOrder::Object);
 	CoinRender->SetScale({ 100, 100 });
 
 	CoinRender->CreateAnimation({ .AnimationName = "CoinLoad",  .ImageName = "Coin.bmp", .Start = 8, .End = 11, .InterTime = 0.03f, .Loop = false });
 	CoinRender->CreateAnimation({ .AnimationName = "Coin",  .ImageName = "Coin.bmp", .Start = 0, .End = 5, .InterTime = 0.15f });
 	CoinRender->ChangeAnimation("CoinLoad");
 	{
-		CoinCol = CreateCollision(IssacCollisionOrder::ItemCoin);
+		CoinCol = CreateCollision(IsaacCollisionOrder::ItemCoin);
 		CoinCol->SetScale({ 10, 10 });
 		CoinCol->On();
 		CoinCol->SetDebugRenderType(CollisionType::CT_Rect);

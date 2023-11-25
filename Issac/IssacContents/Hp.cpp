@@ -7,7 +7,7 @@
 
 #include "ContentsEnums.h"
 
-#include "Issac.h"
+#include "Isaac.h"
 
 HP::HP()
 {
@@ -19,7 +19,7 @@ HP::~HP()
 
 void HP::Start()
 {
-	HpRender1 = CreateRender("Hp.Bmp", IssacRenderOrder::UI);
+	HpRender1 = CreateRender("Hp.Bmp", IsaacRenderOrder::UI);
 	HpRender1->CreateAnimation({ .AnimationName = "Hp0",  .ImageName = "Hp.bmp", .Start = 2, .End = 2 });
 	HpRender1->CreateAnimation({ .AnimationName = "Hp1",  .ImageName = "Hp.bmp", .Start = 1, .End = 1 });
 	HpRender1->CreateAnimation({ .AnimationName = "Hp2",  .ImageName = "Hp.bmp", .Start = 0, .End = 0 });
@@ -28,7 +28,7 @@ void HP::Start()
 	HpRender1->EffectCameraOff();
 	HpRender1->ChangeAnimation("Hp2");
 
-	HpRender2 = CreateRender("Hp.Bmp", IssacRenderOrder::UI);
+	HpRender2 = CreateRender("Hp.Bmp", IsaacRenderOrder::UI);
 	HpRender2->CreateAnimation({ .AnimationName = "Hp0",  .ImageName = "Hp.bmp", .Start = 2, .End = 2 });
 	HpRender2->CreateAnimation({ .AnimationName = "Hp1",  .ImageName = "Hp.bmp", .Start = 1, .End = 1 });
 	HpRender2->CreateAnimation({ .AnimationName = "Hp2",  .ImageName = "Hp.bmp", .Start = 0, .End = 0 });
@@ -37,7 +37,7 @@ void HP::Start()
 	HpRender2->EffectCameraOff();
 	HpRender2->ChangeAnimation("Hp2");
 
-	HpRender3 = CreateRender("Hp.Bmp", IssacRenderOrder::UI);
+	HpRender3 = CreateRender("Hp.Bmp", IsaacRenderOrder::UI);
 	HpRender3->CreateAnimation({ .AnimationName = "Hp0",  .ImageName = "Hp.bmp", .Start = 2, .End = 2 });
 	HpRender3->CreateAnimation({ .AnimationName = "Hp1",  .ImageName = "Hp.bmp", .Start = 1, .End = 1 });
 	HpRender3->CreateAnimation({ .AnimationName = "Hp2",  .ImageName = "Hp.bmp", .Start = 0, .End = 0 });
@@ -48,14 +48,14 @@ void HP::Start()
 }
 void HP::Update(float _DeltaTime)
 {
-	SetIssacHP();
+	SetIsaacHP();
 
 	HpSet(IsaacHP);
 }
 
-void HP::SetIssacHP()
+void HP::SetIsaacHP()
 {
-	IsaacHP = Issac::MainPlayer->GetPlayerHP();
+	IsaacHP = Isaac::MainPlayer->GetPlayerHP();
 }
 
 void HP::HpSet(int _PlayerHP)

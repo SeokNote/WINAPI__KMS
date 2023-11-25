@@ -17,7 +17,7 @@ void IntroBack::Start()
 	float4 Size = GameEngineWindow::GetScreenSize();
 
 
-	GameEngineRender* Render = CreateRender("main.bmp", IssacRenderOrder::BackGround);
+	GameEngineRender* Render = CreateRender("main.bmp", IsaacRenderOrder::BackGround);
 	Render->SetPosition(GameEngineWindow::GetScreenSize().half());
 	Render->SetScale(GameEngineWindow::GetScreenSize());
 }

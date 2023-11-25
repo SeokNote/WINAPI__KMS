@@ -1,6 +1,6 @@
 #pragma once
 
-enum class IssacRenderOrder
+enum class IsaacRenderOrder
 {
 	title,
 	BackGround,
@@ -14,7 +14,7 @@ enum class IssacRenderOrder
 	Boss,
 };
 
-enum class  IssacCollisionOrder
+enum class  IsaacCollisionOrder
 {
 
 //-----------

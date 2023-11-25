@@ -1,5 +1,5 @@
 #include <Windows.h>
-#include <IssacContents/IssacCore.h>
+#include <IssacContents/IsaacCore.h>
 #include <GameEngineBase/GameEngineTime.h>
 #include <GameEngineBase/GameEngineString.h>
 #include <GameEngineBase/GameEngineMath.h>
@@ -27,6 +27,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	//}
 
 
-	IssacCore::GetInst().CoreStart(hInstance);
+	IsaacCore::GetInst().CoreStart(hInstance);
 	return 1;
 }

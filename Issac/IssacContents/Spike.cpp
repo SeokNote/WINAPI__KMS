@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "Spike.h"
 
@@ -49,7 +49,7 @@ void Spike::Start()
 		ImageLoad();
 		LoadSpike = false;
 	}
-	SpikeRender = CreateRender(IssacRenderOrder::Object);
+	SpikeRender = CreateRender(IsaacRenderOrder::Object);
 	SpikeRender->SetScale({ 70, 70 });
 
 
@@ -59,7 +59,7 @@ void Spike::Start()
 
 	{
 
-		SpikeCol = CreateCollision(IssacCollisionOrder::Spike);
+		SpikeCol = CreateCollision(IsaacCollisionOrder::Spike);
 		SpikeCol->SetScale({ 50, 50 });
 		SpikeCol->On();
 		SpikeCol->SetDebugRenderType(CollisionType::CT_Rect);

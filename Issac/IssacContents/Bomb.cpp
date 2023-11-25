@@ -8,7 +8,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "Bomb.h"
 
@@ -47,16 +47,16 @@ void Bomb::Start()
 		ImageLoad();
 		LoadBomb = false;
 	}
-	BombRender = CreateRender(IssacRenderOrder::Player);
+	BombRender = CreateRender(IsaacRenderOrder::Player);
 	BombRender->SetScale({ 70, 70 });
-	SetPos(Issac::MainPlayer->GetPos());
+	SetPos(Isaac::MainPlayer->GetPos());
 
 	BombRender->CreateAnimation({ .AnimationName = "Bomb",  .ImageName = "Bomb.bmp", .Start = 0, .End = 2, .InterTime = 0.5f , .Loop = false });
 	BombRender->CreateAnimation({ .AnimationName = "Bomb_Effect",  .ImageName = "Bomb_Effect.bmp", .Start = 0, .End = 11, .InterTime = 0.02f , .Loop = false });
 	BombRender->ChangeAnimation("Bomb");
 
 	{
-		BombCol = CreateCollision(IssacCollisionOrder::Bomb);
+		BombCol = CreateCollision(IsaacCollisionOrder::Bomb);
 		BombCol->SetScale({ 30, 30 });
 		BombCol->Off();
 		BombCol->SetDebugRenderType(CollisionType::CT_Rect);

@@ -17,7 +17,7 @@ void TitleBack::Start()
 	float4 Size = GameEngineWindow::GetScreenSize();
 
 
-	TitleRender = CreateRender(IssacRenderOrder::title);
+	TitleRender = CreateRender(IsaacRenderOrder::title);
 	TitleRender->SetPosition(GameEngineWindow::GetScreenSize().half());
 	TitleRender->SetScale(GameEngineWindow::GetScreenSize());
 	TitleRender->CreateAnimation({ .AnimationName = "Loop",  .ImageName = "start.bmp", .Start = 0, .End = 1, .InterTime = 0.3f });

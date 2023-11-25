@@ -1,5 +1,5 @@
 #include "MonsterSet.h"
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 
 #include "MonsterOne.h"
@@ -26,7 +26,7 @@ MonsterSet::~MonsterSet()
 
 void MonsterSet::Start()
 {
-	MonsterSetCol = CreateCollision(IssacCollisionOrder::MonsterSetting);
+	MonsterSetCol = CreateCollision(IsaacCollisionOrder::MonsterSetting);
 	MonsterSetCol->SetDebugRenderType(CollisionType::CT_Rect);
 	MonsterSetCol->SetPosition({ 640,1580 });
 	MonsterSetCol->SetScale({ 100,30 });

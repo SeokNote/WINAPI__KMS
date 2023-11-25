@@ -1,4 +1,4 @@
-#include "Issac.h"
+#include "Isaac.h"
 #include <GameEnginePlatform/GameEngineWindow.h>
 #include <GameEngineBase/GameEnginePath.h>
 #include <GameEngineCore/GameEngineResources.h>
@@ -9,27 +9,27 @@
 #include "ContentsEnums.h"
 
 
-void Issac::ChangeState(IssacState _State)
+void Isaac::ChangeState(IsaacState _State)
 {
 
 
-	IssacState NextState = _State;
-	IssacState PrevState = StateValue;
+	IsaacState NextState = _State;
+	IsaacState PrevState = StateValue;
 
 	StateValue = NextState;
 
 	switch (NextState)
 	{
-	case IssacState::IDLE:
+	case IsaacState::IDLE:
 		IdleStart();
 		break;
-	case IssacState::MOVE:
+	case IsaacState::MOVE:
 		MoveStart();
 		break;
-	//case IssacState::GET:
+	//case IsaacState::GET:
 	//	GETStart();
 	//	break;
-	case IssacState::Attack:
+	case IsaacState::Attack:
 		//AttackStart();
 		break;
 	default:
@@ -38,15 +38,15 @@ void Issac::ChangeState(IssacState _State)
 
 	switch (PrevState)
 	{
-	case IssacState::IDLE:
+	case IsaacState::IDLE:
 		IdleEnd();
 		break;
-	case IssacState::MOVE:
+	case IsaacState::MOVE:
 		MoveEnd();
-	//case IssacState::GET:
+	//case IsaacState::GET:
 	//	GETEnd();
 	//	break;
-	case IssacState::Attack:
+	case IsaacState::Attack:
 	//	AttackEnd();
 		break;
 	default:
@@ -55,21 +55,21 @@ void Issac::ChangeState(IssacState _State)
 }
 
 
-void Issac::UpdateState(float _Time)
+void Isaac::UpdateState(float _Time)
 {
 
 	switch (StateValue)
 	{
-	case IssacState::IDLE:
+	case IsaacState::IDLE:
 		IdleUpdate(_Time);
 		break;
-	case IssacState::MOVE:
+	case IsaacState::MOVE:
 		MoveUpdate(_Time);
 		break;
-	/*case IssacState::GET:
+	/*case IsaacState::GET:
 		GETUpdate(_Time);
 		break;*/
-	case IssacState::Attack:
+	case IsaacState::Attack:
 		//AttackUpdate(_Time);
 		break;
 	default:
@@ -83,47 +83,47 @@ void Issac::UpdateState(float _Time)
 
 
 
-void Issac::IdleStart() {
+void Isaac::IdleStart() {
 
 
-//	IssacHeadRender->ChangeAnimation(DirString + "HIdle");
-//	IssacBodyRender->ChangeAnimation(DirString + "BIdle");
+//	IsaacHeadRender->ChangeAnimation(DirString + "HIdle");
+//	IsaacBodyRender->ChangeAnimation(DirString + "BIdle");
 //	GetRender->ChangeAnimation("GetItem");
 
 	DirCheck("HIdle", "BIdle");
 	//DirCheck("BIdle");
 
 }
-void Issac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
+void Isaac::IdleUpdate(float _Time) //가만히 있을때 뭘해야할까
 {
 	if (GameEngineInput::IsPress("LeftMove") || GameEngineInput::IsPress("RightMove")|| GameEngineInput::IsPress("DownMove")|| GameEngineInput::IsPress("UpMove"))
 	{
-		ChangeState(IssacState::MOVE);
+		ChangeState(IsaacState::MOVE);
 	}
 
 }
-void Issac::IdleEnd() {
+void Isaac::IdleEnd() {
 
 
 }
 
-void Issac::MoveStart() {
+void Isaac::MoveStart() {
 
 	//DirCheck("HMove");
 	//DirCheck("BMove");
 	DirCheck("HMove", "BMove");
 
-//	IssacHeadRender->ChangeAnimation(DirString +"HMove");
-//	IssacBodyRender->ChangeAnimation(DirString +"BMove");
+//	IsaacHeadRender->ChangeAnimation(DirString +"HMove");
+//	IsaacBodyRender->ChangeAnimation(DirString +"BMove");
 //	GetRender->ChangeAnimation("GetItem");
 
 }
-void Issac::MoveUpdate(float _Time) {
+void Isaac::MoveUpdate(float _Time) {
 
 
 	if (false == GameEngineInput::IsPress("LeftMove") && false == GameEngineInput::IsPress("RightMove") && false == GameEngineInput::IsPress("DownMove") && false == GameEngineInput::IsPress("UpMove"))
 	{
-		ChangeState(IssacState::IDLE);
+		ChangeState(IsaacState::IDLE);
 		return; //최종 결정후 무조건 리턴
 	}
 	float4 Dir;
@@ -174,46 +174,46 @@ void Issac::MoveUpdate(float _Time) {
 
 
 
-void Issac::MoveEnd() {
+void Isaac::MoveEnd() {
 
 
 }
 
 
-//void Issac::GETStart() {
+//void Isaac::GETStart() {
 //
 //
 //	DirCheck("GetItem");
 //
 //}
 //
-//void Issac::GETUpdate(float _Time) //가만히 있을때 뭘해야할까
+//void Isaac::GETUpdate(float _Time) //가만히 있을때 뭘해야할까
 //{
 //	GetTime += _Time;
 //	
 //	
 //		if (1.0f < GetTime) {
-//			ChangeState(IssacState::IDLE);
+//			ChangeState(IsaacState::IDLE);
 //		}
 //
 //
 //}
-//void Issac::GETEnd() {
+//void Isaac::GETEnd() {
 //
 //	GetTime = 0.0f;
 //}
 
-//void Issac::AttackStart()
+//void Isaac::AttackStart()
 //{
 //	DirCheck("Attack", "BMove");
 //
 //}
 //
-//void Issac::AttackUpdate(float _Time)
+//void Isaac::AttackUpdate(float _Time)
 //{
 //	if (false == GameEngineInput::IsPress("LeftTears") && false == GameEngineInput::IsPress("RightTears") && false == GameEngineInput::IsPress("DownTears") && false == GameEngineInput::IsPress("UpTears"))
 //	{
-//		ChangeState(IssacState::MOVE);
+//		ChangeState(IsaacState::MOVE);
 //		return; //최종 결정후 무조건 리턴
 //	}
 //	//float4 Dir;
@@ -237,6 +237,6 @@ void Issac::MoveEnd() {
 //	DirCheck("Attack", "BMove");
 //}
 //
-//void Issac::AttackEnd()
+//void Isaac::AttackEnd()
 //{
 //}

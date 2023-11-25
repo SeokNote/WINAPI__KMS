@@ -7,7 +7,7 @@
 
 #include "ContentsEnums.h"
 
-#include "Issac.h"
+#include "Isaac.h"
 
 KeyCount* KeyCount::KeyNumberPtr = nullptr;
 
@@ -21,7 +21,7 @@ KeyCount::~KeyCount()
 
 void KeyCount::Start()
 {
-	KeyRender = CreateRender("ItemsUI.Bmp", IssacRenderOrder::UI);
+	KeyRender = CreateRender("ItemsUI.Bmp", IsaacRenderOrder::UI);
 	KeyRender->CreateAnimation({ .AnimationName = "KeyNumber",  .ImageName = "ItemsUI.bmp", .Start = 1, .End = 1 });
 	KeyRender->SetPosition({ 50, 250 });
 	KeyRender->SetScale({ 50, 50 });
@@ -45,7 +45,7 @@ void KeyCount::Update(float _DeltaTime)
 
 void KeyCount::GetKeyNumberSet()
 {
-	KeyNumbers = Issac::MainPlayer->GetKeyCount();
+	KeyNumbers = Isaac::MainPlayer->GetKeyCount();
 }
 
 void KeyCount::NumberSet()

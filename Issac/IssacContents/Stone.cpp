@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "STone.h"
 
@@ -42,7 +42,7 @@ void STone::Start()
 		ImageLoad();
 		LoadStone = false;
 	}
-	SToneRender = CreateRender(IssacRenderOrder::Object);
+	SToneRender = CreateRender(IsaacRenderOrder::Object);
 	SToneRender->SetScale({ 70, 70 });
 
 
@@ -55,7 +55,7 @@ void STone::Start()
 
 	{
 
-		SToneCol = CreateCollision(IssacCollisionOrder::Rock);
+		SToneCol = CreateCollision(IsaacCollisionOrder::Rock);
 		SToneCol->SetScale({ 50, 50 });
 		SToneCol->On();
 		SToneCol->SetDebugRenderType(CollisionType::CT_Rect);
@@ -72,8 +72,8 @@ void STone::Update(float _DeltaTime)
 void STone::CollisionCheck(float _DeltaTime)
 {
 	std::vector<GameEngineCollision*> RCollisions;
-	CollisionCheckParameter CheckSTone = { .TargetGroup = static_cast<int>(IssacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
-	CollisionCheckParameter CheckAttack = { .TargetGroup = static_cast<int>(IssacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter CheckSTone = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::Bomb), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter CheckAttack = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 
 
 	if (true == SToneCol->Collision(CheckSTone, RCollisions)) //ÆøÅº¿¡´êÀ¸¸é

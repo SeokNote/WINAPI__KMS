@@ -10,7 +10,7 @@
 #include <GameEngineCore/GameEngineLevel.h>
 #include <GameEngineCore/GameEngineCollision.h>
 
-#include "Issac.h"
+#include "Isaac.h"
 #include "ContentsEnums.h"
 #include "Poop.h"
 
@@ -48,7 +48,7 @@ void Poop::Start()
 		ImageLoad();
 		LoadPoop = false;
 	}
-	PoopRender = CreateRender(IssacRenderOrder::Object);
+	PoopRender = CreateRender(IsaacRenderOrder::Object);
 	PoopRender->SetScale({ 70, 70 });
 
 
@@ -65,7 +65,7 @@ void Poop::Start()
 
 	{
 
-		PoopCol = CreateCollision(IssacCollisionOrder::Poop);
+		PoopCol = CreateCollision(IsaacCollisionOrder::Poop);
 		PoopCol->SetScale({ 50, 50 });
 		PoopCol->On();
 		PoopCol->SetDebugRenderType(CollisionType::CT_Rect);
@@ -83,7 +83,7 @@ void Poop::Update(float _DeltaTime)
 void Poop::CollisionCheck(float _DeltaTime)
 {
 	std::vector<GameEngineCollision*> PopCollisions;
-	CollisionCheckParameter CheckPop = { .TargetGroup = static_cast<int>(IssacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
+	CollisionCheckParameter CheckPop = { .TargetGroup = static_cast<int>(IsaacCollisionOrder::PlayerAttack), .TargetColType = CT_Rect, .ThisColType = CT_Rect };
 
 
 	if (true == PoopCol->Collision(CheckPop, PopCollisions)) 

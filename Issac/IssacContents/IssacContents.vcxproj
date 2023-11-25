@@ -36,9 +36,9 @@
     <ClCompile Include="HpBar.cpp" />
     <ClCompile Include="IntroBack.cpp" />
     <ClCompile Include="IntroLevel.cpp" />
-    <ClCompile Include="Issac.cpp" />
-    <ClCompile Include="IssacCore.cpp" />
-    <ClCompile Include="Issac_State.cpp" />
+    <ClCompile Include="Isaac.cpp" />
+    <ClCompile Include="IsaacCore.cpp" />
+    <ClCompile Include="Isaac_State.cpp" />
     <ClCompile Include="ItemBomb.cpp" />
     <ClCompile Include="ItemCoin.cpp" />
     <ClCompile Include="ItemHeart.cpp" />
@@ -47,9 +47,10 @@
     <ClCompile Include="Leo.cpp" />
     <ClCompile Include="Loki.cpp" />
     <ClCompile Include="MapOne.cpp" />
-    <ClCompile Include="MonsterOne.cpp" />
+    <ClCompile Include="MonsterBase.cpp" />
+    <ClCompile Include="Pooter.cpp" />
     <ClCompile Include="MonsterSet.cpp" />
-    <ClCompile Include="MonsterTwo.cpp" />
+    <ClCompile Include="Fly.cpp" />
     <ClCompile Include="MouseObject.cpp" />
     <ClCompile Include="Poop.cpp" />
     <ClCompile Include="Rock.cpp" />
@@ -80,8 +81,8 @@
     <ClInclude Include="HpBar.h" />
     <ClInclude Include="IntroBack.h" />
     <ClInclude Include="IntroLevel.h" />
-    <ClInclude Include="Issac.h" />
-    <ClInclude Include="IssacCore.h" />
+    <ClInclude Include="Isaac.h" />
+    <ClInclude Include="IsaacCore.h" />
     <ClInclude Include="ItemBomb.h" />
     <ClInclude Include="ItemCoin.h" />
     <ClInclude Include="ItemHeart.h" />
@@ -90,9 +91,9 @@
     <ClInclude Include="Leo.h" />
     <ClInclude Include="Loki.h" />
     <ClInclude Include="MapOne.h" />
-    <ClInclude Include="MonsterOne.h" />
+    <ClInclude Include="Pooter.h" />
     <ClInclude Include="MonsterSet.h" />
-    <ClInclude Include="MonsterTwo.h" />
+    <ClInclude Include="Fly.h" />
     <ClInclude Include="MouseObject.h" />
     <ClInclude Include="Poop.h" />
     <ClInclude Include="Rock.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="TestLevel.h" />
     <ClInclude Include="TitleBack.h" />
     <ClInclude Include="TitleLevel.h" />
+    <ClInclude Include="MonsterBase.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -110,6 +112,7 @@
     <ProjectGuid>{5d4cfce3-7a35-4fdb-98ea-6813c8a7f86a}</ProjectGuid>
     <RootNamespace>IssacContents</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>IsaacContents</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

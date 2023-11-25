@@ -1,5 +1,5 @@
 #include "BossSet.h"
-#include "Issac.h"
+#include "Isaac.h"
 
 #include "ContentsEnums.h"
 
@@ -24,7 +24,7 @@ BossSet::~BossSet()
 
 void BossSet::Start()
 {
-	BossSetCol = CreateCollision(IssacCollisionOrder::BossSetting);
+	BossSetCol = CreateCollision(IsaacCollisionOrder::BossSetting);
 	BossSetCol->SetDebugRenderType(CollisionType::CT_Rect);
 	BossSetCol->SetPosition({ 640,2280 });
 	BossSetCol->SetScale({ 100,30 });

@@ -4,17 +4,17 @@
 // 이렇게 클래스를 만드는 방식 그자체를 싱글톤이라고 합니다.
 
 // 설명 :
-class IssacCore : public GameEngineCore
+class IsaacCore : public GameEngineCore
 {
 public:
 	// delete Function
-	IssacCore(const IssacCore& _Other) = delete;
-	IssacCore(IssacCore&& _Other) noexcept = delete;
-	IssacCore& operator=(const IssacCore& _Other) = delete;
-	IssacCore& operator=(IssacCore&& _Other) noexcept = delete;
+	IsaacCore(const IsaacCore& _Other) = delete;
+	IsaacCore(IsaacCore&& _Other) noexcept = delete;
+	IsaacCore& operator=(const IsaacCore& _Other) = delete;
+	IsaacCore& operator=(IsaacCore&& _Other) noexcept = delete;
 
 	// 싱글톤
-	static IssacCore& GetInst()
+	static IsaacCore& GetInst()
 	{
 		return Core;
 	}
@@ -34,13 +34,13 @@ protected:
 private:
 	// 생성자를 막아.
 	// constrcuter destructer
-	IssacCore();
-	~IssacCore();
+	IsaacCore();
+	~IsaacCore();
 
 	// 자기를 자신이 가지면
 	// 프로그램을 통틀어서 오직 1개의 객체만 만들어진다
 	// static StudyGameCore* Core;
-	static IssacCore Core;
+	static IsaacCore Core;
 
 };
 

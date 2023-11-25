@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="IssacCore.cpp" />
     <ClCompile Include="ContentsValue.cpp">
       <Filter>Global</Filter>
     </ClCompile>
@@ -14,7 +13,7 @@
     <ClCompile Include="TestLevel.cpp">
       <Filter>Play\Level\TestLevel</Filter>
     </ClCompile>
-    <ClCompile Include="MonsterOne.cpp">
+    <ClCompile Include="Pooter.cpp">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClCompile>
     <ClCompile Include="Door.cpp">
@@ -22,12 +21,6 @@
     </ClCompile>
     <ClCompile Include="Tears.cpp">
       <Filter>Play\Object\Tears</Filter>
-    </ClCompile>
-    <ClCompile Include="Issac.cpp">
-      <Filter>Play\Issac</Filter>
-    </ClCompile>
-    <ClCompile Include="Issac_State.cpp">
-      <Filter>Play\Issac</Filter>
     </ClCompile>
     <ClCompile Include="IntroBack.cpp">
       <Filter>Play\Level\IntroLevel</Filter>
@@ -71,7 +64,7 @@
     <ClCompile Include="ItemCoin.cpp">
       <Filter>Play\Object\Items\Coin</Filter>
     </ClCompile>
-    <ClCompile Include="MonsterTwo.cpp">
+    <ClCompile Include="Fly.cpp">
       <Filter>Play\Monster\MonsterTwo</Filter>
     </ClCompile>
     <ClCompile Include="BloodTear.cpp">
@@ -122,9 +115,14 @@
     <ClCompile Include="KeyCount.cpp">
       <Filter>Play\UI\Key</Filter>
     </ClCompile>
+    <ClCompile Include="Isaac.cpp" />
+    <ClCompile Include="IsaacCore.cpp" />
+    <ClCompile Include="Isaac_State.cpp" />
+    <ClCompile Include="MonsterBase.cpp">
+      <Filter>Play\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IssacCore.h" />
     <ClInclude Include="ContentsEnums.h" />
     <ClInclude Include="ContentsValue.h">
       <Filter>Global</Filter>
@@ -138,7 +136,7 @@
     <ClInclude Include="TestLevel.h">
       <Filter>Play\Level\TestLevel</Filter>
     </ClInclude>
-    <ClInclude Include="MonsterOne.h">
+    <ClInclude Include="Pooter.h">
       <Filter>Play\Monster\MonsterOne</Filter>
     </ClInclude>
     <ClInclude Include="Door.h">
@@ -146,9 +144,6 @@
     </ClInclude>
     <ClInclude Include="Tears.h">
       <Filter>Play\Object\Tears</Filter>
-    </ClInclude>
-    <ClInclude Include="Issac.h">
-      <Filter>Play\Issac</Filter>
     </ClInclude>
     <ClInclude Include="IntroBack.h">
       <Filter>Play\Level\IntroLevel</Filter>
@@ -192,7 +187,7 @@
     <ClInclude Include="ItemCoin.h">
       <Filter>Play\Object\Items\Coin</Filter>
     </ClInclude>
-    <ClInclude Include="MonsterTwo.h">
+    <ClInclude Include="Fly.h">
       <Filter>Play\Monster\MonsterTwo</Filter>
     </ClInclude>
     <ClInclude Include="BloodTear.h">
@@ -243,6 +238,11 @@
     <ClInclude Include="KeyCount.h">
       <Filter>Play\UI\Key</Filter>
     </ClInclude>
+    <ClInclude Include="Isaac.h" />
+    <ClInclude Include="IsaacCore.h" />
+    <ClInclude Include="MonsterBase.h">
+      <Filter>Play\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Global">
@@ -263,7 +263,7 @@
     <Filter Include="Play\Object\Tears">
       <UniqueIdentifier>{c19da15a-d74d-4f7b-b1d2-1872cd5dd8df}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Play\Issac">
+    <Filter Include="Play\Isaac">
       <UniqueIdentifier>{36e70e4d-24ab-4c12-86b0-e1c7d89feb7c}</UniqueIdentifier>
     </Filter>
     <Filter Include="Play\Level">
